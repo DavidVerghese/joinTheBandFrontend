@@ -11,6 +11,7 @@ I would like to create an app for musicians looking to join a band or collaborat
 ## Wireframes
 
 Wireframe for Desktop
+![alt text](https://github.com/DavidVergheseProgrammer/joinTheBand/blob/main/pics/wireframeDesktop.png "Wireframe for Desktop")
 Wireframe for Tablet
 Wireframe for Desktop
 
