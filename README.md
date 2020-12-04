@@ -48,18 +48,14 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 ## Project Schedule
 
-This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
-
-You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
-
 |  Day | Deliverable | Status
 |---|---| ---|
-|July 10-12| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|July 13| Project Approval | Incomplete
-|July 13| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|July 14| Pseudocode / actual code | Incomplete
-|July 15| Initial Clickable Model  | Incomplete
-|July 16| MVP | Incomplete
+|Dec 3 | Prompt / Wireframes / Priority Matrix / Timeframes | 
+|Dec 4| Project Approval | Incomplete
+|Dec 7| Getting data from Air table | Incomplete
+|July 14| Core Application Structure (HTML, CSS, etc.)| Incomplete
+|July 15| Working on Search Bar  | Incomplete
+|July 16| MVP, Getting feedback from friends. | Incomplete
 |July 17| Presentations | Incomplete
 
 ## Timeframes
