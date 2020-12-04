@@ -24,7 +24,7 @@ Wireframe for Phone
 
 ## Component Hierarchy
 
-![alt text] (https://github.com/DavidVergheseProgrammer/joinTheBand/blob/main/pics/componentheirarchy2.png "Component Heirarchy")
+![alt text]((https://github.com/DavidVergheseProgrammer/joinTheBand/blob/main/pics/componentheirarchy2.png "Component Heirarchy")
 
 ## API and Data Sample
 
