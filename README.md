@@ -41,19 +41,20 @@ Postman:
 
 ### MVP/PostMVP
 
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
-
 #### MVP 
 
-- Display user-submitted info 
-- Have sound effects 
-- Have a working searchbar
-- Have a post button
+- Homepage with user-submitted info.
+- 'Post' page where users can submit info through a form.
+- Get and post musician's profiles from Airtable.
+- Have sound effects... eg a guitar riff when they click 'Post'
+- Have a working searchbar where users can search for profiles based on a certain filter (eg #guitarists). 
 
 #### PostMVP  
 
-- Display user-submitted pics, sound files.
-
+- Get my friends who are musicians to create profiles
+- Add a comments feature, so people can comment on profiles.
+- Add an endorsement feature, so other users can endorse a musician's skills, similar to how you can endorse people's skills on LinkedIn.
+ 
 ## Project Schedule
 
 |  Day | Deliverable | Status
