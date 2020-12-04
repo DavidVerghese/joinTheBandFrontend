@@ -36,7 +36,6 @@ Airtable:
 The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
 #### MVP 
-*These are examples only. Replace with your own MVP features.*
 
 - Display user-submitted info 
 - Have a working searchbar
@@ -79,6 +78,8 @@ Time frames are also key in the development cycle.  You have limited time to cod
 ### Strengths:
 
 ### Weaknesses:
+
+Flexbox, getting info from Airbase.
 
 ### Opportunities:
 
