@@ -27,7 +27,9 @@ Show your component hierarchy here! Use [this](https://cms-assets.tutsplus.com/u
 
 ## API and Data Sample
 
-Specify the API you are using and include a link. Show us a snippet of JSON returned by your API so we know you can access it and get the info you need
+Airtable: 
+
+![alt text](https://github.com/DavidVergheseProgrammer/joinTheBand/blob/main/pics/Airtable.png "Airtable")
 
 ### MVP/PostMVP
 
