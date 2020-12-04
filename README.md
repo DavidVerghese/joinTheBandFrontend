@@ -12,15 +12,15 @@ I would like to create an app for musicians looking to join a band or collaborat
 
 Wireframe for Desktop:
 
-![alt text](https://github.com/DavidVergheseProgrammer/joinTheBand/blob/main/pics/wireframeDesktop.png "Wireframe for Desktop")
+![alt text](https://github.com/DavidVergheseProgrammer/joinTheBand/blob/main/pics/wireframeDesktop2.png "Wireframe for Desktop")
 
 Wireframe for Tablet
 
-![alt text](https://github.com/DavidVergheseProgrammer/joinTheBand/blob/main/pics/wireframeTablet3.png "Wireframe for Tablet")
+![alt text](https://github.com/DavidVergheseProgrammer/joinTheBand/blob/main/pics/wireframeTablet4.png "Wireframe for Tablet")
 
 Wireframe for Phone
 
-![alt text](https://github.com/DavidVergheseProgrammer/joinTheBand/blob/main/pics/wireframePhone.png "Wireframe for Phone")
+![alt text](https://github.com/DavidVergheseProgrammer/joinTheBand/blob/main/pics/wireframePhone2.png "Wireframe for Phone")
 
 ## Component Hierarchy
 
