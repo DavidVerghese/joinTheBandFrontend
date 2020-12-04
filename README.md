@@ -89,15 +89,15 @@ Postman:
 
 ### Strengths:
 
-Designing interface, basic React syntax, incorporating sound, graphic design.
+I know that this could be a useful app, as I've used a site like this, such as r/findABand, before. I have a pretty clear idea on how I want it to look and function. I also have experience from the previous project with incorporating sound and images. I think I have a good grasp of basic JS as well. 
 
 ### Weaknesses:
 
-Flexbox, getting info from Airbase, more complicated React syntax.
+I am not great with CRUD and Flexbox. I will need to do review the notes, and probably recieve help from my instructors as well, in order to make sure I am able to get and post information from Airtable, and that I have styled the webpage in the most efficient way. 
 
 ### Opportunities:
 
-Reaching out to musician friends to get their input, learning to add pictures and sound with Airtable.
+I think this app would help me solidify my skills with React and Airtable. It'd be cool if I'd be able to test this out on my musician friends, and even cooler if some of them collaborate through this app. 
 
 ### Threats:
-Not being able to get data to display. Having too many parameters in Airtable.
+I think there is a risk that I could spend too much time trying to figure out how to sort data from Airtable, and not enough time working on the interface and design of the app. I will try to see the TAs for help with CRUD today or tomorrow, and sort this part out over the weekend. 
