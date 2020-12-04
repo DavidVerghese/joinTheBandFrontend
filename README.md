@@ -16,7 +16,7 @@ Wireframe for Desktop:
 
 Wireframe for Tablet
 
-![alt text](https://github.com/DavidVergheseProgrammer/joinTheBand/blob/main/pics/wireframeTablet2.png "Wireframe for Tablet")
+![alt text](https://github.com/DavidVergheseProgrammer/joinTheBand/blob/main/pics/wireframeTablet3.png "Wireframe for Tablet")
 
 Wireframe for Phone
 
