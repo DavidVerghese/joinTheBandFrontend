@@ -74,7 +74,7 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 | Cleaning up the code | Moderate | 2hrs| | |
 | Pseudocode | Low | 1hr| | |
 | Preparing for presentation | Moderate | 1hr| | |
-| Total | H | 26hrs| 5hrs | 5hrs |
+| Total | H | 31rs|  |  |
 
 ## SWOT Analysis
 
