@@ -24,6 +24,8 @@ Wireframe for Phone
 
 ## Component Hierarchy
 
+In the App.js file, you make a call to the API. You pass this data to the Result, Social Media, and Contact components, similar to how the App.js file passed props to the Birds component in the Audubon-Website. In the Post component, you store the user's input as a property of state, then push this to the Airtable API. 
+
 ![alt text](https://github.com/DavidVergheseProgrammer/joinTheBand/blob/main/pics/componentheirarchy2.png "Component Heirarchy")
 
 ## API and Data Sample
