@@ -46,7 +46,7 @@ Postman:
 - Homepage with user-submitted info.
 - 'Post' page where users can submit info through a form.
 - Get and post musician's profiles from Airtable.
-- Have sound effects... eg a guitar riff when they click 'Post'
+- Have sound effects... eg a guitar riff when they click 'Post', or an airhorn.
 - Have a working searchbar where users can search for profiles based on a certain filter (eg #guitarists). 
 
 #### PostMVP  
