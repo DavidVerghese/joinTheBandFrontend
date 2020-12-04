@@ -13,8 +13,14 @@ I would like to create an app for musicians looking to join a band or collaborat
 Wireframe for Desktop:
 
 ![alt text](https://github.com/DavidVergheseProgrammer/joinTheBand/blob/main/pics/wireframeDesktop.png "Wireframe for Desktop")
+
 Wireframe for Tablet
-Wireframe for Desktop
+
+![alt text](https://github.com/DavidVergheseProgrammer/joinTheBand/blob/main/pics/wireframeTablet2.png "Wireframe for Tablet")
+
+Wireframe for Phone
+
+![alt text](https://github.com/DavidVergheseProgrammer/joinTheBand/blob/main/pics/wireframePhone.png "Wireframe for Phone")
 
 ## Component Hierarchy
 Show your component hierarchy here! Use [this](https://cms-assets.tutsplus.com/uploads/users/1795/posts/30352/image/GettingStartedWithReduxTutorial-React-Component-Structure.png) as an example.
