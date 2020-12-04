@@ -52,7 +52,7 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 |---|---| ---|
 |Dec 3 | Prompt / Wireframes / Priority Matrix / Timeframes | 
 |Dec 4| Project Approval | Incomplete
-|Dec 7| Getting data from Air table | Incomplete
+|Dec 7| Getting data from Airtable | Incomplete
 |July 14| Core Application Structure (HTML, CSS, etc.)| Incomplete
 |July 15| Working on Search Bar  | Incomplete
 |July 16| MVP, Getting feedback from friends. | Incomplete
@@ -62,9 +62,19 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Working with Airtable | H | 3hrs| | |
+| Graphic Design | Moderate | 3hrs| |  |
+| Setting Up React| H | 3hrs| |  |
+| Research | Moderate | 3hrs| |  |
+| Writing Text | Moderate | 3hrs| |  |
+| Feedback | Moderate | 3hrs|  | |
+| Incorporating Suggestions | Moderate | 3hrs|  ||
+| Debugging the code | H | 3hrs| | |
+| Testing | H | 3hrs|  |  |
+| Cleaning up the code | Moderate | 2hrs| | |
+| Pseudocode | Low | 1hr| | |
+| Preparing for presentation | Moderate | 1hr| | |
+| Total | H | 26hrs| 5hrs | 5hrs |
 
 ## SWOT Analysis
 
