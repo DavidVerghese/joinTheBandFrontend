@@ -80,14 +80,15 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 ### Strengths:
 
-Designing interface
+Designing interface, basic React syntax, incorporating sound, graphic design.
 
 ### Weaknesses:
 
-Flexbox, getting info from Airbase.
+Flexbox, getting info from Airbase, more complicated React syntax.
 
 ### Opportunities:
 
-Reaching out to musician friends to get their input.
+Reaching out to musician friends to get their input, learning to add pictures and sound with Airtable.
 
 ### Threats:
+Not being able to get data to display. Having too many parameters in Airtable.
