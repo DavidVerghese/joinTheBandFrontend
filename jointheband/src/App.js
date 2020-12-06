@@ -14,12 +14,15 @@ function App() {
   const [data, setData] = useState([])
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+   // e.preventDefault();
     console.log(musician, instrument, lookingFor)
     let data = {
       Musician: musician,
+      Picture: imageAddress,
       Instrument: instrument,
-      Looking_for: lookingFor
+      Genre: genre,
+      Looking_for: lookingFor,
+      Location: location,
     }
     await axios.post(baseURL + '/Musicians', { fields: data }, config);
   }
@@ -61,10 +64,16 @@ function App() {
       <form onSubmit={handleSubmit}>
       <label htmlFor="name">Name</label>
       <input name="name" type="text" onChange={(e) => setMusician(e.target.value)}/>
+      <label htmlFor="picAddress">Picture URL</label>
+      <input name="picAddress" type="text" onChange={(e) => setImageAddress(e.target.value)}/>
       <label htmlFor="instrument">Instrument</label>
-      <input name="instrument" type="text" onChange={(e) => setInstrument(e.target.value)}/>
+        <input name="instrument" type="text" onChange={(e) => setInstrument(e.target.value)} />
+        <label htmlFor="genre">Genre</label>
+      <input name="genre" type="text" onChange={(e) => setGenre(e.target.value)}/>
       <label htmlFor="lookingFor">Looking For</label>
-      <input name="lookingFor" type="text" onChange={(e) => setLookingFor(e.target.value)}/>
+        <input name="lookingFor" type="text" onChange={(e) => setLookingFor(e.target.value)} />
+        <label htmlFor="location">Location</label>
+      <input name="location" type="text" onChange={(e) => setLocation(e.target.value)}/>
         <button>submit</button>
         </form>
     </div>
