@@ -60,8 +60,11 @@ function App() {
           })}
         </div>
       </main>
-
+      <div class="formSection">
       <form onSubmit={handleSubmit}>
+        <h2>Want to create a post!</h2>
+        <img src="https://www.careeraddict.com/uploads/article/54483/man-playing-acoustic-guitar.jpg" />
+        <em><p>Are you a musician looking to find someone to collaborate with? Just submit the form below to get started. </p></em>
       <label htmlFor="name">Name</label>
       <input name="name" type="text" onChange={(e) => setMusician(e.target.value)}/>
       <label htmlFor="picAddress">Picture URL</label>
@@ -74,8 +77,9 @@ function App() {
         <input name="lookingFor" type="text" onChange={(e) => setLookingFor(e.target.value)} />
         <label htmlFor="location">Location</label>
       <input name="location" type="text" onChange={(e) => setLocation(e.target.value)}/>
-        <button>submit</button>
+      <br></br> <button>submit</button>
         </form>
+        </div>
     </div>
   );
 }

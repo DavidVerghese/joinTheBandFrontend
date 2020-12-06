@@ -37,6 +37,11 @@ body {
   font-size: 25px;
 }
 
+button {
+  background-color: #5cdb95;
+  padding: 10px;
+  margin: 10px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -45,11 +50,23 @@ body {
     transform: rotate(360deg);
   }
 }
-
+.formSection {
+  margin: 30px;
+  padding: 10px;
+  background-color: #e98074;
+  display: flex;
+  justify-content: center;
+}
+label {
+  display: block;
+}
 header {
   color: white;
   background-color: #2f24a2;
   margin: -25px;
+}
+h1 {
+  font-size: 45px;
 }
 img {
   width: 300px;
