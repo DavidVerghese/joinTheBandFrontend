@@ -35,6 +35,7 @@ body {
   background-image: url(https://lh3.googleusercontent.com/proxy/vb7RI3jFPv4nEXQ6p0Ywb804eQBFl6fk_HCDWGNoDzJyVFAQUvuBadt474YXL9ORtrs-1qCzg19hOBz5WQ7fub9C0gOd9NJxEqvNFgv--yUORl854ZfO8z5xSXt6ITeeVaxgwlTp6IkKt4Hzq55RYh8);
   font: times-new-roman;
   font-size: 25px;
+  color: white;
 }
 
 button {
@@ -56,6 +57,7 @@ button {
   background-image: url(https://www.netpremacy.com/wp-content/uploads/2018/09/Background-website-01.jpg);
   display: flex;
   justify-content: center;
+  color: black;
 }
 footer {
   background-image: url(https://www.publicdomainpictures.net/pictures/130000/velka/purple-smooth-seamless-background.jpg);
@@ -79,6 +81,12 @@ h1 {
 img {
   width: 300px;
   margin: 10px;
+}
+.intro {
+  margin: 30px;
+  background-color: white;
+  padding: 30px;
+  color: black;
 }
 .profile {
   margin: 35px;
