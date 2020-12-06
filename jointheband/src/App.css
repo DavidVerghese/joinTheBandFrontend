@@ -28,6 +28,15 @@
   color: #61dafb;
 }
 
+a {
+  color: black;
+}
+body {
+  background-color: #379683;
+  font: times-new-roman;
+  font-size: 25px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +44,24 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+header {
+  color: white;
+  background-color: #2f24a2;
+  margin: -25px;
+}
+img {
+  width: 300px;
+  margin: 10px;
+}
+.profile {
+  margin: 30px;
+  padding: 10px;
+  background-color: #fbeec1;
+  /* background-image: url(https://www.netpremacy.com/wp-content/uploads/2018/09/Background-website-01.jpg); */
+}
+.profile iframe {
+  width: 500px;
+  height: 100%;
 }

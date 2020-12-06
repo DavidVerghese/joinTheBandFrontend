@@ -30,6 +30,7 @@ function App() {
     async function getData() {
       let response = await axios.get(baseURL + '/Musicians', config)
       setData(response.data.records)
+      console.log(response)
       const req = await axios.post(baseURL + '/Musicians', { fields }, config)
     }
     getData();
