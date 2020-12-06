@@ -79,7 +79,10 @@ function App() {
       <input name="location" type="text" onChange={(e) => setLocation(e.target.value)}/>
       <br></br> <button>submit</button>
         </form>
-        </div>
+      </div>
+      <footer>
+        <h3>David Verghese's Website</h3>
+      </footer>
     </div>
   );
 }
