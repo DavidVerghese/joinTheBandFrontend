@@ -5,25 +5,23 @@ import { useEffect, useState } from "react";
 import axios from "axios"
 
 function App() {
-  const [musician, setMusician] = useState('')
-  const [instrument, setInstrument] = useState('')
+  const [musician, setMusician] = useState('hello')
+  const [instrument, setInstrument] = useState('hello')
   const [location, setLocation] = useState('')
   const [genre, setGenre] = useState('')
   const [lookingFor, setLookingFor] = useState('')
   const [imageAddress, setImageAddress] = useState('')
   const [data, setData] = useState([])
-  const fields = {
-    musician,
-    instrument,
-    location,
-    genre,
-    lookingFor,
-    imageAddress,
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(musician,instrument,lookingFor)
+    console.log(musician, instrument, lookingFor)
+    let data = {
+      Musician: musician,
+      Instrument: instrument,
+      Looking_for: lookingFor
+    }
+    await axios.post(baseURL + '/Musicians', { fields: data }, config);
   }
 
   useEffect(() => {
@@ -31,7 +29,8 @@ function App() {
       let response = await axios.get(baseURL + '/Musicians', config)
       setData(response.data.records)
       console.log(response)
-      const req = await axios.post(baseURL + '/Musicians', { fields }, config)
+      const req = await axios.post(baseURL + '/Musicians', { Musician: 'Drake' }, config)
+      
     }
     getData();
 
