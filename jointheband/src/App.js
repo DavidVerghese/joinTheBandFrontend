@@ -34,22 +34,6 @@ function App() {
     }
     getData();
 
-    // const handleSubmit = async (e) => {
-    //   e.preventDefault();
-    //   const fields = {
-    //     setup,
-    //     punchline,
-    //     author,
-    //   };
-    //   if (params.id) {
-    //     const jokeURL = `${baseURL}/${params.id}`;
-    //     await axios.put(baseURL, { fields }, config);
-    //   } else {
-    //     await axios.post(baseURL, { fields }, config);
-    //   }
-    //   props.setToggleFetch((prev) => !prev);
-    // };
-
 
   }, [])
 
