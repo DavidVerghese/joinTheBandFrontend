@@ -4,9 +4,9 @@ import { baseURL, config } from "./services";
 import { useEffect, useState } from "react";
 import axios from "axios"
 import { Route, Link } from "react-router-dom";
-import Form from "./components/Form.js"
-import Home from "./components/Home.js"
-import AllProfiles from "./components/AllProfiles.js"
+import Form from "./components/Form.jsx"
+import Home from "./components/Home.jsx"
+import AllProfiles from "./components/AllProfiles.jsx"
 
 
 function App() {
