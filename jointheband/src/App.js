@@ -11,16 +11,17 @@ import SearchResults from "./components/SearchResults.jsx"
 
 function App() {
   
-   const [data, setData] = useState([])
+  const [data, setData] = useState([])
 
-   let findMusician = [];
-   let [userInput, setUserInput] = useState([]);
+  let findMusician = [];
+  let [userInput, setUserInput] = useState([]);
  
-   const searchByName = (e) => {
-     findMusician = data.filter(
-       (item) => item.fields.Musician === e.target.value
-     );
-   };
+  const searchByName = (e) => {
+    findMusician = data.filter(
+      (item) => item.fields.Musician === e.target.value
+    );
+  };
+
  
   const searchByNameSubmit = (e) => {
      if (findMusician.length === 0) {
@@ -65,7 +66,15 @@ function App() {
         </Route>
         
         <label htmlFor="searchByName">Search by name</label>
-      <input name="searchByName" type="text" onChange={searchByName} />
+        <input name="searchByName" type="text" onChange={searchByName} />
+        {/* <label htmlFor="searchByInstrument">Search by instrument</label>
+        <input name="searchByInstrument" type="text" onChange={searchByName} />
+        <label htmlFor="searchByGenre">Search by genre</label>
+        <input name="searchByGenre" type="text" onChange={searchByName} />
+        <label htmlFor="searchByLookingFor">Search by location</label>
+      <input name="searchByLookingFor" type="text" onChange={searchByName} />
+        <label htmlFor="searchByLocation">Search by location</label>
+      <input name="searchByLocation" type="text" onChange={searchByName} /> */}
       <Link to="/search">
         <button onClick={searchByNameSubmit}>Submit</button>
       </Link>
