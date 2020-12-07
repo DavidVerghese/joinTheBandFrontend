@@ -14,7 +14,8 @@
 1. Clone this repo.
 2. Run `npm start`, `npm i`, `npm i axios`, `npm install react-router-dom`
 3. Navigate to the landing page.
-4. The error message should be there already.
+4. Uncomment lines 34-39,86-89, then comment out lines 92-95 in App.js.
+5. The error message should be there already.
 
 
 ## Documentation

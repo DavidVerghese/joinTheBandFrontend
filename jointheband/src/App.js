@@ -29,12 +29,14 @@ function App() {
     console.log(findMusician)
   };
 
-  const searchByAnything = (columnValue) => {
-    findMusician = data.filter(
-      (item) => item.fields.columnValue === e.target.value
-    );
-    console.log(findMusician)
-  };
+  // UNCOMMENT LINES 34-39 
+
+  // const searchByAnything = (columnValue) => {
+  //   findMusician = data.filter(
+  //     (item) => item.fields.columnValue === e.target.value
+  //   );
+  //   console.log(findMusician)
+  // };
 
  
   const searchByNameSubmit = (e) => {
@@ -80,10 +82,19 @@ function App() {
           <SearchResults musician={userInput}/>
         </Route>
         
-        <label htmlFor="searchByName">Search by name</label>
+        {/* UNCOMMENT LINES 86-89 */}
+        {/* <label htmlFor="searchByName">Search by name</label>
         <input name="searchByName" type="text" onChange={(e)=>searchByAnything(e, 'Musician')} />
          <label htmlFor="searchByInstrument">Search by instrument</label>
-        <input name="searchByInstrument" type="text" onChange={(e)=>searchByAnything((e, 'Instrument'))} />
+        <input name="searchByInstrument" type="text" onChange={(e) => searchByAnything((e, 'Instrument'))} /> */}
+
+        {/* COMMENT OUT LINES 92-95 */}
+        <label htmlFor="searchByName">Search by name</label>
+        <input name="searchByName" type="text" onChange={searchByName} />
+         <label htmlFor="searchByInstrument">Search by instrument</label>
+        <input name="searchByInstrument" type="text" onChange={searchByInstrument} />
+        
+
         {/* <label htmlFor="searchByGenre">Search by genre</label>
         <input name="searchByGenre" type="text" onChange={searchByName} />
         <label htmlFor="searchByLookingFor">Search by location</label>
