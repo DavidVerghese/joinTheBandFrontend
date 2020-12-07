@@ -29,6 +29,13 @@ function App() {
     console.log(findMusician)
   };
 
+  const searchByAnything = (columnValue) => {
+    findMusician = data.filter(
+      (item) => item.fields.columnValue === e.target.value
+    );
+    console.log(findMusician)
+  };
+
  
   const searchByNameSubmit = (e) => {
      if (findMusician.length === 0) {
@@ -74,9 +81,9 @@ function App() {
         </Route>
         
         <label htmlFor="searchByName">Search by name</label>
-        <input name="searchByName" type="text" onChange={searchByName} />
+        <input name="searchByName" type="text" onChange={(e)=>searchByAnything(e, 'Musician')} />
          <label htmlFor="searchByInstrument">Search by instrument</label>
-        <input name="searchByInstrument" type="text" onChange={searchByInstrument} />
+        <input name="searchByInstrument" type="text" onChange={(e)=>searchByAnything((e, 'Instrument'))} />
         {/* <label htmlFor="searchByGenre">Search by genre</label>
         <input name="searchByGenre" type="text" onChange={searchByName} />
         <label htmlFor="searchByLookingFor">Search by location</label>
