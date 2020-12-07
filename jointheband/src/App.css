@@ -35,7 +35,7 @@ body {
   background-image: url(https://lh3.googleusercontent.com/proxy/vb7RI3jFPv4nEXQ6p0Ywb804eQBFl6fk_HCDWGNoDzJyVFAQUvuBadt474YXL9ORtrs-1qCzg19hOBz5WQ7fub9C0gOd9NJxEqvNFgv--yUORl854ZfO8z5xSXt6ITeeVaxgwlTp6IkKt4Hzq55RYh8);
   font: times-new-roman;
   font-size: 25px;
-  color: white;
+  color: black;
 }
 
 button {
@@ -98,4 +98,8 @@ img {
 .profile iframe {
   width: 500px;
   height: 100%;
+}
+.search {
+  height: 100px;
+  color: green;
 }

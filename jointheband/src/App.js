@@ -7,13 +7,29 @@ import { Route, Link } from "react-router-dom";
 import Form from "./components/Form.jsx"
 import Home from "./components/Home.jsx"
 import AllProfiles from "./components/AllProfiles.jsx"
-
+import SearchResults from "./components/SearchResults.jsx"
 
 function App() {
   
    const [data, setData] = useState([])
 
+   let findMusician = [];
+   let [userInput, setUserInput] = useState([]);
  
+   const searchByName = (e) => {
+     findMusician = data.filter(
+       (item) => item.fields.Musician === e.target.value
+     );
+   };
+ 
+  const searchByNameSubmit = (e) => {
+     if (findMusician.length === 0) {
+       console.log("no matches found!");
+     } else {
+       console.log(findMusician);
+       setUserInput(findMusician);
+     }
+   };
   
   useEffect(() => {
     async function getData() {
@@ -44,6 +60,16 @@ function App() {
         <Route path="/profiles">
           <AllProfiles data={data}/>
         </Route>
+        <Route path="/search">
+          <SearchResults musician={userInput}/>
+        </Route>
+        
+        <label htmlFor="searchByName">Search by name</label>
+      <input name="searchByName" type="text" onChange={searchByName} />
+      <Link to="/search">
+        <button onClick={searchByNameSubmit}>Submit</button>
+      </Link>
+
         <div>
         </div>
       </main>
