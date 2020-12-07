@@ -20,10 +20,8 @@ function App() {
   const searchByAnything = (e, columnValue) => {
     findMusician = data.filter(
       // (item) => item.fields[columnValue] === e.target.value
-      (item) => item.fields.Instrument.includes(e.target.value)
-    );
+       (item) => item.fields.Instrument.includes(e.target.value))
     console.log(findMusician)
-    // console.log(data)
   };
 
  
