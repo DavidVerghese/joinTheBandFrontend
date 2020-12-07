@@ -16,27 +16,13 @@ function App() {
   let findMusician = [];
   let [userInput, setUserInput] = useState([]);
  
-  const searchByName = (e) => {
-    findMusician = data.filter(
-      (item) => item.fields.Musician === e.target.value
-    );
-  };
 
-  const searchByInstrument = (e) => {
+  const searchByAnything = (e, columnValue) => {
     findMusician = data.filter(
-      (item) => item.fields.Instrument === e.target.value
+      (item) => item.fields[columnValue] === e.target.value
     );
     console.log(findMusician)
   };
-
-  // UNCOMMENT LINES 34-39 
-
-  // const searchByAnything = (columnValue) => {
-  //   findMusician = data.filter(
-  //     (item) => item.fields.columnValue === e.target.value
-  //   );
-  //   console.log(findMusician)
-  // };
 
  
   const searchByNameSubmit = (e) => {
@@ -83,16 +69,11 @@ function App() {
         </Route>
         
         {/* UNCOMMENT LINES 86-89 */}
-        {/* <label htmlFor="searchByName">Search by name</label>
+        <label htmlFor="searchByName">Search by name</label>
         <input name="searchByName" type="text" onChange={(e)=>searchByAnything(e, 'Musician')} />
          <label htmlFor="searchByInstrument">Search by instrument</label>
-        <input name="searchByInstrument" type="text" onChange={(e) => searchByAnything((e, 'Instrument'))} /> */}
+        <input name="searchByInstrument" type="text" onChange={(e) => searchByAnything(e, 'Instrument')} />
 
-        {/* COMMENT OUT LINES 92-95 */}
-        <label htmlFor="searchByName">Search by name</label>
-        <input name="searchByName" type="text" onChange={searchByName} />
-         <label htmlFor="searchByInstrument">Search by instrument</label>
-        <input name="searchByInstrument" type="text" onChange={searchByInstrument} />
         
 
         {/* <label htmlFor="searchByGenre">Search by genre</label>
