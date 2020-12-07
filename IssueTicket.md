@@ -15,7 +15,7 @@
 2. Run `npm start`, `npm i`, `npm i axios`, `npm install react-router-dom`
 3. Navigate to the landing page.
 4. The error message should be there already.
-5
+
 
 ## Documentation
 
