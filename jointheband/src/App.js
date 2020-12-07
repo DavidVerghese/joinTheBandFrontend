@@ -3,50 +3,45 @@ import './App.css';
 import { baseURL, config } from "./services";
 import { useEffect, useState } from "react";
 import axios from "axios"
+import { Route, Link } from "react-router-dom";
+import Form from "./components/Form.js"
 
 function App() {
-  const [musician, setMusician] = useState('')
-  const [instrument, setInstrument] = useState('')
-  const [location, setLocation] = useState('')
-  const [genre, setGenre] = useState('')
-  const [lookingFor, setLookingFor] = useState('')
-  const [imageAddress, setImageAddress] = useState('')
-  const [data, setData] = useState([])
+  
+   const [data, setData] = useState([])
 
-  const handleSubmit = async (e) => {
-   // e.preventDefault();
-    console.log(musician, instrument, lookingFor)
-    let data = {
-      Musician: musician,
-      Picture: imageAddress,
-      Instrument: instrument,
-      Genre: genre,
-      Looking_for: lookingFor,
-      Location: location,
-    }
-    await axios.post(baseURL + '/Musicians', { fields: data }, config);
-  }
+  // const handleSubmit = async (e) => {
+  //  // e.preventDefault();
+  //   console.log(musician, instrument, lookingFor)
+  //   let data = {
+  //     Musician: musician,
+  //     Picture: imageAddress,
+  //     Instrument: instrument,
+  //     Genre: genre,
+  //     Looking_for: lookingFor,
+  //     Location: location,
+  //   }
+  //   await axios.post(baseURL + '/Musicians', { fields: data }, config);
+  // }
 
-  const handleDelete = async (e) => {
-    console.log("deleted!");
-    let data = {
-      Musician: musician,
-      Picture: imageAddress,
-      Instrument: instrument,
-      Genre: genre,
-      Looking_for: lookingFor,
-      Location: location,
-    }
+  // const handleDelete = async (e) => {
+  //   console.log("deleted!");
+  //   let data = {
+  //     Musician: musician,
+  //     Picture: imageAddress,
+  //     Instrument: instrument,
+  //     Genre: genre,
+  //     Looking_for: lookingFor,
+  //     Location: location,
+  //   }
 
-     await axios.delete(baseURL + '/Musicians', { fields: data }, config);
-   }
+  //    await axios.delete(baseURL + '/Musicians', { fields: data }, config);
+  //  }
 
   useEffect(() => {
     async function getData() {
       let response = await axios.get(baseURL + '/Musicians', config)
       setData(response.data.records)
-      console.log(response)
-      //const req = await axios.post(baseURL + '/Musicians', { Musician: 'Drake' }, config)
       
     }
     getData();
@@ -59,8 +54,18 @@ function App() {
       <header>
         <h1>Join the Band!</h1>
       <p>Home</p>
+      <nav>
+      <Link to="/">Home</Link>
+      <Link to="/form">Form</Link>
+        </nav>
       </header>
       <main>
+      <Route exact path="/">
+        {/* <Home /> */}
+        </Route>
+        <Route path="/form">
+          <Form data={data}/>
+      </Route>
         <div class="intro">
         <img src="https://media1.giphy.com/media/13QvN0u5j5SUj6/giphy.gif?cid=ecf05e47tsos9jw567r462i43oqpjho691ily093c8qurxiz&rid=giphy.gif"></img>
           <em><h2>Tired of doing it all on your own?</h2></em>
@@ -87,7 +92,7 @@ function App() {
           })}
         </div>
       </main>
-      <div class="formSection">
+      {/* <div class="formSection">
       <form>
         <h2>Want to create a post!</h2>
         <img src="https://media1.giphy.com/media/ZKHHkPX8TnHyw/giphy.gif?cid=ecf05e47a86294fb3be83bb39fd07cdadcb0f9be07497609&rid=giphy.gif" />
@@ -107,7 +112,7 @@ function App() {
           <br></br> <button onClick={handleSubmit}>submit</button>
           <br></br> <button onClick={handleDelete}>undo</button>
         </form>
-      </div>
+      </div> */}
       <footer>
         <h3>David Verghese's Website</h3>
       </footer>

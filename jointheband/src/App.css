@@ -55,7 +55,7 @@ button {
   margin: 60px;
   padding: 10px;
   background-image: url(https://www.netpremacy.com/wp-content/uploads/2018/09/Background-website-01.jpg);
-  display: flex;
+  display: block;
   justify-content: center;
   color: black;
 }
