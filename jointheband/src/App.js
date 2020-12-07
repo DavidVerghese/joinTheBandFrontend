@@ -19,9 +19,11 @@ function App() {
 
   const searchByAnything = (e, columnValue) => {
     findMusician = data.filter(
-      (item) => item.fields[columnValue] === e.target.value
+      // (item) => item.fields[columnValue] === e.target.value
+      (item) => item.fields.Instrument.includes(e.target.value)
     );
     console.log(findMusician)
+    // console.log(data)
   };
 
  
@@ -75,13 +77,6 @@ function App() {
         <input name="searchByInstrument" type="text" onChange={(e) => searchByAnything(e, 'Instrument')} />
 
         
-
-        {/* <label htmlFor="searchByGenre">Search by genre</label>
-        <input name="searchByGenre" type="text" onChange={searchByName} />
-        <label htmlFor="searchByLookingFor">Search by location</label>
-      <input name="searchByLookingFor" type="text" onChange={searchByName} />
-        <label htmlFor="searchByLocation">Search by location</label>
-      <input name="searchByLocation" type="text" onChange={searchByName} /> */}
       <Link to="/search">
         <button onClick={searchByNameSubmit}>Submit</button>
       </Link>
