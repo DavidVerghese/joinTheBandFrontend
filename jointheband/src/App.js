@@ -22,6 +22,13 @@ function App() {
     );
   };
 
+  const searchByInstrument = (e) => {
+    findMusician = data.filter(
+      (item) => item.fields.Instrument === e.target.value
+    );
+    console.log(findMusician)
+  };
+
  
   const searchByNameSubmit = (e) => {
      if (findMusician.length === 0) {
@@ -29,6 +36,7 @@ function App() {
      } else {
        console.log(findMusician);
        setUserInput(findMusician);
+       console.log('instrument', userInput)
      }
    };
   
@@ -67,9 +75,9 @@ function App() {
         
         <label htmlFor="searchByName">Search by name</label>
         <input name="searchByName" type="text" onChange={searchByName} />
-        {/* <label htmlFor="searchByInstrument">Search by instrument</label>
-        <input name="searchByInstrument" type="text" onChange={searchByName} />
-        <label htmlFor="searchByGenre">Search by genre</label>
+         <label htmlFor="searchByInstrument">Search by instrument</label>
+        <input name="searchByInstrument" type="text" onChange={searchByInstrument} />
+        {/* <label htmlFor="searchByGenre">Search by genre</label>
         <input name="searchByGenre" type="text" onChange={searchByName} />
         <label htmlFor="searchByLookingFor">Search by location</label>
       <input name="searchByLookingFor" type="text" onChange={searchByName} />
