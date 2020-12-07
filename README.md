@@ -62,10 +62,10 @@ Postman:
 |Dec 3 | Prompt / Wireframes / Priority Matrix / Timeframes | 
 |Dec 4| Project Approval | Incomplete
 |Dec 7| Getting data from Airtable | Incomplete
-|July 14| Core Application Structure (HTML, CSS, etc.)| Incomplete
-|July 15| Working on Search Bar  | Incomplete
-|July 16| MVP, Getting feedback from friends. | Incomplete
-|July 17| Presentations | Incomplete
+|Dec 8| Core Application Structure (HTML, CSS, etc.)| Incomplete
+|Dec 9| Working on Search Bar  | Incomplete
+|Dec 10| MVP, Getting feedback from friends. | Incomplete
+|Dec 11| Presentations | Incomplete
 
 ## Timeframes
 
