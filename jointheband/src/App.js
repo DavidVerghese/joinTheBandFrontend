@@ -6,13 +6,15 @@ import axios from "axios"
 import { Route, Link } from "react-router-dom";
 import Form from "./components/Form.js"
 import Home from "./components/Home.js"
-import Profiles from "./components/Profiles.js"
+import AllProfiles from "./components/AllProfiles.js"
 
 
 function App() {
   
    const [data, setData] = useState([])
 
+ 
+  
   useEffect(() => {
     async function getData() {
       let response = await axios.get(baseURL + '/Musicians', config)
@@ -28,22 +30,19 @@ function App() {
     <div className="App">
       <header>
         <h1>Join the Band!</h1>
-      <p>Home</p>
       <nav>
       <Link to="/">Home</Link>
-          <Link to="/form">Form</Link>
-          <Link to="/profiles">Profiles</Link>
         </nav>
       </header>
       <main>
       <Route exact path="/">
-      <Home />
+          <Home data={data}/>
         </Route>
         <Route path="/form">
           <Form data={data}/>
         </Route>
         <Route path="/profiles">
-          <Profiles data={data}/>
+          <AllProfiles data={data}/>
         </Route>
         <div>
         </div>

@@ -1,4 +1,4 @@
-function Profiles(props) {
+function AllProfiles(props) {
   return (
     <div>
       <h2>Profiles:</h2>
@@ -19,4 +19,4 @@ function Profiles(props) {
   )
 }
 
-export default Profiles
+export default AllProfiles
