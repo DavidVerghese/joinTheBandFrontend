@@ -19,8 +19,7 @@ function App() {
 
   const searchByAnything = (e, columnValue) => {
     findMusician = data.filter(
-      // (item) => item.fields[columnValue] === e.target.value
-       (item) => item.fields.Instrument.includes(e.target.value))
+      (item) => item.fields[columnValue] === e.target.value)
     console.log(findMusician)
   };
 
@@ -68,7 +67,6 @@ function App() {
           <SearchResults musician={userInput}/>
         </Route>
         
-        {/* UNCOMMENT LINES 86-89 */}
         <label htmlFor="searchByName">Search by name</label>
         <input name="searchByName" type="text" onChange={(e)=>searchByAnything(e, 'Musician')} />
          <label htmlFor="searchByInstrument">Search by instrument</label>
