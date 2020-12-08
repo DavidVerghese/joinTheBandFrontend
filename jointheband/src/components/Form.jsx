@@ -25,19 +25,19 @@ function Form(props) {
     await axios.post(baseURL + '/Musicians', { fields: data }, config);
   }
 
-  const handleDelete = async (e) => {
-    console.log("deleted!");
-    let data = {
-      Musician: musician,
-      Picture: imageAddress,
-      Instrument: instrument,
-      Genre: genre,
-      Looking_for: lookingFor,
-      Location: location,
-    }
+  // const handleDelete = async (e) => {
+  //   console.log("deleted!");
+  //   let data = {
+  //     Musician: musician,
+  //     Picture: imageAddress,
+  //     Instrument: instrument,
+  //     Genre: genre,
+  //     Looking_for: lookingFor,
+  //     Location: location,
+  //   }
 
-     await axios.delete(baseURL + '/Musicians', { fields: data }, config);
-   }
+  //    await axios.delete(baseURL + '/Musicians', { fields: data }, config);
+  //  }
   
 
   return (
@@ -59,7 +59,7 @@ function Form(props) {
         <label htmlFor="location">Location</label>
       <input name="location" type="text" onChange={(e) => setLocation(e.target.value)}/>
           <br></br> <button onClick={handleSubmit}>submit</button>
-          <br></br> <button onClick={handleDelete}>undo</button>
+
         </form>
     </div>
   )

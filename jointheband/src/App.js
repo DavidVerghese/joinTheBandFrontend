@@ -28,28 +28,28 @@ function App() {
        (item2) => {
          if (item2.fields.Genre.includes(searchValue)) {
            setUserInput(item2);
-           console.log(item2);
+           
          }
-         else if (item2.fields.Instrument.includes(searchValue)) {
-           console.log(item2);
+         if (item2.fields.Instrument.includes(searchValue)) {
+          
           setUserInput(item2);
            
         }
-         else if (item2.fields.Location.includes(searchValue)) {
+         if (item2.fields.Location.includes(searchValue)) {
            setUserInput(item2);
-           console.log(item2);
+          
          }
-         else if (item2.fields.Looking_for.includes(searchValue)) {
+         if (item2.fields.Looking_for.includes(searchValue)) {
            setUserInput(item2);
-           console.log(item2);
+          
          }
-         else if (item2.fields.Musician.includes(searchValue)) {
+         if (item2.fields.Musician.includes(searchValue)) {
            setUserInput(item2);
-           console.log(item2);
+           
          }
-         else if (item2.fields.Picture.includes(searchValue)) {
+         if (item2.fields.Picture.includes(searchValue)) {
            setUserInput(item2);
-           console.log(item2);
+           
          }
         
       }
