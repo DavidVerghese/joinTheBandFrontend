@@ -6,7 +6,7 @@ My search bar is mostly functional, but when I search for certain users (Jane, E
 
 ## Expected Behavior
 
-I expected the search results for Jane, Eminem, Drake, and Doug to display in the center of the page, like the other users. 
+I expected the search results for Jane, Eminem, Drake, and Doug to display in the center of the page, like the other users.
 
 ## Reproduce the Error
 
@@ -20,13 +20,13 @@ I expected the search results for Jane, Eminem, Drake, and Doug to display in th
 
 ## Documentation
 
+![alt text](https://github.com/DavidVergheseProgrammer/joinTheBand/blob/main/pics/issueTicket2Normal.png "What it normally looks like")
 
+![alt text](https://github.com/DavidVergheseProgrammer/joinTheBand/blob/main/pics/issueTicket2Left.png "Result for Drake")
 
 ## Attempted Resolution
 
-> If you haven't already, **Google your error message now**. See if those error messages return an answer. Include at least 2 resources you've tried to consult such as walk-throughs, stack overflow articles, and other discussion threads related to your error.
-
 ```md
-1. Link 1
-2. Link 2
+1. https://stackoverflow.com/questions/58322693/reactjs-wrong-elements-position
+2. https://stackoverflow.com/questions/39847377/wrong-positioning-of-react-material-ui-popover-while-creating-a-component
 ```
