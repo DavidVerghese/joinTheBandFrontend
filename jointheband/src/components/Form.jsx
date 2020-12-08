@@ -26,8 +26,12 @@ function Form(props) {
 
   return (
     <div class="formSection">
-      <h2>Want to create a post!</h2>
-      <img class="formPic" src="https://media.altpress.com/uploads/2020/05/Rivers-of-Nihil.jpg"/>
+      <h1>Want to create a post!</h1>
+      <br></br>
+      <img
+        class="formPic"
+        src="https://media.altpress.com/uploads/2020/05/Rivers-of-Nihil.jpg"
+      />
       <div class="formSectionTextBackground">
         <form>
           <em>

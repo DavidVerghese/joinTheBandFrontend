@@ -21,9 +21,11 @@ button {
   margin: 0px;
   padding: 10px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   background: rgb(0, 40, 40, 30);
 }
+
 .formSectionTextBackground {
   background: rgb(360, 360, 270, 0.9);
   color: black;
@@ -34,7 +36,8 @@ footer {
   width: 100%;
 }
 .formPic {
-  width: 100%;
+  width: 70%;
+  display: block;
 }
 label {
   display: block;
