@@ -70,10 +70,12 @@ function App() {
   return (
     <div className="App">
       <header>
+        <div class="headerBackground">
         <h1>Join the Band!</h1>
       <nav>
-      <Link to="/">Home</Link>
-        </nav>
+      <Link to="/"><p>Home</p></Link>
+          </nav>
+        </div>
       </header>
       <main>
       <Route exact path="/">

@@ -6,9 +6,9 @@ import Form from "./Form.jsx";
 function Home(props) {
   return (
     <div class="intro">
-      <img src="https://media1.giphy.com/media/13QvN0u5j5SUj6/giphy.gif?cid=ecf05e47tsos9jw567r462i43oqpjho691ily093c8qurxiz&rid=giphy.gif"></img>
+      <img class="homePic" src="https://blog.loopearplugs.com/wp-content/uploads/2019/05/applause-audience-band-167636.jpg"/>
       <em>
-        <h2>Tired of doing it all on your own?</h2>
+        <h2>This could be you</h2>
       </em>
 
       <Link to="/form">
