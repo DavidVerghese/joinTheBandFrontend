@@ -1,5 +1,3 @@
-
-
 a {
   color: black;
 }
@@ -8,6 +6,8 @@ body {
   color: white;
   background-color: #282828;
   font-family: "Gothic A1", sans-serif;
+  display: flex;
+  text-align: center;
 }
 
 button {
@@ -28,7 +28,8 @@ button {
 }
 footer {
   padding: 5px;
-  margin: -25px;
+  margin: 0px;
+  width: 100%;
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Classical_spectacular10.jpg/800px-Classical_spectacular10.jpg);
 }
 .formPic {
@@ -39,15 +40,18 @@ label {
 }
 header {
   background-image: url(https://static01.nyt.com/images/2020/03/12/arts/12virus-concerts2/merlin_170369790_63d02a4c-82f8-441a-ac7c-c395828b7961-mobileMasterAt3x.jpg);
-  color: green;
+  color: white;
   padding: 5px;
   margin: 0px;
   width: 100%;
   display: flex;
   justify-content: center;
 }
+header a {
+  color: white;
+}
 .headerBackground {
-  background-color: rgba(176, 15, 80, 0.9);
+  background-color: rgba(21, 3, 23, 0.8);
   width: 60%;
   display: flex;
   color: white;
@@ -72,14 +76,16 @@ img {
   margin: 0px;
   padding: 10px;
   color: white;
-  background-image: url(https://www.nationalgeographic.com/content/dam/science/2020/09/16/crowd/crowd-1057286802.adapt.1900.1.jpg);
+  background-image: url(https://i0.wp.com/doyleleadership.com/wp-content/uploads/2019/02/Audience-2.jpg?fit=5869%2C2367&ssl=1);
+  width: 100%;
   display: flex;
   justify-content: center;
 }
 .profilebackground {
   background-color: rgb(360, 360, 270, 0.9);
+
   color: black;
-  width: 90%;
+  width: 70%;
 }
 .profile img {
   width: 80%;
