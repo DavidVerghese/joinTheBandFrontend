@@ -17,74 +17,76 @@ function App() {
   let [userInput, setUserInput] = useState([]);
   let [searchValue, setSearchValue] = useState([]);
 
-  const search = (e) => {
-    setSearchValue(e.target.value)
-  };
-  const searchByNameSubmit = (e) => {
-    // e.preventDefault()
-    console.clear();
-     let doesItInclude = data.filter(
-       (item2) => {
-         if (item2.fields.Genre.includes(searchValue)) {
-           console.log(item2)
-           findMusician = data.filter(
-            (item) => item.fields.Genre === searchValue
-           );
-           console.log(findMusician)
-         }
-         if (item2.fields.Instrument.includes(searchValue)) {
-           console.log(item2)
-           findMusician = data.filter(
-            (item) => item.fields.Instrument === searchValue
-           );
-           console.log(findMusician)
-        }
-         if (item2.fields.Location.includes(searchValue)) {
-           console.log(item2)
-           findMusician = data.filter(
-            (item) => item.fields.Location === searchValue
-           );
-           console.log(findMusician)
-         }
-         if (item2.fields.Looking_for.includes(searchValue)) {
-           console.log(item2)
-           findMusician = data.filter(
-            (item) => item.fields.Looking_for === searchValue
-           );
-           console.log(findMusician)
-         }
-         if (item2.fields.Musician.includes(searchValue)) {
-           console.log(item2)
-           findMusician = data.filter(
-            (item) => item.fields.Musician === searchValue
-           );
-           console.log(findMusician)
-         }
-         if (item2.fields.Picture.includes(searchValue)) {
-           console.log(item2)
-           findMusician = data.filter(
-            (item) => item.fields.Picture === searchValue
-           );
-           console.log(findMusician)
-         }
-         else {
-           console.log("no matches")
-        }
-      }
-     )
-    setUserInput(findMusician)
-   };
-  
   useEffect(() => {
     async function getData() {
       let response = await axios.get(baseURL + '/Musicians', config)
       setData(response.data.records)
-      
+      console.log(typeof response.data.records[0].fields)
     }
     getData();
 
 
   }, [])
+
+  const search = (e) => {
+    setSearchValue(e.target.value)
+  };
+  const searchByNameSubmit = (e) => {
+    e.preventDefault()
+    console.clear();
+     let doesItInclude = data.filter(
+       (item2) => {
+         console.log(item2.fields.Genre.includes(searchValue))
+        //  if (item2.fields.Genre.includes(searchValue)) {
+        //    console.log(item2)
+        //    findMusician = data.filter(
+        //     (item) => item.fields.Genre === searchValue
+        //    );
+        //    console.log(findMusician)
+        //  }
+        //  if (item2.fields.Instrument.includes(searchValue)) {
+        //    console.log(item2)
+        //    findMusician = data.filter(
+        //     (item) => item.fields.Instrument === searchValue
+        //    );
+        //    console.log(findMusician)
+        // }
+        //  if (item2.fields.Location.includes(searchValue)) {
+        //    console.log(item2)
+        //    findMusician = data.filter(
+        //     (item) => item.fields.Location === searchValue
+        //    );
+        //    console.log(findMusician)
+        //  }
+        //  if (item2.fields.Looking_for.includes(searchValue)) {
+        //    console.log(item2)
+        //    findMusician = data.filter(
+        //     (item) => item.fields.Looking_for === searchValue
+        //    );
+        //    console.log(findMusician)
+        //  }
+        //  if (item2.fields.Musician.includes(searchValue)) {
+        //    console.log(item2)
+        //    findMusician = data.filter(
+        //     (item) => item.fields.Musician === searchValue
+        //    );
+        //    console.log(findMusician)
+        //  }
+        //  if (item2.fields.Picture.includes(searchValue)) {
+        //    console.log(item2)
+        //    findMusician = data.filter(
+        //     (item) => item.fields.Picture === searchValue
+        //    );
+        //    console.log(findMusician)
+        //  }
+        //  else {
+        //    console.log("no matches")
+        //= }
+      }
+     )
+    setUserInput(findMusician)
+   };
+  
 
   return (
     <div>

@@ -4,7 +4,7 @@ a {
 body {
   font-size: 25px;
   color: white;
-  background-color: rgb(100, 40, 40,30);
+  background-color: rgb(100, 40, 40, 30);
   font-family: "Gothic A1", sans-serif;
   display: flex;
   text-align: center;
@@ -22,7 +22,7 @@ button {
   padding: 10px;
   display: flex;
   justify-content: center;
-  background: rgb(0, 40, 40,30);
+  background: rgb(0, 40, 40, 30);
 }
 .formSectionTextBackground {
   background: rgb(360, 360, 270, 0.9);
@@ -32,7 +32,6 @@ footer {
   padding: 5px;
   margin: 0px;
   width: 100%;
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Classical_spectacular10.jpg/800px-Classical_spectacular10.jpg);
 }
 .formPic {
   width: 100%;
@@ -41,7 +40,6 @@ label {
   display: block;
 }
 header {
-  background-image: url(https://static01.nyt.com/images/2020/03/12/arts/12virus-concerts2/merlin_170369790_63d02a4c-82f8-441a-ac7c-c395828b7961-mobileMasterAt3x.jpg);
   color: white;
   padding: 5px;
   margin: 0px;
@@ -78,7 +76,6 @@ img {
   margin: 0px;
   padding: 10px;
   color: white;
-  background-image: url(https://i0.wp.com/doyleleadership.com/wp-content/uploads/2019/02/Audience-2.jpg?fit=5869%2C2367&ssl=1);
   width: 99%;
   display: flex;
   justify-content: center;
@@ -94,4 +91,16 @@ img {
 .search {
   height: 100px;
   color: green;
+}
+
+@media (min-width: 550px) {
+  header {
+    background-image: url(https://static01.nyt.com/images/2020/03/12/arts/12virus-concerts2/merlin_170369790_63d02a4c-82f8-441a-ac7c-c395828b7961-mobileMasterAt3x.jpg);
+  }
+  footer {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Classical_spectacular10.jpg/800px-Classical_spectacular10.jpg);
+  }
+  .profile {
+    background-image: url(https://i0.wp.com/doyleleadership.com/wp-content/uploads/2019/02/Audience-2.jpg?fit=5869%2C2367&ssl=1);
+  }
 }
