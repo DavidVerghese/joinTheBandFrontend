@@ -15,16 +15,17 @@ function App() {
 
   let findMusician = [];
   let [userInput, setUserInput] = useState([]);
- 
+  let [searchValue, setSearchValue] = useState();
 
   const searchByAnything = (e, columnValue) => {
     findMusician = data.filter(
       (item) => item.fields[columnValue] === e.target.value)
-    console.log(findMusician)
+    setSearchValue(e.target.value)
+    // console.log(findMusician)
   };
 
- 
   const searchByNameSubmit = (e) => {
+    e.preventDefault()
      if (findMusician.length === 0) {
        console.log("no matches found!");
      } else {
@@ -32,6 +33,14 @@ function App() {
        setUserInput(findMusician);
        console.log('instrument', userInput)
      }
+     let doesItInclude = data.filter(
+      (item2) => {
+        console.log(item2.fields.Musician.includes(searchValue));
+        if (item2.fields.Musician.includes(searchValue)) {
+          console.log("included")
+        }
+      }
+    )
    };
   
   useEffect(() => {
