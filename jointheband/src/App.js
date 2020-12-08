@@ -68,7 +68,7 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
+    <div>
       <header>
         <div class="headerBackground">
         <h1>Join the Band!</h1>
