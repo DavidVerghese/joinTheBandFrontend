@@ -17,17 +17,14 @@ function App() {
   let [userInput, setUserInput] = useState([]);
   let [searchValue, setSearchValue] = useState();
 
-  const searchByAnything = (e, columnValue) => {
-    findMusician = data.filter(
-      (item) => item.fields[columnValue] === e.target.value)
+  const search = (e) => {
     setSearchValue(e.target.value)
-    // console.log(findMusician)
   };
 
   const searchByNameSubmit = (e) => {
     e.preventDefault()
      if (findMusician.length === 0) {
-       console.log("no matches found!");
+      //  console.log("no matches found!");
      } else {
        console.log(findMusician);
        setUserInput(findMusician);
@@ -35,8 +32,11 @@ function App() {
      }
      let doesItInclude = data.filter(
       (item2) => {
-        console.log(item2.fields.Musician.includes(searchValue));
+        // console.log(item2.fields.Musician.includes(searchValue));
         if (item2.fields.Musician.includes(searchValue)) {
+          console.log("included")
+        }
+        else if (item2.fields.Instrument.includes(searchValue)) {
           console.log("included")
         }
       }
@@ -77,9 +77,9 @@ function App() {
         </Route>
         
         <label htmlFor="searchByName">Search by name</label>
-        <input name="searchByName" type="text" onChange={(e)=>searchByAnything(e, 'Musician')} />
+        <input name="searchByName" type="text" onChange={search} />
          <label htmlFor="searchByInstrument">Search by instrument</label>
-        <input name="searchByInstrument" type="text" onChange={(e) => searchByAnything(e, 'Instrument')} />
+        <input name="searchByInstrument" type="text" onChange={search} />
 
         
       <Link to="/search">
