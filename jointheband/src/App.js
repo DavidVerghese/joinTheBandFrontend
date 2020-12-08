@@ -32,56 +32,47 @@ function App() {
     setSearchValue(e.target.value)
   };
   const searchByNameSubmit = (e) => {
-    e.preventDefault()
+    // e.preventDefault()
     console.clear();
      let doesItInclude = data.filter(
        (item2) => {
-         console.log(item2.fields.Genre.includes(searchValue))
-        //  if (item2.fields.Genre.includes(searchValue)) {
-        //    console.log(item2)
-        //    findMusician = data.filter(
-        //     (item) => item.fields.Genre === searchValue
-        //    );
-        //    console.log(findMusician)
-        //  }
-        //  if (item2.fields.Instrument.includes(searchValue)) {
-        //    console.log(item2)
-        //    findMusician = data.filter(
-        //     (item) => item.fields.Instrument === searchValue
-        //    );
-        //    console.log(findMusician)
-        // }
-        //  if (item2.fields.Location.includes(searchValue)) {
-        //    console.log(item2)
-        //    findMusician = data.filter(
-        //     (item) => item.fields.Location === searchValue
-        //    );
-        //    console.log(findMusician)
-        //  }
-        //  if (item2.fields.Looking_for.includes(searchValue)) {
-        //    console.log(item2)
-        //    findMusician = data.filter(
-        //     (item) => item.fields.Looking_for === searchValue
-        //    );
-        //    console.log(findMusician)
-        //  }
-        //  if (item2.fields.Musician.includes(searchValue)) {
-        //    console.log(item2)
-        //    findMusician = data.filter(
-        //     (item) => item.fields.Musician === searchValue
-        //    );
-        //    console.log(findMusician)
-        //  }
-        //  if (item2.fields.Picture.includes(searchValue)) {
-        //    console.log(item2)
-        //    findMusician = data.filter(
-        //     (item) => item.fields.Picture === searchValue
-        //    );
-        //    console.log(findMusician)
-        //  }
-        //  else {
-        //    console.log("no matches")
-        //= }
+         console.log(item2.fields.Genre)
+         if (item2.fields.Instrument !== undefined) {
+         
+            if (item2.fields.Genre.includes(searchValue)) {
+              findMusician = data.filter(
+               (item) => item.fields.Genre === searchValue
+              );
+            }
+            if (item2.fields.Instrument.includes(searchValue)) {
+              findMusician = data.filter(
+               (item) => item.fields.Instrument === searchValue
+              );
+           }
+            if (item2.fields.Location.includes(searchValue)) {
+              findMusician = data.filter(
+               (item) => item.fields.Location === searchValue
+              );
+            }
+            if (item2.fields.Looking_for.includes(searchValue)) {
+              findMusician = data.filter(
+               (item) => item.fields.Looking_for === searchValue
+              );
+            }
+            if (item2.fields.Musician.includes(searchValue)) {
+              findMusician = data.filter(
+               (item) => item.fields.Musician === searchValue
+              );
+            }
+            if (item2.fields.Picture.includes(searchValue)) {
+              findMusician = data.filter(
+               (item) => item.fields.Picture === searchValue
+              );
+            }
+            else {
+              console.log("no matches")
+           }
+         }
       }
      )
     setUserInput(findMusician)
