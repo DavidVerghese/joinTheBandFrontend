@@ -2,6 +2,7 @@ import "../App.css";
 import Profile from "./Profile.jsx";
 
 function SearchResults(props) {
+  console.log(props);
   if (props.musician.length > 0) {
     return (
       <div class="profile">
