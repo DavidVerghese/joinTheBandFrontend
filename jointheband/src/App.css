@@ -70,7 +70,7 @@ img {
 }
 .intro {
   margin: 0px;
-  background-color: white;
+  background-color: rgba(157, 189, 170, 0.8);
   padding: 30px;
   color: black;
 }
