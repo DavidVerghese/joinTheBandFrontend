@@ -60,7 +60,7 @@ header a {
   color: white;
 }
 h1 {
-  font-size: 45px;
+  font-size: 200%;
 }
 .homePic {
   width: 100%;
@@ -105,5 +105,8 @@ img {
   }
   .profile {
     background-image: url(https://i0.wp.com/doyleleadership.com/wp-content/uploads/2019/02/Audience-2.jpg?fit=5869%2C2367&ssl=1);
+  }
+  button {
+    font-size: 120%;
   }
 }
