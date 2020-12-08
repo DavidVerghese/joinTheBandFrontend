@@ -8,6 +8,7 @@ body {
   font-family: "Gothic A1", sans-serif;
   display: flex;
   text-align: center;
+  margin: 0px;
   height: 100%;
 }
 
@@ -97,6 +98,9 @@ img {
 }
 
 @media (min-width: 550px) {
+  body {
+    font-size: 30px;
+  }
   header {
     background-image: url(https://static01.nyt.com/images/2020/03/12/arts/12virus-concerts2/merlin_170369790_63d02a4c-82f8-441a-ac7c-c395828b7961-mobileMasterAt3x.jpg);
   }
@@ -108,5 +112,11 @@ img {
   }
   button {
     font-size: 120%;
+  }
+}
+
+@media (min-width: 1000px) {
+  body {
+    font-size: 35px;
   }
 }
