@@ -15,30 +15,43 @@ function App() {
 
   let findMusician = [];
   let [userInput, setUserInput] = useState([]);
-  let [searchValue, setSearchValue] = useState();
+  let [searchValue, setSearchValue] = useState([]);
 
   const search = (e) => {
     setSearchValue(e.target.value)
   };
 
   const searchByNameSubmit = (e) => {
-    e.preventDefault()
-     if (findMusician.length === 0) {
-      //  console.log("no matches found!");
-     } else {
-       console.log(findMusician);
-       setUserInput(findMusician);
-       console.log('instrument', userInput)
-     }
+    // e.preventDefault()
+    console.clear();
      let doesItInclude = data.filter(
-      (item2) => {
-        // console.log(item2.fields.Musician.includes(searchValue));
-        if (item2.fields.Musician.includes(searchValue)) {
-          console.log("included")
+       (item2) => {
+         if (item2.fields.Genre.includes(searchValue)) {
+           setUserInput(item2);
+           console.log(item2);
+         }
+         else if (item2.fields.Instrument.includes(searchValue)) {
+           console.log(item2);
+          setUserInput(item2);
+           
         }
-        else if (item2.fields.Instrument.includes(searchValue)) {
-          console.log("included")
-        }
+         else if (item2.fields.Location.includes(searchValue)) {
+           setUserInput(item2);
+           console.log(item2);
+         }
+         else if (item2.fields.Looking_for.includes(searchValue)) {
+           setUserInput(item2);
+           console.log(item2);
+         }
+         else if (item2.fields.Musician.includes(searchValue)) {
+           setUserInput(item2);
+           console.log(item2);
+         }
+         else if (item2.fields.Picture.includes(searchValue)) {
+           setUserInput(item2);
+           console.log(item2);
+         }
+        
       }
     )
    };
@@ -76,10 +89,9 @@ function App() {
           <SearchResults musician={userInput}/>
         </Route>
         
-        <label htmlFor="searchByName">Search by name</label>
-        <input name="searchByName" type="text" onChange={search} />
-         <label htmlFor="searchByInstrument">Search by instrument</label>
-        <input name="searchByInstrument" type="text" onChange={search} />
+        <label htmlFor="searchBar">Search</label>
+        <input name="searchBar" type="text" onChange={search} />
+
 
         
       <Link to="/search">
