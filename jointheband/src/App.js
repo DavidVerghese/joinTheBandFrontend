@@ -36,7 +36,7 @@ function App() {
     console.clear();
      let doesItInclude = data.filter(
        (item2) => {
-         console.log(item2.fields.Genre)
+         console.log(item2)
          if (item2.fields.Instrument !== undefined) {
          
             if (item2.fields.Genre.includes(searchValue)) {
@@ -70,7 +70,7 @@ function App() {
               );
             }
             else {
-              console.log("no matches")
+              // console.log("no matches")
            }
          }
       }
