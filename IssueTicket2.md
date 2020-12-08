@@ -20,7 +20,11 @@ I expected the search results for Jane, Eminem, Drake, and Doug to display in th
 
 ## Documentation
 
+What it's supposed to look like: 
+
 ![alt text](https://github.com/DavidVergheseProgrammer/joinTheBand/blob/main/pics/issueTicket2Normal.png "What it normally looks like")
+
+What it looks like for Drake, Jane, Eminem, and Doug: 
 
 ![alt text](https://github.com/DavidVergheseProgrammer/joinTheBand/blob/main/pics/issueTicket2Left.png "Result for Drake")
 
