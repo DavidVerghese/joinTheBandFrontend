@@ -20,11 +20,6 @@ function App() {
   const search = (e) => {
     setSearchValue(e.target.value)
   };
-
-  const sayHello = (e) => {
-    e.preventDefault();
-    console.log(findMusician)
-  }
   const searchByNameSubmit = (e) => {
     // e.preventDefault()
     console.clear();
@@ -129,7 +124,6 @@ function App() {
         
       </main>
       <footer>
-        <button onClick={sayHello}>User Input</button>
         <h3>David Verghese's Website</h3>
       </footer>
     </div>
