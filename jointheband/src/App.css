@@ -4,10 +4,11 @@ a {
 body {
   font-size: 25px;
   color: white;
-  background-color: #282828;
+  background-color: rgb(100, 40, 40,30);
   font-family: "Gothic A1", sans-serif;
   display: flex;
   text-align: center;
+  height: 100%;
 }
 
 button {
@@ -19,8 +20,9 @@ button {
 .formSection {
   margin: 0px;
   padding: 10px;
-  display: block;
+  display: flex;
   justify-content: center;
+  background: rgb(0, 40, 40,30);
 }
 .formSectionTextBackground {
   background: rgb(360, 360, 270, 0.9);
@@ -77,13 +79,12 @@ img {
   padding: 10px;
   color: white;
   background-image: url(https://i0.wp.com/doyleleadership.com/wp-content/uploads/2019/02/Audience-2.jpg?fit=5869%2C2367&ssl=1);
-  width: 100%;
+  width: 99%;
   display: flex;
   justify-content: center;
 }
 .profilebackground {
   background-color: rgb(360, 360, 270, 0.9);
-
   color: black;
   width: 70%;
 }
