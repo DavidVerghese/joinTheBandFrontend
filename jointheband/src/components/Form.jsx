@@ -10,9 +10,17 @@ function Form(props) {
   const [lookingFor, setLookingFor] = useState("");
   const [imageAddress, setImageAddress] = useState("");
 
+  console.log(musician, imageAddress, instrument, genre, lookingFor, location);
   const handleSubmit = async (e) => {
-    // e.preventDefault();
-    console.log(musician, instrument, lookingFor);
+    e.preventDefault();
+    console.log(
+      musician,
+      imageAddress,
+      instrument,
+      genre,
+      lookingFor,
+      location
+    );
     let data = {
       Musician: musician,
       Picture: imageAddress,
@@ -76,7 +84,7 @@ function Form(props) {
             type="text"
             onChange={(e) => setLocation(e.target.value)}
           />
-          <br></br> <button onClick={handleSubmit}>submit</button>
+          <br></br> <button onClick={handleSubmit}>Create a Post</button>
         </form>
       </div>
     </div>
