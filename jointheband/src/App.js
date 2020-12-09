@@ -8,6 +8,7 @@ import Form from "./components/Form.jsx"
 import Home from "./components/Home.jsx"
 import AllProfiles from "./components/AllProfiles.jsx"
 import SearchResults from "./components/SearchResults.jsx"
+import NoResults from "./components/NoResults.jsx"
 
 function App() {
   
@@ -192,6 +193,7 @@ function App() {
           <SearchResults musician={userInput} numberOfResults={searchValue}/>
           <SearchResults musician={userInput2} numberOfResults={searchValue} />
           <SearchResults musician={userInput3} numberOfResults={searchValue} />
+          <NoResults numberOfResults={searchValue} />
         </Route>
         
         <label htmlFor="searchBar">Search</label>
