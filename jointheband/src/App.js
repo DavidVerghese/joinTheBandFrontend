@@ -21,6 +21,7 @@ function App() {
   let [userInput2, setUserInput2] = useState([]);
   let [userInput3, setUserInput3] = useState([]);
   let [searchValue, setSearchValue] = useState([]);
+  let [warningMessage, setWarningMessage] = useState('');
 
   console.log(searchValue)
   useEffect(() => {
@@ -39,10 +40,15 @@ function App() {
   };
   const searchByNameSubmit = (e) => {
     // e.preventDefault()
+    console.clear();
     if (searchValue === 0) {
       e.preventDefault()
+      console.log("type something new")
+      setWarningMessage("* type something new!")
     }
-    console.clear();
+    else {
+      setWarningMessage("")
+    }
     if (searchValue.length > 0) {
       let searchValueIndividualWords = searchValue.split(" ")
       let doesItInclude = data.filter(
@@ -190,11 +196,12 @@ function App() {
         
         <label htmlFor="searchBar">Search</label>
         <input name="searchBar" type="text" onChange={search} />
-        
+
       <Link to="/search">
         <button onClick={searchByNameSubmit}>Submit</button>
       </Link>
-
+        <p>{warningMessage}</p>
+        
         <div>
         </div>
         
