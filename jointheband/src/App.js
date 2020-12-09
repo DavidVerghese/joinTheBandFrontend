@@ -196,7 +196,7 @@ function App() {
           <NoResults numberOfResults={searchValue} />
         </Route>
         
-        <label htmlFor="searchBar">Search!</label>
+        <label htmlFor="searchBar">Search!!</label>
         <input name="searchBar" type="text" onChange={search} />
 
       <Link to="/search">
