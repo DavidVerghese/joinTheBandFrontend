@@ -22,6 +22,7 @@ function App() {
   let [userInput3, setUserInput3] = useState([]);
   let [searchValue, setSearchValue] = useState([]);
 
+  console.log(searchValue)
   useEffect(() => {
     async function getData() {
       let response = await axios.get(baseURL + '/Musicians', config)
@@ -32,13 +33,16 @@ function App() {
 
   }, [])
 
+  // console.log("searchValue:", searchValue)
   const search = (e) => {
-    setSearchValue(e.target.value)
+      setSearchValue(e.target.value)
   };
   const searchByNameSubmit = (e) => {
     // e.preventDefault()
+    if (searchValue === 0) {
+      e.preventDefault()
+    }
     console.clear();
-    console.log(searchValue.length)
     if (searchValue.length > 0) {
       let searchValueIndividualWords = searchValue.split(" ")
       let doesItInclude = data.filter(
@@ -186,7 +190,6 @@ function App() {
         
         <label htmlFor="searchBar">Search</label>
         <input name="searchBar" type="text" onChange={search} />
-
         
       <Link to="/search">
         <button onClick={searchByNameSubmit}>Submit</button>

@@ -15,7 +15,7 @@ function SearchResults(props) {
       </div>
     );
   } else {
-    return <div>{console.log(props.numberOfResults)}</div>;
+    return <div></div>;
   }
 }
 export default SearchResults;
