@@ -186,7 +186,6 @@ function App() {
         
         <label htmlFor="searchBar">Search</label>
         <input name="searchBar" type="text" onChange={search} />
-        {/* <p>{numberOfResults}</p> */}
 
         
       <Link to="/search">

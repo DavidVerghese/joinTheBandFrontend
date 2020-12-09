@@ -15,12 +15,7 @@ function SearchResults(props) {
       </div>
     );
   } else {
-    return (
-      <div>
-        {/* <h1>No Results Found!</h1>
-        <img src="https://media0.giphy.com/media/5x89XRx3sBZFC/giphy.gif" /> */}
-      </div>
-    );
+    return <div>{console.log(props.numberOfResults)}</div>;
   }
 }
 export default SearchResults;
