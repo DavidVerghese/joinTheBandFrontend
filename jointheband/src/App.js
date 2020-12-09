@@ -13,6 +13,7 @@ function App() {
   
   const [data, setData] = useState([])
 
+  let results = 0;
   let findMusician = [];
   let findMusician2 = [];
   let findMusician3 = [];
@@ -37,106 +38,125 @@ function App() {
   const searchByNameSubmit = (e) => {
     // e.preventDefault()
     console.clear();
-    let searchValueIndividualWords = searchValue.split(" ")
-     let doesItInclude = data.filter(
-       (item2) => {
-         if (item2.fields.Instrument !== undefined) {
+    console.log(searchValue.length)
+    if (searchValue.length > 0) {
+      let searchValueIndividualWords = searchValue.split(" ")
+      let doesItInclude = data.filter(
+        (item2) => {
+          if (item2.fields.Instrument !== undefined) {
 
-           // search by Genre
+            // search by Genre
 
             if (item2.fields.Genre.includes(searchValueIndividualWords[0])) {
               findMusician = data.filter(
-               (item) => item.fields.Genre === searchValueIndividualWords[0]
+                (item) => item.fields.Genre === searchValueIndividualWords[0]
               );
+              results += 1;
             }
             if (item2.fields.Genre.includes(searchValueIndividualWords[1])) {
               findMusician2 = data.filter(
-               (item) => item.fields.Genre === searchValueIndividualWords[1]
+                (item) => item.fields.Genre === searchValueIndividualWords[1]
               );
+              results += 1;
             }
             if (item2.fields.Genre.includes(searchValueIndividualWords[2])) {
               findMusician3 = data.filter(
-               (item) => item.fields.Genre === searchValueIndividualWords[2]
+                (item) => item.fields.Genre === searchValueIndividualWords[2]
               );
+              results += 1;
             }
            
-           // search By Instrument 
+            // search By Instrument 
 
             if (item2.fields.Instrument.includes(searchValueIndividualWords[0])) {
               findMusician = data.filter(
-               (item) => item.fields.Instrument === searchValueIndividualWords[0]
+                (item) => item.fields.Instrument === searchValueIndividualWords[0]
               );
+              results += 1;
             }
             if (item2.fields.Instrument.includes(searchValueIndividualWords[1])) {
               findMusician2 = data.filter(
-               (item) => item.fields.Instrument === searchValueIndividualWords[1]
+                (item) => item.fields.Instrument === searchValueIndividualWords[1]
               );
+              results += 1;
             }
             if (item2.fields.Instrument.includes(searchValueIndividualWords[2])) {
               findMusician3 = data.filter(
-               (item) => item.fields.Instrument === searchValueIndividualWords[2]
+                (item) => item.fields.Instrument === searchValueIndividualWords[2]
               );
+              results += 1;
             }
-           // search by location 
+            // search by location 
             if (item2.fields.Location.includes(searchValueIndividualWords[0])) {
               findMusician = data.filter(
-               (item) => item.fields.Location === searchValueIndividualWords[0]
+                (item) => item.fields.Location === searchValueIndividualWords[0]
               );
+              results += 1;
             }
             if (item2.fields.Location.includes(searchValueIndividualWords[1])) {
               findMusician2 = data.filter(
-               (item) => item.fields.Location === searchValueIndividualWords[1]
+                (item) => item.fields.Location === searchValueIndividualWords[1]
               );
+              results += 1;
             }
             if (item2.fields.Location.includes(searchValueIndividualWords[2])) {
               findMusician3 = data.filter(
-               (item) => item.fields.Location === searchValueIndividualWords[2]
+                (item) => item.fields.Location === searchValueIndividualWords[2]
               );
+              results += 1;
             }
-           // search by what users are looking for
+            // search by what users are looking for
             if (item2.fields.Looking_for.includes(searchValueIndividualWords[0])) {
               findMusician = data.filter(
-               (item) => item.fields.Looking_for === searchValueIndividualWords[0]
+                (item) => item.fields.Looking_for === searchValueIndividualWords[0]
               );
+              results += 1;
             }
             if (item2.fields.Looking_for.includes(searchValueIndividualWords[1])) {
               findMusician2 = data.filter(
-               (item) => item.fields.Looking_for === searchValueIndividualWords[1]
+                (item) => item.fields.Looking_for === searchValueIndividualWords[1]
               );
+              results += 1;
             }
             if (item2.fields.Looking_for.includes(searchValueIndividualWords[2])) {
               findMusician3 = data.filter(
-               (item) => item.fields.Looking_for === searchValueIndividualWords[2]
+                (item) => item.fields.Looking_for === searchValueIndividualWords[2]
               );
+              results += 1;
             }
-           // Search by Name 
+            // Search by Name 
             if (item2.fields.Musician.includes(searchValueIndividualWords[0])) {
               findMusician = data.filter(
-               (item) => item.fields.Musician === searchValueIndividualWords[0]
+                (item) => item.fields.Musician === searchValueIndividualWords[0]
               );
+              results += 1;
             }
             if (item2.fields.Musician.includes(searchValueIndividualWords[1])) {
               findMusician2 = data.filter(
-               (item) => item.fields.Musician === searchValueIndividualWords[1]
+                (item) => item.fields.Musician === searchValueIndividualWords[1]
               );
+              results += 1;
             }
             if (item2.fields.Musician.includes(searchValueIndividualWords[2])) {
               findMusician3 = data.filter(
-               (item) => item.fields.Musician === searchValueIndividualWords[2]
+                (item) => item.fields.Musician === searchValueIndividualWords[2]
               );
+              results += 1;
             }
     
             else {
               // console.log("no matches")
-           }
-         }
-      }
-     )
+            }
+          }
+        }
+      )
+    }
     setUserInput(findMusician)
     setUserInput2(findMusician2)
     setUserInput3(findMusician3)
+    setSearchValue(results)
    };
-  
+   
 
   return (
     <div>
@@ -159,14 +179,14 @@ function App() {
           <AllProfiles data={data}/>
         </Route>
         <Route path="/search">
-          <SearchResults musician={userInput} />
-          <SearchResults musician={userInput2} />
-          <SearchResults musician={userInput3}/>
+          <SearchResults musician={userInput} numberOfResults={searchValue}/>
+          <SearchResults musician={userInput2} numberOfResults={searchValue} />
+          <SearchResults musician={userInput3} numberOfResults={searchValue} />
         </Route>
         
         <label htmlFor="searchBar">Search</label>
         <input name="searchBar" type="text" onChange={search} />
-
+        {/* <p>{numberOfResults}</p> */}
 
         
       <Link to="/search">

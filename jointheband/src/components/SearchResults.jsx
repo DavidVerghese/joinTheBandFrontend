@@ -2,14 +2,15 @@ import "../App.css";
 import Profile from "./Profile.jsx";
 
 function SearchResults(props) {
-  console.log(props);
-  if (props.musician.length > 0) {
+  if (props.numberOfResults > 0) {
     return (
-      <div class="profile">
-        <div class="profilebackground">
-          {props.musician.map((item) => {
-            return <Profile item={item} />;
-          })}
+      <div>
+        <div class="profile">
+          <div class="profilebackground">
+            {props.musician.map((item) => {
+              return <Profile item={item} />;
+            })}
+          </div>
         </div>
       </div>
     );
