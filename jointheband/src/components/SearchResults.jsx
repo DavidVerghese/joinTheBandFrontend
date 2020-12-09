@@ -16,8 +16,8 @@ function SearchResults(props) {
   } else {
     return (
       <div>
-        <h1>No Results Found!</h1>
-        <img src="https://media0.giphy.com/media/5x89XRx3sBZFC/giphy.gif" />
+        {/* <h1>No Results Found!</h1>
+        <img src="https://media0.giphy.com/media/5x89XRx3sBZFC/giphy.gif" /> */}
       </div>
     );
   }

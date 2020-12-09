@@ -2,7 +2,7 @@ a {
   color: black;
 }
 body {
-  font-size: 25px;
+  font-size: 23px;
   color: white;
   background-color: rgb(100, 40, 40, 30);
   font-family: "Gothic A1", sans-serif;
@@ -99,7 +99,7 @@ img {
 
 @media (min-width: 550px) {
   body {
-    font-size: 30px;
+    font-size: 28px;
   }
   header {
     background-image: url(https://static01.nyt.com/images/2020/03/12/arts/12virus-concerts2/merlin_170369790_63d02a4c-82f8-441a-ac7c-c395828b7961-mobileMasterAt3x.jpg);
@@ -117,6 +117,6 @@ img {
 
 @media (min-width: 1000px) {
   body {
-    font-size: 35px;
+    font-size: 33px;
   }
 }
