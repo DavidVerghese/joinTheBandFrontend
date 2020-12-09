@@ -20,25 +20,30 @@ button {
 
 .formSection {
   margin: 0px;
-  padding: 10px;
+  padding: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background: rgb(0, 40, 40, 30);
+  color: orange;
+  /* background: rgb(0, 40, 40, 30); */
+  background-image: url(https://media.wired.com/photos/5b43e42b864f830cb58b1118/125:94/w_894,h_672,c_limit/MusicFans-923247030.jpg);
 }
 
 .formSectionTextBackground {
-  background: rgb(360, 360, 270, 0.9);
+  background: rgb(360, 360, 270);
+  width: 80%;
   color: black;
+  padding: 0px;
+}
+#formHeading {
+  color: black;
+  background: rgb(270, 100, 270);
+  padding: 20px;
 }
 footer {
   padding: 5px;
   margin: 0px;
   width: 100%;
-}
-.formPic {
-  width: 70%;
-  display: block;
 }
 label {
   display: block;
