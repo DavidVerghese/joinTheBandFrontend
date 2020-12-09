@@ -209,7 +209,7 @@ function App() {
         
       </main>
       <footer>
-        <h3>David Verghese's Website</h3>
+        <h3>David Verghese's Website!</h3>
       </footer>
     </div>
   );
