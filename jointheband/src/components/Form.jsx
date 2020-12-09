@@ -12,7 +12,7 @@ function Form(props) {
 
   console.log(musician, imageAddress, instrument, genre, lookingFor, location);
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     console.log(
       musician,
       imageAddress,
@@ -29,6 +29,7 @@ function Form(props) {
       Looking_for: lookingFor,
       Location: location,
     };
+    console.log(data);
     await axios.post(baseURL + "/Musicians", { fields: data }, config);
   };
 
