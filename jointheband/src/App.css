@@ -59,6 +59,7 @@ header {
   width: 100%;
   display: flex;
   justify-content: center;
+  font-size: 60%;
 }
 header a {
   color: white;
@@ -109,7 +110,7 @@ img {
   color: green;
 }
 #searchinstructions {
-  font-size: 60%;
+  font-size: 80%;
   background-color: peachpuff;
   color: black;
   padding: 10px;
@@ -117,12 +118,17 @@ img {
 .searchBarDiv {
   display: flex;
   justify-content: space-around;
-  font-size: 80%;
-  background-color: #5D5C61;
+  flex-wrap: wrap;
+  /* change font size,margin */
+  font-size: 90%;
+  margin: 10px;
+  background-color: #5d5c61;
 }
-.searchBarDiv input{
+.searchBarDiv input {
   width: 20%;
   margin: 20px;
+  /* change margin */
+  margin: 10px;
 }
 .socialMedia img {
   width: 50px;
@@ -148,6 +154,7 @@ img {
   }
   header {
     background-image: url(https://static01.nyt.com/images/2020/03/12/arts/12virus-concerts2/merlin_170369790_63d02a4c-82f8-441a-ac7c-c395828b7961-mobileMasterAt3x.jpg);
+    font-size: 80%;
   }
   footer {
     background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Classical_spectacular10.jpg/800px-Classical_spectacular10.jpg);
@@ -165,6 +172,13 @@ img {
   }
   #socialMediaButton {
     margin-right: 110px;
+  }
+  .searchBarDiv {
+    font-size: 110%;
+    margin: 5px;
+  }
+  .searchBarDiv input {
+    margin: 10px;
   }
   #homePic {
     width: 80%;
