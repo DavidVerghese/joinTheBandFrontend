@@ -190,13 +190,23 @@ function App() {
     <div>
       <header>
         <div class="headerBackground">
-        <h1>Join the Band!</h1>
+          <h1>Join the Band!</h1>
       <nav>
             <Link onClick={function (){ bassAudio.play() }} to="/"><p>Home</p></Link>
           </nav>
         </div>
       </header>
       <main>
+
+      <div class="searchBarDiv">
+      <p><em id = "searchinstructions">Search by instrument,location, genre, etc</em></p>
+        <label htmlFor="searchBar"><p>Search:</p></label>
+        <input name="searchBar" type="text" onChange={search} />
+        <Link to="/search">
+        <button onClick={searchByNameSubmit}>Submit</button>
+      </Link>
+        <p>{warningMessage}</p>
+      </div>
       <Route exact path="/">
           <Home data={data}/>
         </Route>
@@ -213,14 +223,8 @@ function App() {
           <NoResults numberOfResults={searchValue} />
         </Route>
         
-        <p ><em id = "searchinstructions">Search by instrument,location, genre, etc</em></p>
-        <label htmlFor="searchBar">Search:</label>
-        <input name="searchBar" type="text" onChange={search} />
 
-      <Link to="/search">
-        <button onClick={searchByNameSubmit}>Submit</button>
-      </Link>
-        <p>{warningMessage}</p>
+      
         
         <div>
         </div>

@@ -15,6 +15,7 @@ function AllProfiles(props) {
 
   return (
     <div>
+      <a name ="top"></a>
       <h2>Profiles:</h2>
       {data.map((item) => {
         return (
@@ -23,6 +24,7 @@ function AllProfiles(props) {
           </div>
         );
       })}
+      <a href="#top"><button>Back to Top</button></a>
     </div>
   );
 }

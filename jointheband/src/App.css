@@ -62,7 +62,8 @@ header a {
 .headerBackground {
   background-color: rgba(21, 3, 23, 0.8);
   width: 60%;
-  display: flex;
+  /* display: flex;
+  flex-direction: column; */
   color: white;
 }
 h1 {
@@ -108,6 +109,16 @@ img {
   background-color: peachpuff;
   color: black;
   padding: 10px;
+}
+.searchBarDiv {
+  display: flex;
+  justify-content: space-around;
+  font-size: 80%;
+  background-color: #5D5C61;
+}
+.searchBarDiv input{
+  width: 20%;
+  margin: 20px;
 }
 .socialMedia img {
   width: 50px;
