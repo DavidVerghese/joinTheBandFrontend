@@ -15,7 +15,7 @@ function Home(props) {
   return (
     <div class="intro">
       <img
-        class="homePic"
+        id="homePic"
         src="https://blog.loopearplugs.com/wp-content/uploads/2019/05/applause-audience-band-167636.jpg"
       />
       <em>
