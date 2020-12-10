@@ -1,7 +1,6 @@
 
 
 function NoResults(props) {
-  console.log(props.numberOfResults);
   
   if (props.numberOfResults === 0) {
     return (

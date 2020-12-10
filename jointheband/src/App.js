@@ -35,7 +35,6 @@ function App() {
   drumAudio.volume = 0.05;
 
 
-  console.log(searchValue)
   useEffect(() => {
     async function getData() {
       let response = await axios.get(baseURL + '/Musicians', config)
@@ -53,7 +52,7 @@ function App() {
     // e.preventDefault()
 
     console.clear();
-    if (searchValue === 0) {
+    if (typeof searchValue === 'number') {
       e.preventDefault()
       console.log("type something new")
       setWarningMessage("* type something new!")
@@ -61,6 +60,7 @@ function App() {
     else {
       setWarningMessage("")
     }
+    console.log(typeof searchValue)
     if (searchValue.length > 0) {
       let searchValueIndividualWords = searchValue.split(" ")
       let doesItInclude = data.filter(
