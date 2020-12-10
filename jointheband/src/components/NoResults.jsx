@@ -1,5 +1,3 @@
-
-
 function NoResults(props) {
   
   if (props.numberOfResults === 0) {

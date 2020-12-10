@@ -49,7 +49,6 @@ function App() {
       setSearchValue(e.target.value)
   };
   const searchByNameSubmit = (e) => {
-    // e.preventDefault()
 
     console.clear();
     if (typeof searchValue === 'number') {

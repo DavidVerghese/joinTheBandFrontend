@@ -20,20 +20,7 @@ function Form(props) {
   guitarAudio.volume = 0.02;
 
   const handleSubmit = async (e) => {
-    // e.preventDefault();
     guitarAudio.play();
-    console.log(
-      musician,
-      imageAddress,
-      instrument,
-      genre,
-      lookingFor,
-      location,
-      facebookURL,
-      soundcloudURL,
-      instagramURL,
-      twitterURL
-    );
     let data = {
       Musician: musician,
       Picture: imageAddress,

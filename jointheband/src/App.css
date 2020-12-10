@@ -9,7 +9,6 @@ body {
   color: white;
   background-color: rgb(100, 40, 40, 30);
   font-family: "Gothic A1", sans-serif;
-  /* display: flex; */
   text-align: center;
   margin: 0px;
   height: 100%;
@@ -23,12 +22,10 @@ button {
 
 .formSection {
   margin: 0px;
-  /* padding: 50px; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   color: orange;
-  /* background: rgb(0, 40, 40, 30); */
   background-image: url(https://media.wired.com/photos/5b43e42b864f830cb58b1118/125:94/w_894,h_672,c_limit/MusicFans-923247030.jpg);
 }
 
@@ -64,8 +61,6 @@ header a {
 .headerBackground {
   background-color: rgba(21, 3, 23, 0.8);
   width: 60%;
-  /* display: flex;
-  flex-direction: column; */
   color: white;
 }
 h1 {
@@ -83,8 +78,6 @@ img {
   background-color: rgba(157, 189, 170, 0.8);
   padding: 30px;
   color: black;
-  /* width: 90%; */
-  /* background-image: url(https://blog.loopearplugs.com/wp-content/uploads/2019/05/applause-audience-band-167636.jpg) */
 }
 #noResultsPic {
   width: 70%;
@@ -93,7 +86,6 @@ img {
   margin: 0px;
   padding: 10px;
   color: white;
-  /* width: 99%; */
   display: flex;
   justify-content: center;
 }
@@ -119,7 +111,6 @@ img {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  /* change font size,margin */
   font-size: 90%;
   margin: 10px;
   background-color: #5d5c61;
@@ -127,7 +118,6 @@ img {
 .searchBarDiv input {
   width: 20%;
   margin: 20px;
-  /* change margin */
   margin: 10px;
 }
 .socialMedia img {

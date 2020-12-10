@@ -2,7 +2,6 @@ import "../App.css";
 import Profile from "./Profile.jsx";
 
 function SearchResults(props) {
-  console.log(props.musician);
   if (props.numberOfResults > 0) {
     return (
       <div className="allResults">
