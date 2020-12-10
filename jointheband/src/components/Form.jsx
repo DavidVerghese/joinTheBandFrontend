@@ -29,10 +29,10 @@ function Form(props) {
       genre,
       lookingFor,
       location,
-      facebookURL, 
+      facebookURL,
       soundcloudURL,
       instagramURL,
-      twitterURL,
+      twitterURL
     );
     let data = {
       Musician: musician,
@@ -42,11 +42,12 @@ function Form(props) {
       Looking_for: lookingFor,
       Location: location,
       Facebook: facebookURL,
-      Soundcloud: soundcloudURL, 
-      Twitter: twitterURL, 
+      Soundcloud: soundcloudURL,
+      Twitter: twitterURL,
       Instagram: instagramURL,
     };
     await axios.post(baseURL + "/Musicians", { fields: data }, config);
+    props.refresh((prev) => !prev);
   };
 
   return (

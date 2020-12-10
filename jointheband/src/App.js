@@ -21,11 +21,11 @@ function App() {
   let findMusician = [];
   let findMusician2 = [];
   let findMusician3 = [];
-  let [userInput, setUserInput] = useState([]);
-  let [userInput2, setUserInput2] = useState([]);
-  let [userInput3, setUserInput3] = useState([]);
-  let [searchValue, setSearchValue] = useState([]);
-  let [warningMessage, setWarningMessage] = useState('');
+  const [userInput, setUserInput] = useState([]);
+  const [userInput2, setUserInput2] = useState([]);
+  const [userInput3, setUserInput3] = useState([]);
+  const [searchValue, setSearchValue] = useState([]);
+  const [warningMessage, setWarningMessage] = useState('');
 
   const violinAudio = new Audio(violinsound);
   violinAudio.volume = 0.05;
@@ -33,6 +33,7 @@ function App() {
   bassAudio.volume = 0.05;
   const drumAudio = new Audio(drumsound);
   drumAudio.volume = 0.05;
+  const [toggleFetch,setToggleFetch] = useState(true)
 
 
   useEffect(() => {
@@ -42,9 +43,8 @@ function App() {
     }
     getData();
 
-  }, [])
+  }, [toggleFetch])
 
-  // console.log("searchValue:", searchValue)
   const search = (e) => {
       setSearchValue(e.target.value)
   };
@@ -54,13 +54,11 @@ function App() {
     console.clear();
     if (typeof searchValue === 'number') {
       e.preventDefault()
-      console.log("type something new")
       setWarningMessage("* type something new!")
     }
     else {
       setWarningMessage("")
     }
-    console.log(typeof searchValue)
     if (searchValue.length > 0) {
       let searchValueIndividualWords = searchValue.split(" ")
       let doesItInclude = data.filter(
@@ -165,10 +163,6 @@ function App() {
               );
               results += 1;
             }
-    
-            else {
-              // console.log("no matches")
-            }
           }
         }
       )
@@ -212,7 +206,7 @@ function App() {
           <Home data={data}/>
         </Route>
         <Route path="/form">
-          <Form data={data}/>
+          <Form data={data} refresh={setToggleFetch}/>
         </Route>
         <Route path="/profiles">
           <AllProfiles data={data}/>

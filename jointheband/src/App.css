@@ -1,3 +1,6 @@
+/* the default styling is for mobile. Below I have media 
+queries to adjust the styling for tablets and computers */
+
 a {
   color: black;
 }
@@ -6,14 +9,10 @@ body {
   color: white;
   background-color: rgb(100, 40, 40, 30);
   font-family: "Gothic A1", sans-serif;
-  display: flex;
+  /* display: flex; */
   text-align: center;
   margin: 0px;
   height: 100%;
-}
-
-.allResults {
-  width: 100vw;
 }
 
 button {
@@ -24,7 +23,7 @@ button {
 
 .formSection {
   margin: 0px;
-  padding: 50px;
+  /* padding: 50px; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -35,7 +34,7 @@ button {
 
 .formSectionTextBackground {
   background: rgb(360, 360, 270);
-  width: 80%;
+  width: 90%;
   color: black;
   padding: 0px;
 }
@@ -47,7 +46,6 @@ button {
 footer {
   padding: 5px;
   margin: 0px;
-  width: 100%;
 }
 label {
   display: block;
@@ -56,7 +54,6 @@ header {
   color: white;
   padding: 5px;
   margin: 0px;
-  width: 100%;
   display: flex;
   justify-content: center;
   font-size: 60%;
@@ -96,7 +93,7 @@ img {
   margin: 0px;
   padding: 10px;
   color: white;
-  width: 99%;
+  /* width: 99%; */
   display: flex;
   justify-content: center;
 }
@@ -151,6 +148,8 @@ img {
   justify-content: flex-end;
   margin-right: 10px;
 }
+
+/* for tablets and smaller computer screens*/
 @media (min-width: 550px) {
   body {
     font-size: 28px;
@@ -192,6 +191,7 @@ img {
   }
 }
 
+/* for large computer screens*/
 @media (min-width: 1000px) {
   body {
     font-size: 30px;
