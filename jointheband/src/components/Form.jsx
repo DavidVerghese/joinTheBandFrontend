@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { baseURL, config } from "../services";
 import guitarsound from "../sounds/guitarsound.mp3";
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Form(props) {
   const [musician, setMusician] = useState("");
@@ -15,7 +15,6 @@ function Form(props) {
   const [instagramURL, setInstagramURL] = useState("");
   const [soundcloudURL, setSoundcloudURL] = useState("");
   const [twitterURL, setTwitterURL] = useState("");
-
   const guitarAudio = new Audio(guitarsound);
   guitarAudio.volume = 0.02;
 
@@ -39,7 +38,7 @@ function Form(props) {
 
   return (
     <div className="formSection">
-      <h1 id="formHeading">Want to create a post?</h1>
+      <h2 id="formHeading">Want to create a post?</h2>
       <br></br>
       <div className="formSectionTextBackground">
         <form>
@@ -55,7 +54,7 @@ function Form(props) {
             type="text"
             onChange={(e) => setMusician(e.target.value)}
           />
-          <label htmlFor="picAddress">Picture URL</label>
+          <label htmlFor="picAddress"><p>Picture URL <br></br><em id="pictureURLText">(post a link to a picture of yourself)</em></p></label>
           <input
             name="picAddress"
             type="text"

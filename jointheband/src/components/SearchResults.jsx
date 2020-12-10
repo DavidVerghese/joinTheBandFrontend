@@ -10,8 +10,10 @@ function SearchResults(props) {
         })}
       </div>
     );
-  } else {
+  }
+  else {
     return <div className="allResults"></div>;
   }
 }
+
 export default SearchResults;

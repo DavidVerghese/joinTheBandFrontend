@@ -1,11 +1,10 @@
 import SocialMedia from "./SocialMedia.jsx";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import bongo from "../sounds/bongo.mp3";
 
 function Profile(props) {
   const bongoAudio = new Audio(bongo);
   bongoAudio.volume = 0.02;
-
   const socialMediaButton = () => {
     setSocialMediaDisplay(!socialMediaDisplay);
     if (!socialMediaDisplay) {
@@ -18,7 +17,7 @@ function Profile(props) {
     <div className="profile">
       <div className="profilebackground">
         <h2>{props.item.fields.Musician}</h2>
-        <img src={props.item.fields.Picture}></img>
+        <img alt="profile photo of musician" src={props.item.fields.Picture}></img>
         <p>Instrument: {props.item.fields.Instrument}</p>
         <p>Genre: {props.item.fields.Genre}</p>
         <p>Looking for: {props.item.fields.Looking_for}</p>

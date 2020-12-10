@@ -1,7 +1,4 @@
-import { Route, Link } from "react-router-dom";
-import SearchResults from "./SearchResults.jsx";
-import { useState } from "react";
-import Form from "./Form.jsx";
+import { Link } from "react-router-dom";
 import basssoundtwo from "../sounds/harpsound.mp3";
 import guitarsound from "../sounds/guitarstrum.mp3";
 
@@ -10,18 +7,17 @@ function Home(props) {
   bassAudioTwo.volume = 0.02;
   const guitarAudio = new Audio(guitarsound);
   guitarAudio.volume = 0.02;
-  
 
   return (
-    <div className="intro">
+    <div className="home">
       <img
+        alt="a band on stage"
         id="homePic"
         src="https://blog.loopearplugs.com/wp-content/uploads/2019/05/applause-audience-band-167636.jpg"
       />
       <em>
         <h2>This could be you</h2>
       </em>
-
       <Link
         onClick={function () {
           bassAudioTwo.play();
@@ -30,8 +26,12 @@ function Home(props) {
       >
         <button>Make a post!</button>
       </Link>
-      <Link onClick={function () { guitarAudio.play() }}
-        to="/profiles">
+      <Link
+        onClick={function () {
+          guitarAudio.play();
+        }}
+        to="/profiles"
+      >
         <button>View All Posts</button>
       </Link>
     </div>

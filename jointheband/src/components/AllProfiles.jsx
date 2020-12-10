@@ -20,8 +20,8 @@ function AllProfiles(props) {
 
   return (
     <div>
-      <a name ="top"></a>
-      <h2>Profiles:</h2>
+      <a href="top" name ="top">
+      <h2>Profiles:</h2></a>
       {data.map((item) => {
         return (
           <div>

@@ -1,9 +1,6 @@
 /* the default styling is for mobile. Below I have media 
 queries to adjust the styling for tablets and computers */
 
-a {
-  color: black;
-}
 body {
   font-size: 23px;
   color: white;
@@ -13,39 +10,20 @@ body {
   margin: 0px;
   height: 100%;
 }
-
+a {
+  color: black;
+}
 button {
   background-color: #5cdb95;
   padding: 10px;
   margin: 10px;
 }
-
-.formSection {
-  margin: 0px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  color: orange;
-  background-image: url(https://media.wired.com/photos/5b43e42b864f830cb58b1118/125:94/w_894,h_672,c_limit/MusicFans-923247030.jpg);
-}
-
-.formSectionTextBackground {
-  background: rgb(360, 360, 270);
-  width: 90%;
-  color: black;
-  padding: 0px;
-}
-#formHeading {
-  color: black;
-  background: rgb(270, 100, 270);
-  padding: 20px;
-}
 footer {
   padding: 5px;
   margin: 0px;
 }
-label {
-  display: block;
+h1 {
+  font-size: 200%;
 }
 header {
   color: white;
@@ -58,29 +36,53 @@ header {
 header a {
   color: white;
 }
+img {
+  margin: 0px;
+}
+label {
+  display: block;
+}
+
+/* style rules for classes and ids */
+#formHeading {
+  color: black;
+  background: rgb(270, 100, 270);
+  padding: 20px;
+}
+.formSection {
+  margin: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: orange;
+  background-image: url(https://media.wired.com/photos/5b43e42b864f830cb58b1118/125:94/w_894,h_672,c_limit/MusicFans-923247030.jpg);
+}
+.formSectionTextBackground {
+  background: rgb(360, 360, 270);
+  width: 90%;
+  color: black;
+  padding: 0px;
+}
 .headerBackground {
   background-color: rgba(21, 3, 23, 0.8);
   width: 60%;
   color: white;
 }
-h1 {
-  font-size: 200%;
-}
-#homePic {
-  width: 100%;
-  margin: 0px;
-}
-img {
-  margin: 0px;
-}
-.intro {
+.home {
   margin: 0px;
   background-color: rgba(157, 189, 170, 0.8);
   padding: 30px;
   color: black;
 }
+#homePic {
+  width: 80%;
+  margin: 0px;
+}
 #noResultsPic {
   width: 70%;
+}
+#pictureURLText {
+  font-size: 80%;
 }
 .profile {
   margin: 0px;
@@ -101,12 +103,6 @@ img {
   height: 100px;
   color: green;
 }
-#searchinstructions {
-  font-size: 80%;
-  background-color: peachpuff;
-  color: black;
-  padding: 10px;
-}
 .searchBarDiv {
   display: flex;
   justify-content: space-around;
@@ -120,6 +116,12 @@ img {
   margin: 20px;
   margin: 10px;
 }
+#searchinstructions {
+  font-size: 80%;
+  background-color: peachpuff;
+  color: black;
+  padding: 10px;
+}
 .socialMedia img {
   width: 50px;
   height: 50px;
@@ -127,35 +129,52 @@ img {
   padding: 5px;
   margin: 0px 15px 0px 15px;
 }
+#socialMediaButton {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
 .socialMediaSection {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-end;
 }
-#socialMediaButton {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 10px;
-}
 
 /* for tablets and smaller computer screens*/
 @media (min-width: 550px) {
   body {
-    font-size: 28px;
+    font-size: 26px;
   }
-  header {
-    background-image: url(https://static01.nyt.com/images/2020/03/12/arts/12virus-concerts2/merlin_170369790_63d02a4c-82f8-441a-ac7c-c395828b7961-mobileMasterAt3x.jpg);
-    font-size: 80%;
+  button {
+    font-size: 120%;
   }
   footer {
     background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Classical_spectacular10.jpg/800px-Classical_spectacular10.jpg);
   }
+  header {
+    background-image: url(https://static01.nyt.com/images/2020/03/12/arts/12virus-concerts2/merlin_170369790_63d02a4c-82f8-441a-ac7c-c395828b7961-mobileMasterAt3x.jpg);
+    font-size: 70%;
+  }
+  .formSectionTextBackground {
+    width: 80%;
+  }
+  #homePic {
+    width: 50%;
+    margin: 0px;
+  }
+  #noResultsPic {
+    width: 50%;
+  }
   .profile {
     background-image: url(https://i0.wp.com/doyleleadership.com/wp-content/uploads/2019/02/Audience-2.jpg?fit=5869%2C2367&ssl=1);
   }
-  button {
-    font-size: 120%;
+  .searchBarDiv {
+    font-size: 100%;
+    margin: 5px;
+  }
+  .searchBarDiv input {
+    margin: 10px;
   }
   .socialMedia img {
     width: 50px;
@@ -165,36 +184,25 @@ img {
   #socialMediaButton {
     margin-right: 110px;
   }
-  .searchBarDiv {
-    font-size: 110%;
-    margin: 5px;
-  }
-  .searchBarDiv input {
-    margin: 10px;
-  }
-  #homePic {
-    width: 80%;
-    margin: 0px;
-  }
-  #noResultsPic {
-    width: 50%;
-  }
 }
 
 /* for large computer screens*/
 @media (min-width: 1000px) {
   body {
-    font-size: 30px;
+    font-size: 28px;
+  }
+  .formSectionTextBackground {
+    width: 70%;
+  }
+  header {
+    font-size: 100%;
+  }
+  #homePic {
+    width: 30%;
   }
   .socialMedia img {
     width: 70px;
     height: 70px;
     margin: 20px 50px 20px 50px;
-  }
-  #homePic {
-    width: 40%;
-  }
-  header {
-    font-size: 100%;
   }
 }
