@@ -189,7 +189,7 @@ function App() {
   return (
     <div>
       <header>
-        <div class="headerBackground">
+        <div className="headerBackground">
           <h1>Join the Band!</h1>
       <nav>
             <Link onClick={function (){ bassAudio.play() }} to="/"><p>Home</p></Link>
@@ -198,7 +198,7 @@ function App() {
       </header>
       <main>
 
-      <div class="searchBarDiv">
+      <div className="searchBarDiv">
       <p><em id = "searchinstructions">Search by instrument,location, genre, etc</em></p>
         <label htmlFor="searchBar"><p>Search:</p></label>
         <input name="searchBar" type="text" onChange={search} />

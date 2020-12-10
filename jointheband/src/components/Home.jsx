@@ -3,7 +3,7 @@ import SearchResults from "./SearchResults.jsx";
 import { useState } from "react";
 import Form from "./Form.jsx";
 import basssoundtwo from "../sounds/harpsound.mp3";
-import guitarsound from "../sounds/guitarsound.mp3";
+import guitarsound from "../sounds/guitarstrum.mp3";
 
 function Home(props) {
   const bassAudioTwo = new Audio(basssoundtwo);
@@ -13,7 +13,7 @@ function Home(props) {
   
 
   return (
-    <div class="intro">
+    <div className="intro">
       <img
         id="homePic"
         src="https://blog.loopearplugs.com/wp-content/uploads/2019/05/applause-audience-band-167636.jpg"

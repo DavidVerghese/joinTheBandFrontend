@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { baseURL, config } from "../services";
 import guitarsound from "../sounds/guitarsound.mp3";
+import { Route, Link } from "react-router-dom";
 
 function Form(props) {
   const [musician, setMusician] = useState("");
@@ -14,9 +15,9 @@ function Form(props) {
   const guitarAudio = new Audio(guitarsound);
   guitarAudio.volume = 0.02;
 
-  console.log(musician, imageAddress, instrument, genre, lookingFor, location);
   const handleSubmit = async (e) => {
     // e.preventDefault();
+    guitarAudio.play();
     console.log(
       musician,
       imageAddress,
@@ -33,15 +34,14 @@ function Form(props) {
       Looking_for: lookingFor,
       Location: location,
     };
-    console.log(data);
     await axios.post(baseURL + "/Musicians", { fields: data }, config);
   };
 
   return (
-    <div class="formSection">
+    <div className="formSection">
       <h1 id="formHeading">Want to create a post?</h1>
       <br></br>
-      <div class="formSectionTextBackground">
+      <div className="formSectionTextBackground">
         <form>
           <em>
             <p>
@@ -85,7 +85,10 @@ function Form(props) {
             type="text"
             onChange={(e) => setLocation(e.target.value)}
           />
-          <br></br> <button onClick={handleSubmit}>Create a Post</button>
+          <br></br>
+          <Link to="/">
+            <button onClick={handleSubmit}>Create a Post</button>
+          </Link>
         </form>
       </div>
     </div>

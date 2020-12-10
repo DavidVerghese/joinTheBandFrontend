@@ -2,8 +2,13 @@ import Profile from "./Profile.jsx";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { baseURL, config } from "../services";
+import drumfill from "../sounds/drumfill.mp3";
 
 function AllProfiles(props) {
+
+  const drumFillAudio = new Audio(drumfill);
+  drumFillAudio.volume = 0.02;
+
   const [data, setData] = useState([]);
   useEffect(() => {
     async function getData() {
@@ -24,7 +29,7 @@ function AllProfiles(props) {
           </div>
         );
       })}
-      <a href="#top"><button>Back to Top</button></a>
+      <a href="#top"><button onClick={function (){drumFillAudio.play()}}>Back to Top</button></a>
     </div>
   );
 }

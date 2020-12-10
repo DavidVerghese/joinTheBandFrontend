@@ -12,6 +12,10 @@ body {
   height: 100%;
 }
 
+.allResults {
+  width: 100vw;
+}
+
 button {
   background-color: #5cdb95;
   padding: 10px;
