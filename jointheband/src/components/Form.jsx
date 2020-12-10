@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { baseURL, config } from "../services";
+import guitarsound from "../sounds/guitarsound.mp3";
 
 function Form(props) {
   const [musician, setMusician] = useState("");
@@ -9,6 +10,9 @@ function Form(props) {
   const [genre, setGenre] = useState("");
   const [lookingFor, setLookingFor] = useState("");
   const [imageAddress, setImageAddress] = useState("");
+
+  const guitarAudio = new Audio(guitarsound);
+  guitarAudio.volume = 0.02;
 
   console.log(musician, imageAddress, instrument, genre, lookingFor, location);
   const handleSubmit = async (e) => {
@@ -35,7 +39,7 @@ function Form(props) {
 
   return (
     <div class="formSection">
-      <h1 id = "formHeading">Want to create a post?</h1>
+      <h1 id="formHeading">Want to create a post?</h1>
       <br></br>
       <div class="formSectionTextBackground">
         <form>

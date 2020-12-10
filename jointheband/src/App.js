@@ -9,6 +9,9 @@ import Home from "./components/Home.jsx"
 import AllProfiles from "./components/AllProfiles.jsx"
 import SearchResults from "./components/SearchResults.jsx"
 import NoResults from "./components/NoResults.jsx"
+import violinsound from "./sounds/violinsound.mp3"
+import basssound from "./sounds/basssoundone.mp3"
+import drumsound from "./sounds/drumsound.mp3";
 
 function App() {
   
@@ -23,6 +26,14 @@ function App() {
   let [userInput3, setUserInput3] = useState([]);
   let [searchValue, setSearchValue] = useState([]);
   let [warningMessage, setWarningMessage] = useState('');
+
+  const violinAudio = new Audio(violinsound);
+  violinAudio.volume = 0.05;
+  const bassAudio = new Audio(basssound);
+  bassAudio.volume = 0.05;
+  const drumAudio = new Audio(drumsound);
+  drumAudio.volume = 0.05;
+
 
   console.log(searchValue)
   useEffect(() => {
@@ -41,6 +52,7 @@ function App() {
   };
   const searchByNameSubmit = (e) => {
     // e.preventDefault()
+    
     console.clear();
     if (searchValue === 0) {
       e.preventDefault()
@@ -166,6 +178,12 @@ function App() {
     setUserInput2(findMusician2)
     setUserInput3(findMusician3)
     setSearchValue(results)
+    if (results > 0) {
+      violinAudio.play()
+    }
+    else {
+      drumAudio.play()
+    }
    };
    
 
@@ -175,7 +193,7 @@ function App() {
         <div class="headerBackground">
         <h1>Join the Band!</h1>
       <nav>
-      <Link to="/"><p>Home</p></Link>
+            <Link onClick={function (){ bassAudio.play() }} to="/"><p>Home</p></Link>
           </nav>
         </div>
       </header>
@@ -196,7 +214,8 @@ function App() {
           <NoResults numberOfResults={searchValue} />
         </Route>
         
-        <label htmlFor="searchBar">Search!!</label>
+        <p ><em id = "searchinstructions">Search by instrument,location, genre, etc</em></p>
+        <label htmlFor="searchBar">Search:</label>
         <input name="searchBar" type="text" onChange={search} />
 
       <Link to="/search">
@@ -206,7 +225,6 @@ function App() {
         
         <div>
         </div>
-        
       </main>
       <footer>
         <h3>David Verghese's Website!</h3>
