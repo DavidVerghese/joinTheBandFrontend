@@ -13,8 +13,6 @@ function AllProfiles(props) {
     getData();
   }, []);
 
-  console.log(data);
-
   return (
     <div>
       <h2>Profiles:</h2>

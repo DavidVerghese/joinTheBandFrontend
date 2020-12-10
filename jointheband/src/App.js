@@ -43,7 +43,6 @@ function App() {
     }
     getData();
 
-
   }, [])
 
   // console.log("searchValue:", searchValue)
@@ -52,7 +51,7 @@ function App() {
   };
   const searchByNameSubmit = (e) => {
     // e.preventDefault()
-    
+
     console.clear();
     if (searchValue === 0) {
       e.preventDefault()
