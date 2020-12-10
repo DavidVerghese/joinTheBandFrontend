@@ -11,6 +11,10 @@ function Form(props) {
   const [genre, setGenre] = useState("");
   const [lookingFor, setLookingFor] = useState("");
   const [imageAddress, setImageAddress] = useState("");
+  const [facebookURL, setFacebookURL] = useState("");
+  const [instagramURL, setInstagramURL] = useState("");
+  const [soundcloudURL, setSoundcloudURL] = useState("");
+  const [twitterURL, setTwitterURL] = useState("");
 
   const guitarAudio = new Audio(guitarsound);
   guitarAudio.volume = 0.02;
@@ -24,7 +28,11 @@ function Form(props) {
       instrument,
       genre,
       lookingFor,
-      location
+      location,
+      facebookURL, 
+      soundcloudURL,
+      instagramURL,
+      twitterURL,
     );
     let data = {
       Musician: musician,
@@ -33,6 +41,10 @@ function Form(props) {
       Genre: genre,
       Looking_for: lookingFor,
       Location: location,
+      Facebook: facebookURL,
+      Soundcloud: soundcloudURL, 
+      Twitter: twitterURL, 
+      Instagram: instagramURL,
     };
     await axios.post(baseURL + "/Musicians", { fields: data }, config);
   };
@@ -84,6 +96,30 @@ function Form(props) {
             name="location"
             type="text"
             onChange={(e) => setLocation(e.target.value)}
+          />
+          <label htmlFor="facebook">Facebook URL</label>
+          <input
+            name="facebook"
+            type="text"
+            onChange={(e) => setFacebookURL(e.target.value)}
+          />
+          <label htmlFor="soundcloud">Soundcloud URL</label>
+          <input
+            name="soundcloud"
+            type="text"
+            onChange={(e) => setSoundcloudURL(e.target.value)}
+          />
+          <label htmlFor="instagram">Instagram URL</label>
+          <input
+            name="instagram"
+            type="text"
+            onChange={(e) => setInstagramURL(e.target.value)}
+          />
+          <label htmlFor="twitter">Twitter URL</label>
+          <input
+            name="twitter"
+            type="text"
+            onChange={(e) => setTwitterURL(e.target.value)}
           />
           <br></br>
           <Link to="/">

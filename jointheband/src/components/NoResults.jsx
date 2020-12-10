@@ -6,7 +6,7 @@ function NoResults(props) {
     return (
       <div>
         <h1>No Results Found!</h1>
-        <img src="https://media0.giphy.com/media/5x89XRx3sBZFC/giphy.gif" />
+        <img id="noResultsPic" src="https://media0.giphy.com/media/5x89XRx3sBZFC/giphy.gif" />
       </div>
     );
   } else {

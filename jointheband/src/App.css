@@ -89,6 +89,9 @@ img {
   /* width: 90%; */
   /* background-image: url(https://blog.loopearplugs.com/wp-content/uploads/2019/05/applause-audience-band-167636.jpg) */
 }
+#noResultsPic {
+  width: 70%;
+}
 .profile {
   margin: 0px;
   padding: 10px;
@@ -184,11 +187,14 @@ img {
     width: 80%;
     margin: 0px;
   }
+  #noResultsPic {
+    width: 50%;
+  }
 }
 
 @media (min-width: 1000px) {
   body {
-    font-size: 33px;
+    font-size: 30px;
   }
   .socialMedia img {
     width: 70px;
@@ -196,6 +202,9 @@ img {
     margin: 20px 50px 20px 50px;
   }
   #homePic {
-    width: 50%;
+    width: 40%;
+  }
+  header {
+    font-size: 100%;
   }
 }
