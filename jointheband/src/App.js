@@ -21,6 +21,7 @@ function App() {
   let findMusician = [];
   let findMusician2 = [];
   let findMusician3 = [];
+  // state variables
   const [searchResult1, setSearchResult1] = useState([]);
   const [searchResult2, setSearchResult2] = useState([]);
   const [searchResult3, setSearchResult3] = useState([]);
@@ -56,6 +57,8 @@ function App() {
   }, [toggleFetch])
 
   const search = (e) => {
+    // sets the state variable 'searchValue' equal to the user's 
+    // input
       setSearchValue(e.target.value)
   };
 
@@ -88,6 +91,8 @@ function App() {
       let searchValueIndividualWords = searchValue.split(" ")
       let doesItInclude = data.filter(
         (item2) => {
+          // if a field in Airtable is empty, you get an error 
+          // I fixed this with the following if statement.
           if (item2.fields.Instrument !== undefined) {
             // This checks if the first word in the user's search matches any of the 
             // genres listed in the profiles in Airtable
