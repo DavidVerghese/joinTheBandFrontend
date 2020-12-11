@@ -33,6 +33,8 @@ function Form(props) {
       Instagram: instagramURL,
     };
     await axios.post(baseURL + "/Musicians", { fields: data }, config);
+    // see useEffect in App.js to see how the code below 
+    // allows us to make another axios.get request
     props.refresh((prev) => !prev);
   };
 
@@ -54,7 +56,14 @@ function Form(props) {
             type="text"
             onChange={(e) => setMusician(e.target.value)}
           />
-          <label htmlFor="picAddress"><p>Picture URL <br></br><em id="pictureURLText">(post a link to a picture of yourself)</em></p></label>
+          <label htmlFor="picAddress">
+            <p>
+              Picture URL <br></br>
+              <em id="pictureURLText">
+                (post a link to a picture of yourself)
+              </em>
+            </p>
+          </label>
           <input
             name="picAddress"
             type="text"

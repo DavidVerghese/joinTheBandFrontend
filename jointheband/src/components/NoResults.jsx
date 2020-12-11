@@ -11,7 +11,7 @@ function NoResults(props) {
       </div>
     );
   } else {
-    return <div></div>;
+    return (<div></div>);
   }
 }
 
