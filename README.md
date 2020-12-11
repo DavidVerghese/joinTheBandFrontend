@@ -71,18 +71,18 @@ Postman:
 | Component                  | Priority | Estimated Time | Time Invested | Actual Time |
 | -------------------------- | :------: | :------------: | :-----------: | :---------: |
 | Working with Airtable      |    H     |      3hrs      |     4hrs      |     4hr     |
-| Graphic Design             | Moderate |      3hrs      |     3hrs      |    3hrs     |
-| Setting Up React           |    H     |      3hrs      |3hrs               | 3hrs            |
-| Research                   | Moderate |      3hrs      | 2hrs              | 2hrs            |
-| Writing Text               | Moderate |      3hrs      | 2hrs              | 2hrs            |
-| Feedback                   | Moderate |      3hrs      | 0hrs              | 0hrs            |
-| Incorporating Suggestions  | Moderate |      3hrs      | 2hrs              | 2hrs            |
-| Debugging the code         |    H     |      3hrs      | 4hrs              | 4hrs            |
-| Testing                    |    H     |      3hrs      | 3hrs              | 3hrs            |
-| Cleaning up the code       | Moderate |      2hrs      | 1hr              |             |
-| Pseudocode                 |   Low    |      1hr       | 1hr              |             |
-| Preparing for presentation | Moderate |      1hr       | 2hr              |             |
-| Total                      |    H     |      31rs      |               |             |
+| Graphic Design             | Moderate |      3hrs      |     4hrs      |    4hrs     |
+| Setting Up React           |    H     |      3hrs      |     3hrs      |    3hrs     |
+| Research                   | Moderate |      3hrs      |     2hrs      |    2hrs     |
+| Writing Text               | Moderate |      3hrs      |     2hrs      |    2hrs     |
+| Feedback                   | Moderate |      3hrs      |     2hrs      |    0hrs     |
+| Incorporating Suggestions  | Moderate |      3hrs      |     2hrs      |    2hrs     |
+| Debugging the code         |    H     |      3hrs      |     4hrs      |    4hrs     |
+| Testing                    |    H     |      3hrs      |     3hrs      |    3hrs     |
+| Cleaning up the code       | Moderate |      2hrs      |      1hr      |             |
+| Pseudocode                 |   Low    |      1hr       |      1hr      |     1hr     |
+| Preparing for presentation | Moderate |      1hr       |      2hr      |     2hr     |
+| Total                      |    H     |      31rs      |     30hrs     |    30hrs    |
 
 ## SWOT Analysis
 
@@ -101,3 +101,21 @@ I think this app would help me solidify my skills with React and Airtable. It'd 
 ### Threats:
 
 I think there is a risk that I could spend too much time trying to figure out how to sort data from Airtable, and not enough time working on the interface and design of the app. I will try to see the TAs for help with CRUD today or tomorrow, and sort this part out over the weekend.
+
+### Code Showcase
+
+App.js: In the code below toggleFetch makes sure that API call occurs everytime the boolean value of 'toggleFetch' changes. I use
+this in Form.js to make sure that an API call happens everytime
+that I click the 'make a post' button. I learned this from Jeremy.
+I think it's an interesting piece of JS logic.
+
+```
+useEffect(() => {...
+  }, [toggleFetch])
+```
+
+SocialMedia.jsx: 'rel=noreferrer' is a safety feature Google recommends. I saw this when I was reading the console.log error messages.
+
+```
+<a href={props.item.fields.Facebook} target="_blank" rel="noreferrer"></a>
+```

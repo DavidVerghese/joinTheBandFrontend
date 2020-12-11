@@ -3,7 +3,7 @@ function SocialMedia(props) {
     return (
       <div className="socialMediaSection">
         <div className="socialMedia">
-          {/* no referrer is a safety feature that Google recommends
+          {/* rel="noreferrer" is a safety feature that Google recommends
           you use if you are creating a link that opens in a new tab.
           it makes sure that hackers can't use this to have a link 
           redirect while the user is distracted */}
