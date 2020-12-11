@@ -79,7 +79,7 @@ Postman:
 | Incorporating Suggestions  | Moderate |      3hrs      |     2hrs      |    2hrs     |
 | Debugging the code         |    H     |      3hrs      |     4hrs      |    4hrs     |
 | Testing                    |    H     |      3hrs      |     3hrs      |    3hrs     |
-| Cleaning up the code       | Moderate |      2hrs      |      1hr      |             |
+| Cleaning up the code       | Moderate |      2hrs      |      1hr      | 1hr            |
 | Pseudocode                 |   Low    |      1hr       |      1hr      |     1hr     |
 | Preparing for presentation | Moderate |      1hr       |      2hr      |     2hr     |
 | Total                      |    H     |      31rs      |     30hrs     |    30hrs    |
