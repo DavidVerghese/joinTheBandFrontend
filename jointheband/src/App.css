@@ -52,8 +52,8 @@ label {
 
 /* style rules for classes and ids */
 #formHeading {
-  color: black;
-  background: rgb(270, 100, 270);
+  /* color: black; */
+  /* background: rgb(270, 100, 270); */
   padding: 20px;
 }
 .formSection {
@@ -65,9 +65,9 @@ label {
   /* background-image: url(https://media.wired.com/photos/5b43e42b864f830cb58b1118/125:94/w_894,h_672,c_limit/MusicFans-923247030.jpg); */
 }
 .formSectionTextBackground {
-  background: rgb(360, 360, 270);
+  /* background: rgb(360, 360, 270); */
   width: 90%;
-  color: black;
+  /* color: black; */
   padding: 0px;
 }
 .headerBackground {

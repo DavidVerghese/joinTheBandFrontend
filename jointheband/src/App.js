@@ -15,6 +15,10 @@ import basssoundtwo from "./sounds/harpsound.mp3";
 import guitarsound from "./sounds/guitarstrum.mp3";
 
 function App() {
+  const bassAudioTwo = new Audio(basssoundtwo);
+  bassAudioTwo.volume = 0.02;
+  const guitarAudio = new Audio(guitarsound);
+  guitarAudio.volume = 0.02;
 
   const [data, setData] = useState([])
   let results = 0;
@@ -239,7 +243,7 @@ function App() {
           </div>
           <Link
         onClick={function () {
-          // bassAudioTwo.play();
+          bassAudioTwo.play();
         }}
         to="/form"
       >
@@ -247,7 +251,7 @@ function App() {
       </Link>
       <Link
         onClick={function () {
-          // guitarAudio.play();
+          guitarAudio.play();
         }}
         to="/profiles"
       >
