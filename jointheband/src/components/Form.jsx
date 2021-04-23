@@ -5,6 +5,7 @@ import guitarsound from "../sounds/guitarsound.mp3";
 import { Link } from "react-router-dom";
 
 function Form(props) {
+  // state variables
   const [musician, setMusician] = useState("");
   const [instrument, setInstrument] = useState("");
   const [location, setLocation] = useState("");
@@ -50,6 +51,7 @@ function Form(props) {
               Just submit the form below to get started.{" "}
             </p>
           </em>
+          {/* storing the user inputs in the state variables */}
           <label htmlFor="name">Name</label>
           <input
             name="name"

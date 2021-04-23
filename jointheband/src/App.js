@@ -11,8 +11,14 @@ import NoResults from "./components/NoResults.jsx"
 import violinsound from "./sounds/violinsound.mp3"
 import basssound from "./sounds/basssoundone.mp3"
 import drumsound from "./sounds/drumsound.mp3";
+import basssoundtwo from "./sounds/harpsound.mp3";
+import guitarsound from "./sounds/guitarstrum.mp3";
 
 function App() {
+  const bassAudioTwo = new Audio(basssoundtwo);
+  bassAudioTwo.volume = 0.02;
+  const guitarAudio = new Audio(guitarsound);
+  guitarAudio.volume = 0.02;
 
   const [data, setData] = useState([])
   let results = 0;
@@ -229,17 +235,35 @@ function App() {
     <div>
       <header>
         <div className="headerBackground">
-          <h1>Join the Band!</h1>
-          <h3>find musicians in your area</h3>
+          <div>
           <nav>
-            <Link onClick={function (){ bassAudio.play() }} to="/"><p>Home</p></Link>
+            <Link onClick={function (){ bassAudio.play() }} to="/"><h1>Join the Band!</h1></Link>
           </nav>
+            <h3>find musicians in your area</h3>
+          </div>
+          <Link
+        onClick={function () {
+          bassAudioTwo.play();
+        }}
+        to="/form"
+      >
+        <p>Make a post!</p>
+      </Link>
+      <Link
+        onClick={function () {
+          guitarAudio.play();
+        }}
+        to="/profiles"
+      >
+        <p>View All Posts</p>
+      </Link>
         </div>
       </header>
       <main>
         <div className="searchBarDiv">
           <p><em id = "searchInstructions">Search for musicians by instrument,location, genre, etc</em></p>
           <label htmlFor="searchBar"><p>Search:</p></label>
+          {/* storing the user's input in the state variable searchValue */}
           <input name="searchBar" type="text" onChange={search} />
           <Link to="/search">
             <button onClick={searchSubmit}>Submit</button>
@@ -250,6 +274,7 @@ function App() {
           <Home data={data}/>
         </Route>
         <Route path="/form">
+          {/* setToggleFetch is passed as a prop to Form */}
           <Form data={data} refresh={setToggleFetch}/>
         </Route>
         <Route path="/profiles">
@@ -263,7 +288,7 @@ function App() {
         </Route>
       </main>
       <footer>
-        <h3>David Verghese's Website!</h3>
+        <h3>copyright David Verghese</h3>
       </footer>
     </div>
   );
