@@ -13,8 +13,10 @@ function AllProfiles(props) {
         <h2>Profiles:</h2>
       </a>
       {props.data.map((item) => {
+        // item stores data of musician's profile
         return (
           <div>
+            {/* pass item as prop to Profile */}
             <Profile item={item} />
           </div>
         );

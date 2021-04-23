@@ -18,7 +18,7 @@ function Home(props) {
       <em>
         <h2>This could be you</h2>
       </em>
-      <Link
+      {/* <Link
         onClick={function () {
           bassAudioTwo.play();
         }}
@@ -33,7 +33,7 @@ function Home(props) {
         to="/profiles"
       >
         <button>View All Posts</button>
-      </Link>
+      </Link> */}
     </div>
   );
 }

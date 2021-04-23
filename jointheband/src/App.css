@@ -3,8 +3,11 @@ queries to adjust the styling for tablets and computers */
 
 body {
   font-size: 23px;
-  color: white;
-  background-color: rgb(100, 40, 40, 30);
+  /* color: white; */
+  /* background-color: rgb(100, 40, 40, 30); */
+  /* background-color: rgb(38, 38, 23); */
+  background-color: #0a0712;
+  color: rgb(237, 235, 190);
   font-family: "Gothic A1", sans-serif;
   text-align: center;
   margin: 0px;
@@ -14,7 +17,8 @@ a {
   color: black;
 }
 button {
-  background-color: #5cdb95;
+  /* background-color: #5cdb95; */
+  background-color: red;
   padding: 10px;
   margin: 10px;
 }
@@ -24,17 +28,20 @@ footer {
 }
 h1 {
   font-size: 200%;
+  color: rgb(237, 235, 190);
 }
 header {
-  color: white;
-  padding: 5px;
+  /* color: white; */
+  color: rgb(237, 235, 190);
+  /* padding: 5px;
   margin: 0px;
   display: flex;
-  justify-content: center;
+  justify-content: center; */
   font-size: 60%;
 }
 header a {
-  color: white;
+  /* color: white; */
+  color: rgb(237, 235, 190);
 }
 img {
   margin: 0px;
@@ -55,7 +62,7 @@ label {
   flex-wrap: wrap;
   justify-content: center;
   color: orange;
-  background-image: url(https://media.wired.com/photos/5b43e42b864f830cb58b1118/125:94/w_894,h_672,c_limit/MusicFans-923247030.jpg);
+  /* background-image: url(https://media.wired.com/photos/5b43e42b864f830cb58b1118/125:94/w_894,h_672,c_limit/MusicFans-923247030.jpg); */
 }
 .formSectionTextBackground {
   background: rgb(360, 360, 270);
@@ -64,19 +71,20 @@ label {
   padding: 0px;
 }
 .headerBackground {
-  background-color: rgba(21, 3, 23, 0.8);
-  width: 60%;
-  color: white;
+  color: rgb(237, 235, 190);
+  display: flex;
+  justify-content: space-around;
 }
 .home {
   margin: 0px;
-  background-color: rgba(157, 189, 170, 0.8);
+  /* background-color: rgba(157, 189, 170, 0.8); */
   padding: 30px;
-  color: black;
+  color: rgb(237, 235, 190);
 }
 #homePic {
-  width: 80%;
-  margin: 0px;
+  /* width: 80%;
+  margin: 0px; */
+  width: 1000px;
 }
 #noResultsPic {
   width: 70%;
@@ -87,13 +95,13 @@ label {
 .profile {
   margin: 0px;
   padding: 10px;
-  color: white;
+  /* color: white; */
   display: flex;
   justify-content: center;
 }
 .profilebackground {
-  background-color: rgb(360, 360, 270, 0.9);
-  color: black;
+  /* background-color: rgb(360, 360, 270, 0.9); */
+  /* color: black; */
   width: 70%;
 }
 .profile img {
@@ -109,7 +117,7 @@ label {
   flex-wrap: wrap;
   font-size: 90%;
   margin: 10px;
-  background-color: #5d5c61;
+  /* background-color: #5d5c61; */
 }
 .searchBarDiv input {
   width: 20%;
@@ -150,24 +158,24 @@ label {
     font-size: 120%;
   }
   footer {
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Classical_spectacular10.jpg/800px-Classical_spectacular10.jpg);
+    /* background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Classical_spectacular10.jpg/800px-Classical_spectacular10.jpg); */
   }
   header {
-    background-image: url(https://static01.nyt.com/images/2020/03/12/arts/12virus-concerts2/merlin_170369790_63d02a4c-82f8-441a-ac7c-c395828b7961-mobileMasterAt3x.jpg);
+    /* background-image: url(https://static01.nyt.com/images/2020/03/12/arts/12virus-concerts2/merlin_170369790_63d02a4c-82f8-441a-ac7c-c395828b7961-mobileMasterAt3x.jpg); */
     font-size: 70%;
   }
   .formSectionTextBackground {
     width: 80%;
   }
-  #homePic {
+  /* #homePic {
     width: 50%;
     margin: 0px;
-  }
+  } */
   #noResultsPic {
     width: 50%;
   }
   .profile {
-    background-image: url(https://i0.wp.com/doyleleadership.com/wp-content/uploads/2019/02/Audience-2.jpg?fit=5869%2C2367&ssl=1);
+    /* background-image: url(https://i0.wp.com/doyleleadership.com/wp-content/uploads/2019/02/Audience-2.jpg?fit=5869%2C2367&ssl=1); */
   }
   .searchBarDiv {
     font-size: 100%;
@@ -198,7 +206,7 @@ label {
     font-size: 100%;
   }
   #homePic {
-    width: 30%;
+    /* width: 30%; */
   }
   .socialMedia img {
     width: 70px;
