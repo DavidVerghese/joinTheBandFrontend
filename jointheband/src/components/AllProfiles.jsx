@@ -12,6 +12,7 @@ function AllProfiles(props) {
       <a href="top" name="top">
         <h2>Profiles:</h2>
       </a>
+      <div id="all-profiles-parent-div">
       {props.data.map((item) => {
         // item stores data of musician's profile
         return (
@@ -20,7 +21,7 @@ function AllProfiles(props) {
             <Profile item={item} />
           </div>
         );
-      })}
+      })}</div>
       <a href="#top">
         <button
           onClick={function () {

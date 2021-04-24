@@ -41,10 +41,12 @@ function Form(props) {
 
   return (
     <div className="formSection">
-      <h2 id="formHeading">Want to create a post?</h2>
-      <br></br>
+  
       <div className="formSectionTextBackground">
         <form>
+            <div id="form-pic-parent-div">
+      <img id="form-pic" src="https://media4.giphy.com/media/3o6ZtdARd9exOTKPOo/giphy.gif?cid=ecf05e47950r5maaxhbkgga4kaofecmpvacc4a10f6kf7kzh&rid=giphy.gif&ct=g"/>
+      </div>
           <em>
             <p>
               Are you a musician looking to find someone to collaborate with?
@@ -52,17 +54,20 @@ function Form(props) {
             </p>
           </em>
           {/* storing the user inputs in the state variables */}
-          <label htmlFor="name">Name</label>
+         <div className="input-parent-div">
+          <div className="input-div">
+          <label htmlFor="name">Name: </label>
           <input
             name="name"
             type="text"
             onChange={(e) => setMusician(e.target.value)}
-          />
+            /></div>
+           <div className="input-div">
           <label htmlFor="picAddress">
             <p>
-              Picture URL <br></br>
+              Picture URL: <br></br>
               <em id="pictureURLText">
-                (post a link to a picture of yourself)
+                (post a link to a picture of yourself) 
               </em>
             </p>
           </label>
@@ -70,55 +75,64 @@ function Form(props) {
             name="picAddress"
             type="text"
             onChange={(e) => setImageAddress(e.target.value)}
-          />
-          <label htmlFor="instrument">Instrument</label>
+            /></div>
+           <div className="input-div">
+          <label htmlFor="instrument">Instrument that you play: </label>
           <input
             name="instrument"
             type="text"
             onChange={(e) => setInstrument(e.target.value)}
-          />
-          <label htmlFor="genre">Genre</label>
+            /></div>
+           <div className="input-div">
+          <label htmlFor="genre">Genre: </label>
           <input
             name="genre"
             type="text"
             onChange={(e) => setGenre(e.target.value)}
-          />
-          <label htmlFor="lookingFor">Looking For</label>
+            /></div>
+           <div className="input-div">
+          <label htmlFor="lookingFor">Looking For: </label>
           <input
             name="lookingFor"
             type="text"
             onChange={(e) => setLookingFor(e.target.value)}
-          />
-          <label htmlFor="location">Location</label>
+            /></div>
+           <div className="input-div">
+          <label htmlFor="location">Location: </label>
           <input
             name="location"
             type="text"
             onChange={(e) => setLocation(e.target.value)}
-          />
-          <label htmlFor="facebook">Facebook URL</label>
+            /></div>
+           <div className="input-div">
+          <label htmlFor="facebook">Facebook URL: </label>
           <input
             name="facebook"
             type="text"
             onChange={(e) => setFacebookURL(e.target.value)}
-          />
-          <label htmlFor="soundcloud">Soundcloud URL</label>
+            /></div>
+           <div className="input-div">
+          <label htmlFor="soundcloud">Soundcloud URL: </label>
           <input
             name="soundcloud"
             type="text"
             onChange={(e) => setSoundcloudURL(e.target.value)}
-          />
-          <label htmlFor="instagram">Instagram URL</label>
+            /></div>
+           <div className="input-div">
+          <label htmlFor="instagram">Instagram URL: </label>
           <input
             name="instagram"
             type="text"
             onChange={(e) => setInstagramURL(e.target.value)}
-          />
-          <label htmlFor="twitter">Twitter URL</label>
+            /></div>
+           <div className="input-div">
+          <label htmlFor="twitter">Twitter URL: </label>
           <input
             name="twitter"
             type="text"
             onChange={(e) => setTwitterURL(e.target.value)}
-          />
+              /></div>
+          </div>
           <br></br>
           <Link to="/">
             <button onClick={handleSubmit}>Create a Post</button>

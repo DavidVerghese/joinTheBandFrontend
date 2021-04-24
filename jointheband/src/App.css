@@ -3,9 +3,6 @@ queries to adjust the styling for tablets and computers */
 
 body {
   font-size: 23px;
-  /* color: white; */
-  /* background-color: rgb(100, 40, 40, 30); */
-  /* background-color: rgb(38, 38, 23); */
   background-color: #0a0712;
   color: rgb(237, 235, 190);
   /* font-family: "Gothic A1", sans-serif; */
@@ -19,14 +16,8 @@ a {
   text-decoration: none;
 }
 button {
-  /* background-color: #5cdb95; */
-  background-color: red;
-  /* padding: 10px;
-  margin: 10px; */
+  background-color: #B82601;
 }
-/* #search-button {
- font-size: 80%;
-} */
 footer {
   padding: 5px;
   margin: 0px;
@@ -34,21 +25,11 @@ footer {
 #website-description-text {
   font-size: 20px;
 }
-/* h1 {
-  font-size: 200%;
-  color: rgb(237, 235, 190);
-} */
 header {
-  /* color: white; */
   color: rgb(237, 235, 190);
-  /* padding: 5px;
-  margin: 0px;
-  display: flex;
-  justify-content: center; */
   font-size: 60%;
 }
 header a {
-  /* color: white; */
   color: rgb(237, 235, 190);
 }
 img {
@@ -57,11 +38,7 @@ img {
 label {
   display: block;
 }
-
-/* style rules for classes and ids */
 #formHeading {
-  /* color: black; */
-  /* background: rgb(270, 100, 270); */
   padding: 20px;
 }
 .formSection {
@@ -69,14 +46,35 @@ label {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  color: orange;
   /* background-image: url(https://media.wired.com/photos/5b43e42b864f830cb58b1118/125:94/w_894,h_672,c_limit/MusicFans-923247030.jpg); */
 }
+.formSection input{
+  margin-left: 10px;
+  width: 100%;
+ }
 .formSectionTextBackground {
-  /* background: rgb(360, 360, 270); */
   width: 90%;
-  /* color: black; */
+  padding: 10px;
+  background-color: #813772;
+}
+#form-pic {
+  width: 200px;
+}
+#form-pic-parent-div {
+  display: block;
+}
+.input-div {
+  display: flex;
+  /* justify-content: ; */
+  margin-bottom: 10px;
+}
+.input-parent-div {
+  /* display: flex;
+  justify-content: center;
+  flex-wrap: wrap; */
+  margin: 0 auto;
   padding: 0px;
+  width: 600px;
 }
 .headerBackground {
   color: rgb(237, 235, 190);
@@ -86,14 +84,16 @@ label {
 }
 .home {
   margin: 0px;
-  /* background-color: rgba(157, 189, 170, 0.8); */
   padding: 30px;
   color: rgb(237, 235, 190);
 }
 #homePic {
-  /* width: 80%;
-  margin: 0px; */
-  width: 1000px;
+  width: 500px;
+}
+#home-page-text {
+  background-color: #062f4f;
+  width: 80%;
+  margin: 0 auto;
 }
 #noResultsPic {
   width: 70%;
@@ -101,16 +101,15 @@ label {
 #pictureURLText {
   font-size: 80%;
 }
+
+
 .profile {
   margin: 0px;
   padding: 10px;
-  /* color: white; */
   display: flex;
   justify-content: center;
 }
 .profilebackground {
-  /* background-color: rgb(360, 360, 270, 0.9); */
-  /* color: black; */
   width: 70%;
 }
 .profile img {
@@ -129,9 +128,6 @@ label {
 }
 .searchBarDiv input {
   width: 38%;
-  /* font-size: 50%; */
-  /* margin: 20px;
-  margin: 10px; */
 }
 #searchInstructions {
   font-size: 80%;
@@ -176,10 +172,6 @@ label {
   .formSectionTextBackground {
     width: 80%;
   }
-  /* #homePic {
-    width: 50%;
-    margin: 0px;
-  } */
   #noResultsPic {
     width: 50%;
   }
