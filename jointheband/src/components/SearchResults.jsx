@@ -15,6 +15,7 @@ function SearchResults(props) {
     );
   }
   else {
+    <p>{props.warningMessage}</p>
     return <div className="allResults"></div>;
   }
 }

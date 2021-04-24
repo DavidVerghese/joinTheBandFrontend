@@ -235,12 +235,8 @@ function App() {
     <div>
       <header>
         <div className="headerBackground">
-          <div>
-          <nav>
-            <Link onClick={function (){ bassAudio.play() }} to="/"><h1>Join the Band!</h1></Link>
-          </nav>
-            <h3>find musicians in your area</h3>
-          </div>
+            <Link onClick={function (){ bassAudio.play() }} to="/"><p>Join the Band!</p></Link>
+            {/* <p id="website-description-text">find musicians in your area</p> */}
           <Link
         onClick={function () {
           bassAudioTwo.play();
@@ -256,20 +252,21 @@ function App() {
         to="/profiles"
       >
         <p>View All Posts</p>
-      </Link>
+          </Link>
+          <div className="searchBarDiv">
+          {/* <p><em id = "searchInstructions">Search for musicians by instrument,location, genre, etc</em></p> */}
+          <label htmlFor="searchBar"><p>Search for musicians:</p></label>
+          {/* storing the user's input in the state variable searchValue */}
+          <input name="searchBar" type="text" placeholder="instrument,location,genre, etc" onChange={search} />
+          <Link to="/search">
+            <button id="search-button" onClick={searchSubmit}>Submit</button>
+          </Link>
+          {/* <p>{warningMessage}</p> */}
+        </div>
         </div>
       </header>
       <main>
-        <div className="searchBarDiv">
-          <p><em id = "searchInstructions">Search for musicians by instrument,location, genre, etc</em></p>
-          <label htmlFor="searchBar"><p>Search:</p></label>
-          {/* storing the user's input in the state variable searchValue */}
-          <input name="searchBar" type="text" onChange={search} />
-          <Link to="/search">
-            <button onClick={searchSubmit}>Submit</button>
-          </Link>
-          <p>{warningMessage}</p>
-        </div>
+        
         <Route exact path="/">
           <Home data={data}/>
         </Route>
@@ -281,10 +278,10 @@ function App() {
           <AllProfiles data={data}/>
         </Route>
         <Route path="/search">
-          <SearchResults musician={searchResult1} numberOfResults={searchValue}/>
-          <SearchResults musician={searchResult2} numberOfResults={searchValue} />
-          <SearchResults musician={searchResult3} numberOfResults={searchValue} />
-          <NoResults numberOfResults={searchValue} />
+          <SearchResults warningMessage={warningMessage} musician={searchResult1} numberOfResults={searchValue}/>
+          <SearchResults warningMessage={warningMessage} musician={searchResult2} numberOfResults={searchValue} />
+          <SearchResults warningMessage={warningMessage} musician={searchResult3} numberOfResults={searchValue} />
+          <NoResults warningMessage={warningMessage} numberOfResults={searchValue} />
         </Route>
       </main>
       <footer>
