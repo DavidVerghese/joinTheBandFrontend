@@ -10,6 +10,7 @@ function Home(props) {
 
   return (
     <div className="home">
+      <h2>Join The Band: find musicians in your area</h2>
       <img
         alt="a band on stage"
         id="homePic"

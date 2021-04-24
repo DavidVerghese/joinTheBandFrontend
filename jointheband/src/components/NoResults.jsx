@@ -3,6 +3,7 @@ function NoResults(props) {
     return (
       <div>
         <h1>No Results Found!</h1>
+        <p>{props.warningMessage}</p>
         <img
           alt="a tumbleweed blowing through the desert"
           id="noResultsPic"
