@@ -56,78 +56,90 @@ function Form(props) {
           {/* storing the user inputs in the state variables */}
          <div className="input-parent-div">
           <div className="input-div">
-          <label htmlFor="name">Name: </label>
-          <input
-            name="name"
+              <label htmlFor="name"></label>
+     
+              <input
+                name="name"
+                placeholder = 'enter your name:'
             type="text"
             onChange={(e) => setMusician(e.target.value)}
-            /></div>
+                />
+            </div>
            <div className="input-div">
           <label htmlFor="picAddress">
-            <p>
+            {/* <p>
               Picture URL: <br></br>
               <em id="pictureURLText">
                 (post a link to a picture of yourself) 
               </em>
-            </p>
+            </p> */}
           </label>
           <input
-            name="picAddress"
+                name="picAddress"
+                placeholder = 'enter a link to a picture of yourself'
             type="text"
             onChange={(e) => setImageAddress(e.target.value)}
             /></div>
            <div className="input-div">
-          <label htmlFor="instrument">Instrument that you play: </label>
+          <label htmlFor="instrument"></label>
           <input
-            name="instrument"
+                name="instrument"
+                placeholder = 'enter instrument you play'
             type="text"
             onChange={(e) => setInstrument(e.target.value)}
             /></div>
            <div className="input-div">
-          <label htmlFor="genre">Genre: </label>
+          <label htmlFor="genre"></label>
           <input
             name="genre"
-            type="text"
+                type="text"
+                placeholder = 'enter genre you play'
             onChange={(e) => setGenre(e.target.value)}
             /></div>
            <div className="input-div">
-          <label htmlFor="lookingFor">Looking For: </label>
+          <label htmlFor="lookingFor"></label>
           <input
-            name="lookingFor"
+                name="lookingFor"
+                placeholder = 'write what you are looking for'
             type="text"
             onChange={(e) => setLookingFor(e.target.value)}
             /></div>
            <div className="input-div">
-          <label htmlFor="location">Location: </label>
+          <label htmlFor="location"></label>
           <input
-            name="location"
+                name="location"
+                placeholder = 'enter your location'
             type="text"
             onChange={(e) => setLocation(e.target.value)}
             /></div>
            <div className="input-div">
-          <label htmlFor="facebook">Facebook URL: </label>
+          <label htmlFor="facebook"></label>
           <input
-            name="facebook"
+                name="facebook"
+                placeholder = 'post your facebook url'
             type="text"
             onChange={(e) => setFacebookURL(e.target.value)}
             /></div>
            <div className="input-div">
-          <label htmlFor="soundcloud">Soundcloud URL: </label>
+          <label htmlFor="soundcloud"></label>
           <input
-            name="soundcloud"
+                name="soundcloud"
+                placeholder = 'post your soundcloud url'
             type="text"
             onChange={(e) => setSoundcloudURL(e.target.value)}
             /></div>
            <div className="input-div">
-          <label htmlFor="instagram">Instagram URL: </label>
+          <label htmlFor="instagram"></label>
           <input
-            name="instagram"
+                name="instagram"
+                placeholder = 'post your instagram url'
             type="text"
             onChange={(e) => setInstagramURL(e.target.value)}
             /></div>
            <div className="input-div">
-          <label htmlFor="twitter">Twitter URL: </label>
-          <input
+          <label htmlFor="twitter"></label>
+              <input
+                placeholder = 'post your twitter url'
             name="twitter"
             type="text"
             onChange={(e) => setTwitterURL(e.target.value)}
