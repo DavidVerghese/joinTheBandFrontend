@@ -251,11 +251,13 @@ function App() {
         }}
         to="/profiles"
       >
-        <p>View All Posts</p>
+            <p>View All Posts</p>
+            
           </Link>
+          <p>Search for musicians:</p>
           <div className="searchBarDiv">
           {/* <p><em id = "searchInstructions">Search for musicians by instrument,location, genre, etc</em></p> */}
-          <label htmlFor="searchBar"><p>Search for musicians:</p></label>
+          <label htmlFor="searchBar"></label>
           {/* storing the user's input in the state variable searchValue */}
           <input name="searchBar" type="text" placeholder="instrument,location,genre, etc" onChange={search} />
           <Link to="/search">

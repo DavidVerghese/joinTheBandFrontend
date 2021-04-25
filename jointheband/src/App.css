@@ -94,7 +94,7 @@ label {
   color: rgb(237, 235, 190);
   display: flex;
   flex-wrap: wrap;
-  font-size: 25px;
+  font-size: 28px;
   justify-content: space-around;
 }
 .headerBackground p{ 

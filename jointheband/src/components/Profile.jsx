@@ -1,6 +1,8 @@
 import SocialMedia from "./SocialMedia.jsx";
 import { useState } from "react";
 import bongo from "../sounds/bongo.mp3";
+import jazzkeys from "../sounds/jazzkeys.wav";
+import vibraphone from "../sounds/vibraphone.wav";
 import axios from "axios";
 import { baseURL, config } from "../services";
 
@@ -8,6 +10,8 @@ function Profile(props) {
   let profileInfo = props.item.fields
 
   const [toEdit, setToEdit] = useState(false);
+  const [editSound, setEditSound] = useState(true);
+  const [deleteSound, setDeleteSound] = useState(true);
 
   const [musician, setMusician] = useState(profileInfo.Musician);
   const [instrument, setInstrument] = useState(profileInfo.Instrument);
@@ -46,6 +50,11 @@ function Profile(props) {
   }
   const bongoAudio = new Audio(bongo);
   bongoAudio.volume = 0.02;
+
+  const jazzkeysAudio = new Audio(jazzkeys);
+  jazzkeysAudio.volume = 0.02;
+  const vibraphoneAudio = new Audio(vibraphone);
+  vibraphoneAudio.volume = 0.02;
   // the function below allows us to hide and show the social 
   // media icon. When you click the button, you set the 
   // socialMediaDisplay value, which is a boolean value to be the 
@@ -71,8 +80,8 @@ function Profile(props) {
         <p>Looking for: {props.item.fields.Looking_for}</p>
         <p>Location: {props.item.fields.Location}</p>
         <div id="socialMediaButtons">
-        <button onClick={function (e) { e.preventDefault(); setToEdit(!toEdit) }}>Edit</button>
-        <button onClick={deleteFunction}>Delete</button>
+          <button onClick={function (e) { e.preventDefault(); setToEdit(!toEdit); setEditSound(!editSound); if(editSound){jazzkeysAudio.play()}  }}>Edit</button>
+          <button onClick={function (e) { e.preventDefault(); deleteFunction(); setDeleteSound(!deleteSound); if (deleteSound) { vibraphoneAudio.play() }}}>Delete</button>
         <button onClick={socialMediaButton}>Social Media</button>
         </div>
         
