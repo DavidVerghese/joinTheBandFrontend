@@ -60,7 +60,7 @@ function App() {
     // whatever it previously was. Thus 'toggleFetch' is changed.
     // this ensures than useEffect runs again, and the new profile 
     // we just created is pulled down into React.
-  }, [toggleFetch])
+  }, [toggleFetch]);
 
   const search = (e) => {
     // sets the state variable 'searchValue' equal to the user's 
@@ -71,11 +71,11 @@ function App() {
   // the search function 
 
   const searchSubmit = (e) => {
-    console.clear();
     // if you press enter more than once, you get a number
     // instead of a string. I used this to create a warning message.
     if (typeof searchValue === 'number') {
-      e.preventDefault()
+      // e.preventDefault();
+      console.log("match!");
       setWarningMessage("* type something new!")
     }
     else {
@@ -275,7 +275,7 @@ function App() {
           <Form data={data} refresh={setToggleFetch}/>
         </Route>
         <Route path="/profiles">
-          <AllProfiles data={data}/>
+          <AllProfiles refresh={setToggleFetch} data={data}/>
         </Route>
         <Route path="/search">
           <SearchResults warningMessage={warningMessage} musician={searchResult1} numberOfResults={searchValue}/>

@@ -1,8 +1,49 @@
 import SocialMedia from "./SocialMedia.jsx";
 import { useState } from "react";
 import bongo from "../sounds/bongo.mp3";
+import axios from "axios";
+import { baseURL, config } from "../services";
 
 function Profile(props) {
+  let profileInfo = props.item.fields
+
+  const [toEdit, setToEdit] = useState(false);
+
+  const [musician, setMusician] = useState(profileInfo.Musician);
+  const [instrument, setInstrument] = useState(profileInfo.Instrument);
+  const [location, setLocation] = useState(profileInfo.Location);
+  const [genre, setGenre] = useState(profileInfo.Genre);
+  const [lookingFor, setLookingFor] = useState(profileInfo.Looking_for);
+  const [imageAddress, setImageAddress] = useState(profileInfo.Picture);
+  const [facebookURL, setFacebookURL] = useState(profileInfo.FacebookURL);
+  const [instagramURL, setInstagramURL] = useState(profileInfo.InstagramURL);
+  const [soundcloudURL, setSoundcloudURL] = useState(profileInfo.SoundcloudURL);
+  const [twitterURL, setTwitterURL] = useState(profileInfo.TwitterURL);
+
+  const edit = async (e) => {
+    let response = await axios.get(baseURL + `/Musicians/${props.item.id}`, config);
+    let fields = {
+      Musician: musician,
+      Picture: imageAddress,
+      Instrument: instrument,
+      Genre: genre,
+      Looking_for: lookingFor,
+      Location: location,
+      Facebook: facebookURL,
+      Soundcloud: soundcloudURL,
+      Twitter: twitterURL,
+      Instagram: instagramURL
+    };
+
+    axios.put(baseURL + `/Musicians/${props.item.id}`, { fields }, config);
+    
+    props.refresh((prev) => !prev);
+  };
+
+  const deleteFunction = async (e) => {
+    axios.delete(baseURL + `/Musicians/${props.item.id}`, config);
+    props.refresh((prev) => !prev);
+  }
   const bongoAudio = new Audio(bongo);
   bongoAudio.volume = 0.02;
   // the function below allows us to hide and show the social 
@@ -29,8 +70,60 @@ function Profile(props) {
         <p>Genre: {props.item.fields.Genre}</p>
         <p>Looking for: {props.item.fields.Looking_for}</p>
         <p>Location: {props.item.fields.Location}</p>
-        <div id="socialMediaButton">
-          <button onClick={socialMediaButton}>Social Media</button>
+        <div id="socialMediaButtons">
+        <button onClick={function (e) { e.preventDefault(); setToEdit(!toEdit) }}>Edit</button>
+        <button onClick={deleteFunction}>Delete</button>
+        <button onClick={socialMediaButton}>Social Media</button>
+        </div>
+        
+        <div>
+          <div className={toEdit ? "edit-section" : "edit-section-hide"}>
+          <div>
+          <label htmlFor="name">Name: </label>
+          <input
+            name="name"
+            type="text"
+            value={musician}
+            onChange={(e) => setMusician(e.target.value)}
+          />
+          <label htmlFor="pictureURL">Picture URL: </label>
+          <input
+            name="pictureURL"
+            value={imageAddress}
+            type="text"
+            onChange={(e) => setImageAddress(e.target.value)}
+          />
+          <label htmlFor="instrument">Instrument: </label>
+          <input
+            name="instrument"
+            value={instrument}
+            type="text"
+            onChange={(e) => setInstrument(e.target.value)}
+          />
+          <label htmlFor="genre">Genre: </label>
+          <input
+            name="genre"
+            value={genre}
+            type="text"
+            onChange={(e) => setGenre(e.target.value)}
+          />
+          <label htmlFor="name">Looking for: </label>
+          <input
+            name="looking for"
+            value={lookingFor}
+            type="text"
+            onChange={(e) => setLookingFor(e.target.value)}
+          />
+          <label htmlFor="location">Location: </label>
+          <input
+            name="location"
+            value={location}
+            type="text"
+            onChange={(e) => setLocation(e.target.value)}
+          />
+           </div>
+          <button onClick={edit}>Submit</button>
+          </div>
         </div>
         <SocialMedia item={props.item} todisplay={socialMediaDisplay} />
         <br></br>

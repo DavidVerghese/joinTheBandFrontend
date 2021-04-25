@@ -13,12 +13,12 @@ function AllProfiles(props) {
         <h2>Profiles:</h2>
       </a>
       <div id="all-profiles-parent-div">
-      {props.data.map((item) => {
+      {props.data.map((item, key) => {
         // item stores data of musician's profile
         return (
           <div>
             {/* pass item as prop to Profile */}
-            <Profile item={item} />
+            <Profile  key={key} item={item} refresh={props.refresh} />
           </div>
         );
       })}</div>

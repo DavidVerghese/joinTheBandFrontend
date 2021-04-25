@@ -38,6 +38,16 @@ img {
 label {
   display: block;
 }
+.edit-section {
+  background-color: #062F4f;
+  padding: 10px;
+}
+.edit-section-hide {
+  display: none;
+}
+.edit-section button {
+  margin: 20px 10px 10px 10px;
+}
 #formHeading {
   padding: 20px;
 }
@@ -49,11 +59,14 @@ label {
   /* background-image: url(https://media.wired.com/photos/5b43e42b864f830cb58b1118/125:94/w_894,h_672,c_limit/MusicFans-923247030.jpg); */
 }
 .formSection input{
-  margin-left: 10px;
-  width: 100%;
+  /* margin-left: 10px; */
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 80%;
  }
 .formSectionTextBackground {
-  width: 90%;
+  width: 80%;
   padding: 10px;
   background-color: #813772;
 }
@@ -65,6 +78,7 @@ label {
 }
 .input-div {
   display: flex;
+  flex-wrap: wrap;
   /* justify-content: ; */
   margin-bottom: 10px;
 }
@@ -74,13 +88,17 @@ label {
   flex-wrap: wrap; */
   margin: 0 auto;
   padding: 0px;
-  width: 600px;
+  /* width: 600px; */
 }
 .headerBackground {
   color: rgb(237, 235, 190);
   display: flex;
+  flex-wrap: wrap;
   font-size: 25px;
   justify-content: space-around;
+}
+.headerBackground p{ 
+  margin: 0px 10px 0px 10px;
 }
 .home {
   margin: 0px;
@@ -88,7 +106,8 @@ label {
   color: rgb(237, 235, 190);
 }
 #homePic {
-  width: 500px;
+  /* width: 500px; */
+  width: 100%;
 }
 #home-page-text {
   background-color: #062f4f;
@@ -122,12 +141,10 @@ label {
 .searchBarDiv {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   align-items: center;
-  margin: 0px;
+  margin: 10px;
   padding: 0px;
-}
-.searchBarDiv input {
-  width: 38%;
 }
 #searchInstructions {
   font-size: 80%;
@@ -142,20 +159,40 @@ label {
   padding: 5px;
   margin: 0px 15px 0px 15px;
 }
-#socialMediaButton {
+#socialMediaButtons {
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
   margin-right: 10px;
 }
+#socialMediaButtons {
+  display: flex;
+  justify-content: center;
+  margin-right: 10px;
+}
+#socialMediaButtons button{
+  margin: 10px 20px 10px 20px;
+  background-color: #813772;
+  padding: 20px;
+  color: rgb(237, 235, 190);
+}
+
 .socialMediaSection {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: center;
+  background-color: #B82601;
+  margin-top: 20px;
+  
 }
 
 /* for tablets and smaller computer screens*/
 @media (min-width: 550px) {
+  #socialMediaButtons button{
+    color: black;
+  }
+
   body {
     font-size: 26px;
   }
@@ -207,7 +244,7 @@ label {
     font-size: 100%;
   }
   #homePic {
-    /* width: 30%; */
+    width: 60%;
   }
   .socialMedia img {
     width: 70px;
