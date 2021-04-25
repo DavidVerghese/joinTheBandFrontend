@@ -33,7 +33,7 @@ function App() {
   const [searchResult3, setSearchResult3] = useState([]);
   const [searchValue, setSearchValue] = useState([]);
   const [warningMessage, setWarningMessage] = useState('');
-
+  const [numberOfResults, setNumberOfResults] = useState(0);
   // here we create variables to represent the sounds we 
   // have stored in the sound folder. Later on, we will 
   // trigger these sounds in response to user input
@@ -75,7 +75,7 @@ function App() {
     // instead of a string. I used this to create a warning message.
     if (typeof searchValue === 'number') {
       // e.preventDefault();
-      console.log("match!");
+      results = 0;
       setWarningMessage("* type something new!")
     }
     else {
@@ -106,7 +106,10 @@ function App() {
               findMusician = data.filter(
                 (item) => item.fields.Genre === searchValueIndividualWords[0]
               );
-              results += 1;
+              // results += 1;
+              if (findMusician.length !== 0) {
+                results += 1;
+              };
             }
             // This checks if the second word in the user's search matches 
             // any of the genres listed in the profiles in Airtable
@@ -114,7 +117,10 @@ function App() {
               findMusician2 = data.filter(
                 (item) => item.fields.Genre === searchValueIndividualWords[1]
               );
-              results += 1;
+              // results += 1;
+              if (findMusician2.length !== 0) {
+                results += 1;
+              };
             }
             // This checks if the third word in the user's search matches 
             // any of the genres listed in the profiles in Airtable
@@ -122,7 +128,10 @@ function App() {
               findMusician3 = data.filter(
                 (item) => item.fields.Genre === searchValueIndividualWords[2]
               );
-              results += 1;
+              // results += 1;
+              if (findMusician3.length !== 0) {
+                results += 1;
+              };
             }
             // This checks if any of the words in the user's search 
             // match any of the names of the instruments listed 
@@ -131,19 +140,28 @@ function App() {
               findMusician = data.filter(
                 (item) => item.fields.Instrument === searchValueIndividualWords[0]
               );
-              results += 1;
+              // results += 1;
+              if (findMusician.length !== 0) {
+                results += 1;
+              };
             }
             if (item2.fields.Instrument.includes(searchValueIndividualWords[1])) {
               findMusician2 = data.filter(
                 (item) => item.fields.Instrument === searchValueIndividualWords[1]
               );
-              results += 1;
+              // results += 1;
+              if (findMusician2.length !== 0) {
+                results += 1;
+              };
             }
             if (item2.fields.Instrument.includes(searchValueIndividualWords[2])) {
               findMusician3 = data.filter(
                 (item) => item.fields.Instrument === searchValueIndividualWords[2]
               );
-              results += 1;
+              // results += 1;
+              if (findMusician3.length !== 0) {
+                results += 1;
+              };
             }
             // This checks if any of the words in the user's search 
             // match any of the names of the locations listed 
@@ -152,19 +170,28 @@ function App() {
               findMusician = data.filter(
                 (item) => item.fields.Location === searchValueIndividualWords[0]
               );
-              results += 1;
-            }
+              // results += 1;
+              if (findMusician.length !== 0) {
+                results += 1;
+              };
+            };
             if (item2.fields.Location.includes(searchValueIndividualWords[1])) {
               findMusician2 = data.filter(
                 (item) => item.fields.Location === searchValueIndividualWords[1]
               );
-              results += 1;
+              // results += 1;
+              if (findMusician2.length !== 0) {
+                results += 1;
+              };
             }
             if (item2.fields.Location.includes(searchValueIndividualWords[2])) {
               findMusician3 = data.filter(
                 (item) => item.fields.Location === searchValueIndividualWords[2]
               );
-              results += 1;
+              // results += 1;
+              if (findMusician3.length !== 0) {
+                results += 1;
+              };
             }
             // This checks if any of the words in the user's search 
             // match what the musicians listed in Airtable said they 
@@ -173,19 +200,28 @@ function App() {
               findMusician = data.filter(
                 (item) => item.fields.Looking_for === searchValueIndividualWords[0]
               );
-              results += 1;
+              // results += 1;
+              if (findMusician.length !== 0) {
+                results += 1;
+              };
             }
             if (item2.fields.Looking_for.includes(searchValueIndividualWords[1])) {
               findMusician2 = data.filter(
                 (item) => item.fields.Looking_for === searchValueIndividualWords[1]
               );
-              results += 1;
+              // results += 1;
+              if (findMusician2.length !== 0) {
+                results += 1;
+              };
             }
             if (item2.fields.Looking_for.includes(searchValueIndividualWords[2])) {
               findMusician3 = data.filter(
                 (item) => item.fields.Looking_for === searchValueIndividualWords[2]
               );
-              results += 1;
+              // results += 1;
+              if (findMusician3.length !== 0) {
+                results += 1;
+              };
             }
             // This checks if any of the words in the user's search 
             // match any of the names listed in the profiles in Airtable
@@ -193,19 +229,28 @@ function App() {
               findMusician = data.filter(
                 (item) => item.fields.Musician === searchValueIndividualWords[0]
               );
-              results += 1;
+              // results += 1;
+              if (findMusician.length !== 0) {
+                results += 1;
+              };
             }
             if (item2.fields.Musician.includes(searchValueIndividualWords[1])) {
               findMusician2 = data.filter(
                 (item) => item.fields.Musician === searchValueIndividualWords[1]
               );
-              results += 1;
+              // results += 1;
+              if (findMusician2.length !== 0) {
+                results += 1;
+              };
             }
             if (item2.fields.Musician.includes(searchValueIndividualWords[2])) {
               findMusician3 = data.filter(
                 (item) => item.fields.Musician === searchValueIndividualWords[2]
               );
-              results += 1;
+              // results += 1;
+              if (findMusician3.length !== 0) {
+                results += 1;
+              };
               }
             }
           }
@@ -219,7 +264,8 @@ function App() {
     setSearchResult1(findMusician)
     setSearchResult2(findMusician2)
     setSearchResult3(findMusician3)
-    setSearchValue(results)
+    setSearchValue(results);
+    setNumberOfResults(results);
     // if there are no matches, we hear the 'ba dum tss' drum sound
     // if there are matches, we hear the violin sound.
     if (results > 0) {
@@ -228,7 +274,7 @@ function App() {
     else {
       drumAudio.play()
     }
-   };
+  };
    
 
   return (
@@ -283,7 +329,7 @@ function App() {
           <SearchResults warningMessage={warningMessage} musician={searchResult1} numberOfResults={searchValue}/>
           <SearchResults warningMessage={warningMessage} musician={searchResult2} numberOfResults={searchValue} />
           <SearchResults warningMessage={warningMessage} musician={searchResult3} numberOfResults={searchValue} />
-          <NoResults warningMessage={warningMessage} numberOfResults={searchValue} />
+          <NoResults warningMessage={warningMessage} numberOfResults={numberOfResults} />
         </Route>
       </main>
       <footer>

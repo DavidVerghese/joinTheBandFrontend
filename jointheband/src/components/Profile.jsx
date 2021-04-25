@@ -47,6 +47,7 @@ function Profile(props) {
   const deleteFunction = async (e) => {
     axios.delete(baseURL + `/Musicians/${props.item.id}`, config);
     props.refresh((prev) => !prev);
+    
   }
   const bongoAudio = new Audio(bongo);
   bongoAudio.volume = 0.02;

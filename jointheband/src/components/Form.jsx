@@ -159,7 +159,10 @@ function Form(props) {
           </div>
           <br></br>
           <p>{message}</p>
-          <button onClick={function (e) { e.preventDefault(); handleSubmit() }}>Create a Post</button>
+          <button onClick={function (e) {
+            // e.preventDefault();
+            handleSubmit();
+          }}>Create a Post</button>
      
         </form>
       </div>
