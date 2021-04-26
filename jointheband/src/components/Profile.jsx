@@ -41,13 +41,13 @@ function Profile(props) {
       Instagram: instagramURL
     };
 
-    axios.put(baseURL + `/Musicians/${props.item.id}`, { fields }, config);
+    await axios.put(baseURL + `/Musicians/${props.item.id}`, { fields }, config);
     
     props.refresh((prev) => !prev);
   };
 
   const deleteFunction = async (e) => {
-    axios.delete(baseURL + `/Musicians/${props.item.id}`, config);
+    await axios.delete(baseURL + `/Musicians/${props.item.id}`, config);
     props.refresh((prev) => !prev);
     console.log("clicked!");
   }
