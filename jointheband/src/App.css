@@ -173,7 +173,7 @@ label {
 #socialMediaButtons button{
   margin: 10px 20px 10px 20px;
   background-color: #813772;
-  padding: 20px;
+  /* padding: 20px; */
   color: rgb(237, 235, 190);
 }
 

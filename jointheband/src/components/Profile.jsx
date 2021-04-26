@@ -3,6 +3,7 @@ import { useState } from "react";
 import bongo from "../sounds/bongo.mp3";
 import jazzkeys from "../sounds/jazzkeys.wav";
 import vibraphone from "../sounds/vibraphone.wav";
+import syntharpeggio from "../sounds/syntharpeggio.wav";
 import axios from "axios";
 import { baseURL, config } from "../services";
 
@@ -25,6 +26,7 @@ function Profile(props) {
   const [twitterURL, setTwitterURL] = useState(profileInfo.TwitterURL);
 
   const edit = async (e) => {
+    syntharpeggioAudio.play();
     let response = await axios.get(baseURL + `/Musicians/${props.item.id}`, config);
     let fields = {
       Musician: musician,
@@ -47,6 +49,7 @@ function Profile(props) {
   const deleteFunction = async (e) => {
     axios.delete(baseURL + `/Musicians/${props.item.id}`, config);
     props.refresh((prev) => !prev);
+    console.log("clicked!");
   }
   const bongoAudio = new Audio(bongo);
   bongoAudio.volume = 0.02;
@@ -55,6 +58,8 @@ function Profile(props) {
   jazzkeysAudio.volume = 0.02;
   const vibraphoneAudio = new Audio(vibraphone);
   vibraphoneAudio.volume = 0.02;
+  const syntharpeggioAudio = new Audio(syntharpeggio);
+  syntharpeggioAudio.volume = 0.02;
   // the function below allows us to hide and show the social 
   // media icon. When you click the button, you set the 
   // socialMediaDisplay value, which is a boolean value to be the 
