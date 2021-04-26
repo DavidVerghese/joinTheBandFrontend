@@ -282,7 +282,6 @@ function App() {
       <header>
         <div className="headerBackground">
             <Link onClick={function (){ bassAudio.play() }} to="/"><p>Join the Band!</p></Link>
-            {/* <p id="website-description-text">find musicians in your area</p> */}
           <Link
         onClick={function () {
           bassAudioTwo.play();
@@ -302,14 +301,12 @@ function App() {
           </Link>
           <p>Search for musicians:</p>
           <div className="searchBarDiv">
-          {/* <p><em id = "searchInstructions">Search for musicians by instrument,location, genre, etc</em></p> */}
           <label htmlFor="searchBar"></label>
           {/* storing the user's input in the state variable searchValue */}
           <input name="searchBar" type="text" placeholder="instrument,location,genre, etc" onChange={search} />
           <Link to="/search">
             <button id="search-button" onClick={searchSubmit}>Submit</button>
           </Link>
-          {/* <p>{warningMessage}</p> */}
         </div>
         </div>
       </header>

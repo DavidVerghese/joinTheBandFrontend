@@ -5,7 +5,6 @@ body {
   font-size: 23px;
   background-color: #0a0712;
   color: rgb(237, 235, 190);
-  /* font-family: "Gothic A1", sans-serif; */
   font-family: 'Ubuntu Mono', monospace;
   text-align: center;
   margin: 0px;
@@ -56,10 +55,8 @@ label {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* background-image: url(https://media.wired.com/photos/5b43e42b864f830cb58b1118/125:94/w_894,h_672,c_limit/MusicFans-923247030.jpg); */
 }
 .formSection input{
-  /* margin-left: 10px; */
   display: flex;
   justify-content: center;
   margin: 0 auto;
@@ -79,16 +76,11 @@ label {
 .input-div {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: ; */
   margin-bottom: 10px;
 }
 .input-parent-div {
-  /* display: flex;
-  justify-content: center;
-  flex-wrap: wrap; */
   margin: 0 auto;
   padding: 0px;
-  /* width: 600px; */
 }
 .headerBackground {
   color: rgb(237, 235, 190);
@@ -106,7 +98,6 @@ label {
   color: rgb(237, 235, 190);
 }
 #homePic {
-  /* width: 500px; */
   width: 100%;
 }
 #home-page-text {
@@ -173,7 +164,6 @@ label {
 #socialMediaButtons button{
   margin: 10px 20px 10px 20px;
   background-color: #813772;
-  /* padding: 20px; */
   color: rgb(237, 235, 190);
 }
 
@@ -199,11 +189,8 @@ label {
   button {
     font-size: 120%;
   }
-  footer {
-    /* background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Classical_spectacular10.jpg/800px-Classical_spectacular10.jpg); */
-  }
+
   header {
-    /* background-image: url(https://static01.nyt.com/images/2020/03/12/arts/12virus-concerts2/merlin_170369790_63d02a4c-82f8-441a-ac7c-c395828b7961-mobileMasterAt3x.jpg); */
     font-size: 70%;
   }
   .formSectionTextBackground {

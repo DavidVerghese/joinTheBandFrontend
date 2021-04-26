@@ -91,12 +91,6 @@ function Form(props) {
             </div>
            <div className="input-div">
           <label htmlFor="picAddress">
-            {/* <p>
-              Picture URL: <br></br>
-              <em id="pictureURLText">
-                (post a link to a picture of yourself) 
-              </em>
-            </p> */}
           </label>
           <input
                 name="picAddress"
