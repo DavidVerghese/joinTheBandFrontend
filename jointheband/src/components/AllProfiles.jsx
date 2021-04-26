@@ -1,6 +1,4 @@
 import Profile from "./Profile.jsx";
-import axios from "axios";
-import { baseURL, config } from "../services";
 import drumfill from "../sounds/drumfill.mp3";
 
 function AllProfiles(props) {

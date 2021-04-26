@@ -79,7 +79,7 @@ function Profile(props) {
     <div className="profile">
       <div className="profilebackground">
         <h2>{props.item.fields.Musician}</h2>
-        <img alt="profile photo of musician" src={props.item.fields.Picture}></img>
+        <img alt="the musician" src={props.item.fields.Picture}></img>
         <p>Instrument: {props.item.fields.Instrument}</p>
         <p>Genre: {props.item.fields.Genre}</p>
         <p>Looking for: {props.item.fields.Looking_for}</p>
