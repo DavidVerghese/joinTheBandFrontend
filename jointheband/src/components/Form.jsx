@@ -3,7 +3,6 @@ import axios from "axios";
 import { baseURL, config } from "../services";
 import guitarsound from "../sounds/guitarsound.mp3";
 import pianoslide from "../sounds/pianoslide.wav";
-import { Link } from "react-router-dom";
 
 function Form(props) {
   // state variables
@@ -42,7 +41,6 @@ function Form(props) {
     && twitterURL !== "" && instagramURL !== "") {
       await axios.post(baseURL + "/Musicians", { fields: data }, config);
       setMessage('');
-      console.log(counter);
       guitarAudio.play();
       setMusician("");
             setImageAddress("");
@@ -70,7 +68,7 @@ function Form(props) {
       <div className="formSectionTextBackground">
         <form>
             <div id="form-pic-parent-div">
-      <img id="form-pic" src="https://media4.giphy.com/media/3o6ZtdARd9exOTKPOo/giphy.gif?cid=ecf05e47950r5maaxhbkgga4kaofecmpvacc4a10f6kf7kzh&rid=giphy.gif&ct=g"/>
+      <img id="form-pic" alt="a person playing piano" src="https://media4.giphy.com/media/3o6ZtdARd9exOTKPOo/giphy.gif?cid=ecf05e47950r5maaxhbkgga4kaofecmpvacc4a10f6kf7kzh&rid=giphy.gif&ct=g"/>
       </div>
           <em>
             <p>
@@ -93,12 +91,6 @@ function Form(props) {
             </div>
            <div className="input-div">
           <label htmlFor="picAddress">
-            {/* <p>
-              Picture URL: <br></br>
-              <em id="pictureURLText">
-                (post a link to a picture of yourself) 
-              </em>
-            </p> */}
           </label>
           <input
                 name="picAddress"

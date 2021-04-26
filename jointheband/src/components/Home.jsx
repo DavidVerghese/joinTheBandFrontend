@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import basssoundtwo from "../sounds/harpsound.mp3";
 import guitarsound from "../sounds/guitarstrum.mp3";
 
