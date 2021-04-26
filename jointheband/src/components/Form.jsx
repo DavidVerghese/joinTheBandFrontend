@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { baseURL, config } from "../services";
 import guitarsound from "../sounds/guitarsound.mp3";
+import pianoslide from "../sounds/pianoslide.wav";
 import { Link } from "react-router-dom";
 
 function Form(props) {
@@ -20,9 +21,10 @@ function Form(props) {
   const [counter, setCounter] = useState(0);
   const guitarAudio = new Audio(guitarsound);
   guitarAudio.volume = 0.02;
+  const pianoslideAudio = new Audio(pianoslide);
+  pianoslideAudio.volume = 0.02;
 
   const handleSubmit = async (e) => {
-    guitarAudio.play();
     let data = {
       Musician: musician,
       Picture: imageAddress,
@@ -41,9 +43,20 @@ function Form(props) {
       await axios.post(baseURL + "/Musicians", { fields: data }, config);
       setMessage('');
       console.log(counter);
+      guitarAudio.play();
+      setMusician("");
+            setImageAddress("");
+            setInstrument("");
+            setGenre("");
+            setLookingFor("");
+            setLocation("");
+            setFacebookURL("");
+            setSoundcloudURL("");
+            setInstagramURL("");
+            setTwitterURL("");
     } else {
       setMessage('* fill out all the fields');
-      console.log(counter);
+      pianoslideAudio.play();
     }
     
     // see useEffect in App.js to see how the code below 
@@ -74,6 +87,7 @@ function Form(props) {
                 name="name"
                 placeholder='enter your name:'
                 type="text"
+                value= {musician}
                 onChange={function (e) { setMusician(e.target.value); setCounter(counter+1) }}
                 />
             </div>
@@ -89,7 +103,8 @@ function Form(props) {
           <input
                 name="picAddress"
                 placeholder = 'enter a link to a picture of yourself'
-            type="text"
+                type="text"
+                value= {imageAddress}
             onChange={function (e) { setImageAddress(e.target.value); setCounter(counter+1) }}
             /></div>
            <div className="input-div">
@@ -97,7 +112,8 @@ function Form(props) {
           <input
                 name="instrument"
                 placeholder = 'enter instrument you play'
-            type="text"
+                type="text"
+                value= {instrument}
             onChange={function (e) { setInstrument(e.target.value); setCounter(counter+1) }}
             /></div>
            <div className="input-div">
@@ -105,7 +121,8 @@ function Form(props) {
           <input
             name="genre"
                 type="text"
-                placeholder = 'enter genre you play'
+                placeholder='enter genre you play'
+                value= {genre}
             onChange={function (e) { setGenre(e.target.value); setCounter(counter+1) }}
             /></div>
            <div className="input-div">
@@ -113,7 +130,8 @@ function Form(props) {
           <input
                 name="lookingFor"
                 placeholder = 'write what you are looking for'
-            type="text"
+                type="text"
+                value= {lookingFor}
             onChange={function (e) { setLookingFor(e.target.value); setCounter(counter+1) }}
             /></div>
            <div className="input-div">
@@ -121,7 +139,8 @@ function Form(props) {
           <input
                 name="location"
                 placeholder = 'enter your location'
-            type="text"
+                type="text"
+                value= {location}
             onChange={function (e) { setLocation(e.target.value); setCounter(counter+1) }}
             /></div>
            <div className="input-div">
@@ -129,7 +148,8 @@ function Form(props) {
           <input
                 name="facebook"
                 placeholder = 'post your facebook url'
-            type="text"
+                type="text"
+                value= {facebookURL}
             onChange={function (e) { setFacebookURL(e.target.value); setCounter(counter+1) }}
             /></div>
            <div className="input-div">
@@ -137,14 +157,16 @@ function Form(props) {
           <input
                 name="soundcloud"
                 placeholder = 'post your soundcloud url'
-            type="text"
+                type="text"
+                value= {soundcloudURL}
             onChange={function (e) { setSoundcloudURL(e.target.value); setCounter(counter+1) }}
             /></div>
            <div className="input-div">
           <label htmlFor="instagram"></label>
           <input
                 name="instagram"
-                placeholder = 'post your instagram url'
+                placeholder='post your instagram url'
+                value= {instagramURL}
             type="text"
             onChange={function (e) { setInstagramURL(e.target.value); setCounter(counter+1)}}
             /></div>
@@ -152,7 +174,8 @@ function Form(props) {
           <label htmlFor="twitter"></label>
               <input
                 placeholder = 'post your twitter url'
-            name="twitter"
+                name="twitter"
+                value= {twitterURL}
             type="text"
             onChange={function (e) { setTwitterURL(e.target.value); setCounter(counter+1) }}
               /></div>
@@ -160,8 +183,9 @@ function Form(props) {
           <br></br>
           <p>{message}</p>
           <button onClick={function (e) {
-            // e.preventDefault();
+            e.preventDefault();
             handleSubmit();
+            
           }}>Create a Post</button>
      
         </form>
