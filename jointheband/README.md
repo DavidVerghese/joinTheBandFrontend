@@ -13,3 +13,5 @@ I would like to create an app for musicians looking to join a band or collaborat
 ``` 
   npm install
   npm start
+
+Backend repo... https://github.com/DavidVerghese/JoinTheBandBackend
