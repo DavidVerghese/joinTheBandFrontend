@@ -13,7 +13,7 @@ import basssound from "./sounds/basssoundone.mp3"
 import drumsound from "./sounds/drumsound.mp3";
 import basssoundtwo from "./sounds/harpsound.mp3";
 import guitarsound from "./sounds/guitarstrum.mp3";
-
+import Landing from './components/Landing';
 function App() {
   const bassAudioTwo = new Audio(basssoundtwo);
   bassAudioTwo.volume = 0.02;
@@ -297,7 +297,7 @@ function App() {
 
   return (
     <div>
-      <header>
+      {/* <header>
         <div className="headerBackground">
             <Link onClick={function (){ bassAudio.play() }} to="/"><p>Join the Band!</p></Link>
           <Link
@@ -320,18 +320,19 @@ function App() {
           <p>Search for musicians:</p>
           <div className="searchBarDiv">
           <label htmlFor="searchBar"></label>
-          {/* storing the user's input in the state variable searchValue */}
+        
           <input name="searchBar" type="text" placeholder="instrument,location,genre, etc" onChange={search} />
           <Link to="/search">
             <button id="search-button" onClick={searchSubmit}>Submit</button>
           </Link>
         </div>
         </div>
-      </header>
+      </header> */}
       <main>
         
         <Route exact path="/">
-          <Home data={data}/>
+          {/* <Home data={data}/> */}
+          <Landing/>
         </Route>
         <Route path="/form">
           {/* setToggleFetch is passed as a prop to Form */}
@@ -347,9 +348,9 @@ function App() {
           <NoResults warningMessage={warningMessage} numberOfResults={numberOfResults} />
         </Route>
       </main>
-      <footer>
+      {/* <footer>
         <h3>copyright David Verghese</h3>
-      </footer>
+      </footer> */}
     </div>
   );
 }

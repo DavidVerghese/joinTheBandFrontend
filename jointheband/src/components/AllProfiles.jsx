@@ -15,24 +15,26 @@ function AllProfiles(props) {
         <h2>Profiles:</h2>
       </a>
       <div id="all-profiles-parent-div">
-        {users.map((item, key) => {
         
-        // item stores data of musician's profile
-        return (
-          <div>
-            <p>{item.name}</p>
+        {/* {users.map((item, key) => { */}
+        
+        {/* // item stores data of musician's profile
+        // return (
+        //   <div> */}
+            {/* <p>{item.name}</p>
             <img src={item.picture_url} />
             <p>email: {item.email_address}</p>
             <p>genre: {item.genre.name}</p>
             <p>joined: {alterDate(item.created_at)}</p>
             <p>location: {item.location.name}</p>
             <p>instrument: {item.instrument.name}</p>
-            <p>looking for: {item.looking_for.name}</p>
+            <p>looking for: {item.looking_for.name}</p> */}
             {/* pass item as prop to Profile */}
             {/* <Profile  key={key} item={item} refresh={props.refresh} /> */}
-          </div>
-        );
-      })}</div>
+        {/* //   </div>
+        // );
+        // })}
+      </div> */}
       {/* <a href="#top">
         <button
           onClick={function () {
@@ -42,7 +44,8 @@ function AllProfiles(props) {
           Back to Top
         </button>
       </a> */}
-    </div>
+      </div>
+      </div>
   );
 }
 
