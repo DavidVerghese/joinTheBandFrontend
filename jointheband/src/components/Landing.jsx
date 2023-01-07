@@ -2,19 +2,28 @@ import { useState } from 'react';
 
 function Landing() {
 
-  const [user, setUser] = useState({ username: "", password: "" });
-
-  const testUser = {
-    name: "hellswo",
-    password: "hesllo!",
-    email_address: "twess3t", 
-    picture_url: "piwcsture.jpeg",
-    genre_id: 1754,                                            
-    instrument_id: 768,                                        
-    location_id: 1801, 
-    looking_for_id: 769
-  }
-  const handleSubmit = e => {
+  const [user, setUser] = useState({
+    username: "",
+    password: "",
+    email_address: "", 
+    picture_url: "",
+    genre_id: "",                                            
+    instrument_id: "",                                        
+    location_id: "", 
+    looking_for_id: ""
+  });
+  // const []
+  // const testUser = {
+  //   name: "hellswo",
+  //   password: "hesllo!",
+    // email_address: "twess3t", 
+    // picture_url: "piwcsture.jpeg",
+    // genre_id: 1754,                                            
+    // instrument_id: 768,                                        
+    // location_id: 1801, 
+    // looking_for_id: 769
+  // }
+  const handleSubmitLogin = e => {
 
     e.preventDefault();
 
@@ -41,7 +50,46 @@ function Landing() {
    })
 
   }  
+
+  const handleSubmitSignUp = e => {
+
+    e.preventDefault();
+
+    console.log(user);
+    fetch('http://localhost:3000/signup', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        name: user.username,
+        password: user.password,
+        email_address: user.email_address, 
+        picture_url: user.picture_url,
+        genre_id: user.genre_id,                                            
+        instrument_id: user.instrument_id,                                        
+        location_id: user.location_id, 
+        looking_for_id: user.looking_for_id
+      }),
+     
+    }).then(resp => {
+      if(resp.ok){
+        resp.json().then(data => {
+        
+          console.log(data);
+          // setUser(data);
+            // handleCurrentUser(data)
+            // navigate('/')
+         })
+      }else {
+         resp.json().then(json => console.log(json.errors))
+      }
+   })
+
+  } 
   
+
   const handleChange = e => {
     setUser({
       ...user,
@@ -49,9 +97,11 @@ function Landing() {
     })
   }
 
+
+
   return <div>
     <h2>Login</h2>
-    <form className="login" onSubmit={ handleSubmit }>
+    <form className="login" onSubmit={ handleSubmitLogin }>
           <div>
             <label htmlFor="name">Name: </label>
         <input  type="text" id="name" name="username" value={user.username} onChange={ handleChange }/>
@@ -64,6 +114,49 @@ function Landing() {
     </form>
     
     <h2>Sign Up</h2>
+
+    <form className="signup" onSubmit={ handleSubmitSignUp }>
+          <div>
+            <label htmlFor="name">Name: </label>
+        <input  type="text" id="name" name="username" value={user.username} onChange={ handleChange }/>
+          </div>
+          <div>
+            <label htmlFor="password">Password: </label>
+            <input type="password" id="password" name="password"  value={user.password} onChange={ handleChange } />
+      </div>
+      
+      <div>
+            <label htmlFor="email_address">email address: </label>
+            <input type="text" id="email_address" name="email_address"  value={user.email_address} onChange={ handleChange } />
+      </div>
+
+      <div>
+            <label htmlFor="picture_url">picture url: </label>
+            <input type="text" id="picture_url" name="picture_url"  value={user.picture_url} onChange={ handleChange } />
+      </div>
+
+      <div>
+            <label htmlFor="genre_id">genre id: </label>
+            <input type="text" id="genre_id" name="genre_id"  value={user.genre_id} onChange={ handleChange } />
+      </div>
+
+      <div>
+            <label htmlFor="instrument_id">instrument id: </label>
+            <input type="text" id="instrument_id" name="instrument_id"  value={user.instrument_id} onChange={ handleChange } />
+      </div>
+
+      <div>
+            <label htmlFor="location_id">location id: </label>
+            <input type="text" id="location_id" name="location_id"  value={user.location_id} onChange={ handleChange } />
+      </div>
+
+      <div>
+            <label htmlFor="looking_for_id">looking for id: </label>
+            <input type="text" id="looking_for_id" name="looking_for_id"  value={user.looking_for_id} onChange={ handleChange } />
+      </div>
+    
+          <input  type="submit" value="submit"  />
+    </form>
   </div>
 }
 export default Landing;
