@@ -11,5 +11,6 @@ Netlify link: https://happy-poincare-eefdcf.netlify.app/
 
 ## Installation 
 
-``` npm install
-npm start
+``` 
+  npm install
+  npm start
