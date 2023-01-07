@@ -16,19 +16,20 @@ function Landing() {
   
   const [toggle,setToggle] = useState(false)
 
-  useEffect(() => {
-    // debugger;
-    fetch("http://localhost:3000/me")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   // debugger;
+  //   fetch("http://localhost:3000/me")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //     });
+  // }, []);
 
   function meTest()  {
     fetch("http://localhost:3000/me")
       .then((response) => response.json())
       .then((data) => {
+        setCurrentUser(data);
         console.log(data);
       });
   }
@@ -115,7 +116,7 @@ function Landing() {
 
   return <div>
     <p>current user: {currentUser.name}</p>
-    <button onClick={meTest}>run /me again</button>
+    <button onClick={meTest}>run /me</button>
     <h2>Login</h2>
   
     <form className="login" onSubmit={ handleSubmitLogin }>
