@@ -80,6 +80,8 @@ function App() {
       });
   }, []);
 
+ 
+
   const search = (e) => {
     // sets the state variable 'searchValue' equal to the user's 
     // input

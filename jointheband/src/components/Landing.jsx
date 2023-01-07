@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Landing() {
 
+  const [currentUser, setCurrentUser] = useState({ name: 'no user' })
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -12,17 +13,27 @@ function Landing() {
     location_id: "", 
     looking_for_id: ""
   });
-  // const []
-  // const testUser = {
-  //   name: "hellswo",
-  //   password: "hesllo!",
-    // email_address: "twess3t", 
-    // picture_url: "piwcsture.jpeg",
-    // genre_id: 1754,                                            
-    // instrument_id: 768,                                        
-    // location_id: 1801, 
-    // looking_for_id: 769
-  // }
+  
+  const [toggle,setToggle] = useState(false)
+
+  useEffect(() => {
+    // debugger;
+    fetch("http://localhost:3000/me")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      });
+  }, []);
+
+  function meTest()  {
+    fetch("http://localhost:3000/me")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      });
+  }
+  
+
   const handleSubmitLogin = e => {
 
     e.preventDefault();
@@ -39,7 +50,9 @@ function Landing() {
     }).then(resp => {
       if(resp.ok){
         resp.json().then(data => {
-          console.log(data);
+          console.log(data); 
+          setCurrentUser(data);
+          setToggle(!toggle)
           // setUser(data);
             // handleCurrentUser(data)
             // navigate('/')
@@ -50,6 +63,7 @@ function Landing() {
    })
 
   }  
+
 
   const handleSubmitSignUp = e => {
 
@@ -76,7 +90,7 @@ function Landing() {
     }).then(resp => {
       if(resp.ok){
         resp.json().then(data => {
-        
+          setCurrentUser(data);
           console.log(data);
           // setUser(data);
             // handleCurrentUser(data)
@@ -100,7 +114,10 @@ function Landing() {
 
 
   return <div>
+    <p>current user: {currentUser.name}</p>
+    <button onClick={meTest}>run /me again</button>
     <h2>Login</h2>
+  
     <form className="login" onSubmit={ handleSubmitLogin }>
           <div>
             <label htmlFor="name">Name: </label>
