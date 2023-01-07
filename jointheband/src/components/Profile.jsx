@@ -6,39 +6,41 @@ import vibraphone from "../sounds/vibraphone.wav";
 import syntharpeggio from "../sounds/syntharpeggio.wav";
 import axios from "axios";
 import { baseURL, config } from "../services";
+import userEvent from "@testing-library/user-event";
 
 function Profile(props) {
   let profileInfo = props.item.fields
 
+  const { users } = props;
   const [toEdit, setToEdit] = useState(false);
   const [editSound, setEditSound] = useState(true);
   const [deleteSound, setDeleteSound] = useState(true);
 
-  const [musician, setMusician] = useState(profileInfo.Musician);
-  const [instrument, setInstrument] = useState(profileInfo.Instrument);
-  const [location, setLocation] = useState(profileInfo.Location);
-  const [genre, setGenre] = useState(profileInfo.Genre);
-  const [lookingFor, setLookingFor] = useState(profileInfo.Looking_for);
-  const [imageAddress, setImageAddress] = useState(profileInfo.Picture);
-  const [facebookURL, setFacebookURL] = useState(profileInfo.FacebookURL);
-  const [instagramURL, setInstagramURL] = useState(profileInfo.InstagramURL);
-  const [soundcloudURL, setSoundcloudURL] = useState(profileInfo.SoundcloudURL);
-  const [twitterURL, setTwitterURL] = useState(profileInfo.TwitterURL);
+  // const [musician, setMusician] = useState(profileInfo.Musician);
+  // const [instrument, setInstrument] = useState(profileInfo.Instrument);
+  // const [location, setLocation] = useState(profileInfo.Location);
+  // const [genre, setGenre] = useState(profileInfo.Genre);
+  // const [lookingFor, setLookingFor] = useState(profileInfo.Looking_for);
+  // const [imageAddress, setImageAddress] = useState(profileInfo.Picture);
+  // const [facebookURL, setFacebookURL] = useState(profileInfo.FacebookURL);
+  // const [instagramURL, setInstagramURL] = useState(profileInfo.InstagramURL);
+  // const [soundcloudURL, setSoundcloudURL] = useState(profileInfo.SoundcloudURL);
+  // const [twitterURL, setTwitterURL] = useState(profileInfo.TwitterURL);
 
   const edit = async (e) => {
     syntharpeggioAudio.play();
     let response = await axios.get(baseURL + `/Musicians/${props.item.id}`, config);
     let fields = {
-      Musician: musician,
-      Picture: imageAddress,
-      Instrument: instrument,
-      Genre: genre,
-      Looking_for: lookingFor,
-      Location: location,
-      Facebook: facebookURL,
-      Soundcloud: soundcloudURL,
-      Twitter: twitterURL,
-      Instagram: instagramURL
+      // Musician: musician,
+      // Picture: imageAddress,
+      // Instrument: instrument,
+      // Genre: genre,
+      // Looking_for: lookingFor,
+      // Location: location,
+      // Facebook: facebookURL,
+      // Soundcloud: soundcloudURL,
+      // Twitter: twitterURL,
+      // Instagram: instagramURL
     };
 
     await axios.put(baseURL + `/Musicians/${props.item.id}`, { fields }, config);
@@ -78,8 +80,9 @@ function Profile(props) {
   return (
     <div className="profile">
       <div className="profilebackground">
-        <h2>{props.item.fields.Musician}</h2>
-        <img alt="the musician" src={props.item.fields.Picture}></img>
+        {/* <h2>{users.name}</h2> */}
+        {/* <h2>{props.item.fields.Musician}</h2> */}
+        {/* <img alt="the musician" src={props.item.fields.Picture}></img>
         <p>Instrument: {props.item.fields.Instrument}</p>
         <p>Genre: {props.item.fields.Genre}</p>
         <p>Looking for: {props.item.fields.Looking_for}</p>
@@ -88,9 +91,9 @@ function Profile(props) {
           <button onClick={function (e) { e.preventDefault(); setToEdit(!toEdit); setEditSound(!editSound); if(editSound){jazzkeysAudio.play()}  }}>Edit</button>
           <button onClick={function (e) { e.preventDefault(); deleteFunction(); setDeleteSound(!deleteSound); if (deleteSound) { vibraphoneAudio.play() }}}>Delete</button>
         <button onClick={socialMediaButton}>Social Media</button>
-        </div>
+        </div> */}
         
-        <div>
+        {/* <div>
           <div className={toEdit ? "edit-section" : "edit-section-hide"}>
           <div>
           <label htmlFor="name">Name: </label>
@@ -140,7 +143,7 @@ function Profile(props) {
           </div>
         </div>
         <SocialMedia item={props.item} todisplay={socialMediaDisplay} />
-        <br></br>
+        <br></br> */}
       </div>
     </div>
   );

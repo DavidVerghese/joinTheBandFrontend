@@ -19,7 +19,7 @@ function App() {
   bassAudioTwo.volume = 0.02;
   const guitarAudio = new Audio(guitarsound);
   guitarAudio.volume = 0.02;
-
+  const [users, setUsers] = useState([]);
   const [data, setData] = useState([])
   let results = 0;
   // we will we use findMusician and searchResult to 
@@ -61,6 +61,24 @@ function App() {
     // this ensures than useEffect runs again, and the new profile 
     // we just created is pulled down into React.
   }, [toggleFetch]);
+
+  // useEffect(() => {
+  //   // debugger;
+  //   fetch("http://api.randomuser.me/")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //     });
+  // }, []);
+
+  useEffect(() => {
+    // debugger;
+    fetch("http://localhost:3000/users/")
+      .then((response) => response.json())
+      .then((data) => {
+        setUsers(data);
+      });
+  }, []);
 
   const search = (e) => {
     // sets the state variable 'searchValue' equal to the user's 
@@ -320,7 +338,7 @@ function App() {
           <Form data={data} refresh={setToggleFetch}/>
         </Route>
         <Route path="/profiles">
-          <AllProfiles refresh={setToggleFetch} data={data}/>
+          <AllProfiles users={users} refresh={setToggleFetch} data={data}/>
         </Route>
         <Route path="/search">
           <SearchResults warningMessage={warningMessage} musician={searchResult1} numberOfResults={searchValue}/>
