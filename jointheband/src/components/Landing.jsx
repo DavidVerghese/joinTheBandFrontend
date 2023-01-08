@@ -9,11 +9,12 @@ function Landing() {
     password: "",
     email_address: "", 
     picture_url: "",
-    genre_id: "",                                            
-    instrument_id: "",                                        
-    location_id: "", 
-    looking_for_id: ""
+    genre: "",                                            
+    instrument: "",                                        
+    location: "", 
+    looking_for: ""
   });
+  const [signupErrors,setSignupErrors] = useState([])
   const [genres, setGenres] = useState([]);
   const [instruments, setInstruments] = useState([]);
   const [locations, setLocations] = useState([]);
@@ -113,15 +114,16 @@ function Landing() {
         password: user.password,
         email_address: user.email_address, 
         picture_url: user.picture_url,
-        genre_id: user.genre_id,                                            
-        instrument_id: user.instrument_id,                                        
-        location_id: user.location_id, 
-        looking_for_id: user.looking_for_id
+        genre: user.genre,                                            
+        instrument: user.instrument,                                        
+        location: user.location, 
+        looking_for: user.looking_for
       }),
      
     }).then(resp => {
       if(resp.ok){
         resp.json().then(data => {
+          setSignupErrors([])
           setCurrentUser(data);
           console.log(data);
           // setUser(data);
@@ -129,7 +131,7 @@ function Landing() {
             // navigate('/')
          })
       }else {
-         resp.json().then(json => console.log(json.errors))
+         resp.json().then(json => setSignupErrors(json.errors))
       }
    })
 
@@ -167,7 +169,7 @@ function Landing() {
     </form>
     
     <h2>Sign Up</h2>
-
+    {signupErrors.map((signupError) => <><em>{signupError}</em><br></br></>)}
     <form className="signup" onSubmit={ handleSubmitSignUp }>
           <div>
             <label htmlFor="name">Name: </label>
@@ -191,32 +193,32 @@ function Landing() {
  
       
       <div>
-        <label htmlFor="genre_id">genre id: </label>
-          <input list="genres" type="text" id="genre_id" name="genre_id" value={user.genre_id} onChange={handleChange} />
+        <label htmlFor="genre">genre: </label>
+          <input list="genres" type="text" id="genre" name="genre" value={user.genre} onChange={handleChange} />
         <datalist id="genres">
           {genres.map((genre) => <option value={genre.name}/>)}
             </datalist> 
       </div>
 
       <div>
-            <label htmlFor="instrument_id">instrument id: </label>
-            <input list="instruments" type="text" id="instrument_id" name="instrument_id"  value={user.instrument_id} onChange={ handleChange } />
+            <label htmlFor="instrument">instrument: </label>
+            <input list="instruments" type="text" id="instrument" name="instrument"  value={user.instrument} onChange={ handleChange } />
             <datalist id="instruments">
           {instruments.map((instrument) => <option value={instrument.name}/>)}
             </datalist> 
       </div>
 
       <div>
-            <label htmlFor="location_id">location id: </label>
-        <input list="locations" type="text" id="location_id" name="location_id" value={user.location_id} onChange={handleChange} />
+            <label htmlFor="location">location: </label>
+        <input list="locations" type="text" id="location" name="location" value={user.location} onChange={handleChange} />
         <datalist id="locations">
           {locations.map((instrument) => <option value={instrument.name}/>)}
             </datalist> 
       </div>
 
       <div>
-            <label htmlFor="looking_for_id">looking for id: </label>
-        <input list="instruments" type="text" id="looking_for_id" name="looking_for_id" value={user.looking_for_id} onChange={handleChange} />
+            <label htmlFor="looking_for">looking for: </label>
+        <input list="instruments" type="text" id="looking_for" name="looking_for" value={user.looking_for} onChange={handleChange} />
         <datalist id="instruments">
           {instruments.map((instrument) => <option value={instrument.name}/>)}
             </datalist> 
