@@ -18,36 +18,52 @@ function AllProfiles({users,genres,instruments,locations}) {
     setDisplayedUsers(users)
   },[users])
   function filterUsersByGenre(genre) {
-
+    const filterResults =  users.filter((user) => user.genre_name === genre);
     if (genre === 'All genres') {
       setDescribeDisplayedUsers(`all users`)
       return users;
     }
+    else if (filterResults.length == 0){
+      alert(`no users found with the genre "${genre}"`);
+      setDescribeDisplayedUsers(`all users`);
+      return users;
+    }
     else {
       setDescribeDisplayedUsers(`users whose genre is "${genre}"`)
-      return users.filter((user) => user.genre_name === genre);
+      return filterResults;
     }
   }
   function filterUsersByInstrument(instrument) {
 
+    const filterResults = users.filter((user) => user.instrument_name === instrument);
     if (instrument === 'All instruments') {
       setDescribeDisplayedUsers(`all users`)
       return users;
     }
+    else if (filterResults.length == 0){
+      alert(`no users found with the instrument "${instrument}"`);
+      setDescribeDisplayedUsers(`all users`);
+      return users;
+    }
     else {
       setDescribeDisplayedUsers(`users whose instrument is "${instrument}"`)
-      return users.filter((user) => user.instrument_name === instrument);
+      return filterResults;
     }
   }
   function filterUsersByLocation(location) {
-
+    const filterResults = users.filter((user) => user.location_name === location);
     if (location === 'All locations') {
       setDescribeDisplayedUsers(`all users`)
       return users;
     }
+    else if (filterResults.length == 0){
+      alert(`no users found with location "${location}"`);
+      setDescribeDisplayedUsers(`all users`);
+      return users;
+    }
     else {
       setDescribeDisplayedUsers(`users whose location is "${location}"`)
-      return users.filter((user) => user.location_name === location);
+      return filterResults;
     }
   }
   function alterDate(UTCString) {
@@ -131,7 +147,7 @@ function AllProfiles({users,genres,instruments,locations}) {
       <p>Currently displaying {describeDisplayedUsers}</p>
     <div className="profiles">
   
-        {displayedUsers.length > 0 ? displayedUsers.map((item, key) => {
+        {displayedUsers && displayedUsers.length > 0 ? displayedUsers.map((item, key) => {
         
         //  item stores data of musician's profile
           return (
