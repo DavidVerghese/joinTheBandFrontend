@@ -2,22 +2,48 @@ import Profile from "./Profile.jsx";
 import drumfill from "../sounds/drumfill.mp3";
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-
-function AllProfiles(props) {
+import Dropdown from 'react-bootstrap/Dropdown';
+import { useState, useEffect } from 'react';
+function AllProfiles({users,genres}) {
   const drumFillAudio = new Audio(drumfill);
   drumFillAudio.volume = 0.02;
-  const { users } = props;
 
+  const [displayedUsers, setDisplayedUsers] = useState([]);
+  useEffect(() => {
+    setDisplayedUsers(users)
+  },[users])
+  function filterUsersByGenre(genre) {
+
+    if (genre === 'All genres') {
+      return users;
+    }
+    else {
+      console.log(users,genre)
+      return users.filter((user) => user.genre_name === genre);
+    }
+    
+  }
   function alterDate(UTCString) {
     return Date(UTCString).split(' ').slice(0,3).join(' ')
   }
+  const genresPlusAllGenres = [{ name: "All genres" },...genres]
   return (
     <div>
         <h2>Users:</h2>
-        
+
+        <Dropdown>
+      <Dropdown.Toggle variant="success" id="dropdown-basic">
+        Filter by Genre
+      </Dropdown.Toggle>
+
+        <Dropdown.Menu>
+          {genresPlusAllGenres.map((genre) => <Dropdown.Item onClick={()=>setDisplayedUsers(filterUsersByGenre(genre.name))}>{genre.name}</Dropdown.Item>)}
+      </Dropdown.Menu>
+      </Dropdown>
+      
     <div className="profiles">
       
-        {users.map((item, key) => {
+        {displayedUsers.map((item, key) => {
         
         //  item stores data of musician's profile
           return (

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-function Landing() {
+function Landing({genres,setGenres}) {
 
   const [currentUser, setCurrentUser] = useState({ name: 'no user' })
   const [user, setUser] = useState({
@@ -16,17 +16,11 @@ function Landing() {
   });
   const [signupErrors, setSignupErrors] = useState([]);
   const [loginErrors, setLoginErrors] = useState([]);
-  const [genres, setGenres] = useState([]);
+  
   const [instruments, setInstruments] = useState([]);
   const [locations, setLocations] = useState([]);
 
-  useEffect(() => {
-    fetch("http://localhost:3000/genres")
-      .then((response) => response.json())
-      .then((data) => {
-        setGenres(data);
-      });
-  }, []);
+  
 
   useEffect(() => {
     fetch("http://localhost:3000/instruments")

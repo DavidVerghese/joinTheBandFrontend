@@ -80,6 +80,8 @@ function App() {
       });
   }, []);
 
+
+
  
 
   const search = (e) => {
@@ -295,6 +297,15 @@ function App() {
       drumAudio.play()
     }
   };
+
+  const [genres, setGenres] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3000/genres")
+      .then((response) => response.json())
+      .then((data) => {
+        setGenres(data);
+      });
+  }, []);
    
 
   return (
@@ -334,14 +345,14 @@ function App() {
         
         <Route exact path="/">
           {/* <Home data={data}/> */}
-          <Landing/>
+          <Landing genres={genres} setGenres={setGenres}/>
         </Route>
         <Route path="/form">
           {/* setToggleFetch is passed as a prop to Form */}
           <Form data={data} refresh={setToggleFetch}/>
         </Route>
         <Route path="/profiles">
-          <AllProfiles users={users} refresh={setToggleFetch} data={data}/>
+          <AllProfiles genres={genres} users={users} refresh={setToggleFetch} data={data}/>
         </Route>
         <Route path="/search">
           <SearchResults warningMessage={warningMessage} musician={searchResult1} numberOfResults={searchValue}/>
