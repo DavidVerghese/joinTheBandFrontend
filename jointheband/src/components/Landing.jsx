@@ -141,7 +141,7 @@ function Landing() {
     <Button variant="primary" onClick={meTest}>run /me</Button>
 
     <Form  onSubmit={handleSubmitLogin}>
-      <h2>Signup</h2>
+      <h2>Log in</h2>
       {loginErrors.map((loginError) => <><em>{loginError}</em><br></br></>)}
       <Form.Group className="mb-3">
         <Form.Label>Username</Form.Label>
