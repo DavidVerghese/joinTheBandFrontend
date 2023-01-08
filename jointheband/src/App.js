@@ -370,6 +370,9 @@ function App() {
           {/* <Home data={data}/> */}
           <Landing baseURL={baseURL} instruments={instruments} setInstruments={setInstruments} locations={locations} setLocations={setLocations} genres={genres} setGenres={setGenres} users={users} setUsers={setUsers} />
         </Route>
+        <Route path="/home">
+          <Home/>
+        </Route>
         <Route path="/form">
           {/* setToggleFetch is passed as a prop to Form */}
           <Form data={data} refresh={setToggleFetch}/>
