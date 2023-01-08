@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Hint } from 'react-autocomplete-hint';
 
 function Landing() {
 
@@ -13,6 +14,36 @@ function Landing() {
     location_id: "", 
     looking_for_id: ""
   });
+  const [genres, setGenres] = useState([]);
+  const [instruments, setInstruments] = useState([]);
+  const [locations, setLocations] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/genres")
+      .then((response) => response.json())
+      .then((data) => {
+        setGenres(data);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/instruments")
+      .then((response) => response.json())
+      .then((data) => {
+        setInstruments(data);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/locations")
+      .then((response) => response.json())
+      .then((data) => {
+        setLocations(data);
+      });
+  }, []);
+
+
+  const options = ["orange", "banana", "apple"];
   
   const [toggle,setToggle] = useState(false)
 
@@ -119,10 +150,14 @@ function Landing() {
     <button onClick={meTest}>run /me</button>
     <h2>Login</h2>
   
+  
+                
     <form className="login" onSubmit={ handleSubmitLogin }>
           <div>
-            <label htmlFor="name">Name: </label>
-        <input  type="text" id="name" name="username" value={user.username} onChange={ handleChange }/>
+        <label htmlFor="name">Name: </label>
+        <Hint options={["orange", "banana", "apple"]}>
+          <input type="text" id="name" name="username" value={user.username} onChange={handleChange} />
+        </Hint>
           </div>
           <div>
             <label htmlFor="password">Password: </label>
@@ -153,24 +188,38 @@ function Landing() {
             <input type="text" id="picture_url" name="picture_url"  value={user.picture_url} onChange={ handleChange } />
       </div>
 
+ 
+      
       <div>
-            <label htmlFor="genre_id">genre id: </label>
-            <input type="text" id="genre_id" name="genre_id"  value={user.genre_id} onChange={ handleChange } />
+        <label htmlFor="genre_id">genre id: </label>
+          <input list="genres" type="text" id="genre_id" name="genre_id" value={user.genre_id} onChange={handleChange} />
+        <datalist id="genres">
+          {genres.map((genre) => <option value={genre.name}/>)}
+            </datalist> 
       </div>
 
       <div>
             <label htmlFor="instrument_id">instrument id: </label>
-            <input type="text" id="instrument_id" name="instrument_id"  value={user.instrument_id} onChange={ handleChange } />
+            <input list="instruments" type="text" id="instrument_id" name="instrument_id"  value={user.instrument_id} onChange={ handleChange } />
+            <datalist id="instruments">
+          {instruments.map((instrument) => <option value={instrument.name}/>)}
+            </datalist> 
       </div>
 
       <div>
             <label htmlFor="location_id">location id: </label>
-            <input type="text" id="location_id" name="location_id"  value={user.location_id} onChange={ handleChange } />
+        <input list="locations" type="text" id="location_id" name="location_id" value={user.location_id} onChange={handleChange} />
+        <datalist id="locations">
+          {locations.map((instrument) => <option value={instrument.name}/>)}
+            </datalist> 
       </div>
 
       <div>
             <label htmlFor="looking_for_id">looking for id: </label>
-            <input type="text" id="looking_for_id" name="looking_for_id"  value={user.looking_for_id} onChange={ handleChange } />
+        <input list="instruments" type="text" id="looking_for_id" name="looking_for_id" value={user.looking_for_id} onChange={handleChange} />
+        <datalist id="instruments">
+          {instruments.map((instrument) => <option value={instrument.name}/>)}
+            </datalist> 
       </div>
     
           <input  type="submit" value="submit"  />
