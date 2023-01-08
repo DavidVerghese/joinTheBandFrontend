@@ -21,5 +21,8 @@ body {
   flex-wrap: wrap;
   justify-content: center;
 }
+.profiles-parent {
+  margin: 20px;
+}
 
 @import 'bootstrap/dist/css/bootstrap.min.css'
