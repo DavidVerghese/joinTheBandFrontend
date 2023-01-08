@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 function Landing() {
 
   const [currentUser, setCurrentUser] = useState({ name: 'no user' })
@@ -46,15 +47,6 @@ function Landing() {
 
   
   const [toggle,setToggle] = useState(false)
-
-  // useEffect(() => {
-  //   // debugger;
-  //   fetch("http://localhost:3000/me")
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //     });
-  // }, []);
 
   function meTest()  {
     fetch("http://localhost:3000/me")
@@ -147,9 +139,25 @@ function Landing() {
   return <div className="login-or-signup">
     <p>current user: {currentUser.name}</p>
     <button onClick={meTest}>run /me</button>
-    
+
+    <Form  onSubmit={handleSubmitLogin}>
+      <h2>Signup</h2>
+      {loginErrors.map((loginError) => <><em>{loginError}</em><br></br></>)}
+      <Form.Group className="mb-3">
+        <Form.Label>Username</Form.Label>
+        <Form.Control type="text" placeholder="Enter your username" name="username" value={user.username} onChange={handleChange}/>
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Password</Form.Label>
+        <Form.Control type="password" placeholder="Password"  name="password"  value={user.password} onChange={ handleChange } />
+      </Form.Group>
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+    </Form>
   
-    <form className="login" onSubmit={handleSubmitLogin}>
+    {/* <form className="login" onSubmit={handleSubmitLogin}>
       
     <h2>Login</h2>
   
@@ -167,7 +175,7 @@ function Landing() {
             <input type="password" id="password" name="password"  value={user.password} onChange={ handleChange } />
           </div>
           <input  type="submit" value="submit"  />
-    </form>
+    </form> */}
     
    
     <form className="signup" onSubmit={handleSubmitSignUp}>
