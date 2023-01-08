@@ -105,7 +105,6 @@ function Landing({baseURL,genres,setGenres,instruments,setInstruments,locations,
           if (!locations.includes(data.location)) {
             setLocations([...locations,data.location])
           }
-   
           setUsers([...users,data])
           setCurrentUser(data);
           history.push("/profiles");

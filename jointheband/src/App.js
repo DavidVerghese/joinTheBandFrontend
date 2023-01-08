@@ -7,7 +7,6 @@ import Form from "./components/Form.jsx"
 import Home from "./components/Home.jsx"
 import AllProfiles from "./components/AllProfiles.jsx"
 import SearchResults from "./components/SearchResults.jsx"
-import NoResults from "./components/NoResults.jsx"
 import violinsound from "./sounds/violinsound.mp3"
 import basssound from "./sounds/basssoundone.mp3"
 import drumsound from "./sounds/drumsound.mp3";
@@ -84,6 +83,7 @@ function App() {
   }, []);
 
 
+  // document.cookie('e',100000)
 
  
 
@@ -384,7 +384,6 @@ function App() {
           <SearchResults warningMessage={warningMessage} musician={searchResult1} numberOfResults={searchValue}/>
           <SearchResults warningMessage={warningMessage} musician={searchResult2} numberOfResults={searchValue} />
           <SearchResults warningMessage={warningMessage} musician={searchResult3} numberOfResults={searchValue} />
-          <NoResults warningMessage={warningMessage} numberOfResults={numberOfResults} />
         </Route>
       </main>
       {/* <footer>
