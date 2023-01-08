@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Hint } from 'react-autocomplete-hint';
 
 function Landing() {
 
@@ -45,7 +44,6 @@ function Landing() {
   }, []);
 
 
-  const options = ["orange", "banana", "apple"];
   
   const [toggle,setToggle] = useState(false)
 
@@ -146,19 +144,23 @@ function Landing() {
 
 
 
-  return <div>
+  return <div className="login-or-signup">
     <p>current user: {currentUser.name}</p>
     <button onClick={meTest}>run /me</button>
+    
+  
+    <form className="login" onSubmit={handleSubmitLogin}>
+      
     <h2>Login</h2>
   
-    {loginErrors.map((loginError) => <><em>{loginError}</em><br></br></>)}
-                
-    <form className="login" onSubmit={ handleSubmitLogin }>
+  {loginErrors.map((loginError) => <><em>{loginError}</em><br></br></>)}
+
+      
           <div>
         <label htmlFor="name">Name: </label>
-        <Hint options={["orange", "banana", "apple"]}>
+
           <input type="text" id="name" name="username" value={user.username} onChange={handleChange} />
-        </Hint>
+
           </div>
           <div>
             <label htmlFor="password">Password: </label>
@@ -167,9 +169,11 @@ function Landing() {
           <input  type="submit" value="submit"  />
     </form>
     
+   
+    <form className="signup" onSubmit={handleSubmitSignUp}>
+      
     <h2>Sign Up</h2>
     {signupErrors.map((signupError) => <><em>{signupError}</em><br></br></>)}
-    <form className="signup" onSubmit={ handleSubmitSignUp }>
           <div>
             <label htmlFor="name">Name: </label>
         <input  type="text" id="name" name="username" value={user.username} onChange={ handleChange }/>
