@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useHistory } from "react-router-dom";
 
-function Landing({baseURL,genres,setGenres,instruments,locations}) {
+function Landing({baseURL,genres,setGenres,instruments,setInstruments,locations,setLocations, users,setUsers}) {
 
   let history = useHistory();
 
@@ -96,6 +96,16 @@ function Landing({baseURL,genres,setGenres,instruments,locations}) {
       if(resp.ok){
         resp.json().then(data => {
           setSignupErrors([])
+          if (!genres.includes(data.genre)) {
+            setGenres([...genres,data.genre])
+          }
+          if (!instruments.includes(data.instrument)) {
+            setInstruments([...genres,data.instrument])
+          }
+          if (!locations.includes(data.location)) {
+            setLocations([...locations,data.location])
+          }
+          setUsers([...users,data])
           setCurrentUser(data);
           history.push("/profiles");
           // console.log(data);
