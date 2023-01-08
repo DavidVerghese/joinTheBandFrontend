@@ -14,7 +14,8 @@ function Landing() {
     location: "", 
     looking_for: ""
   });
-  const [signupErrors,setSignupErrors] = useState([])
+  const [signupErrors, setSignupErrors] = useState([]);
+  const [loginErrors, setLoginErrors] = useState([]);
   const [genres, setGenres] = useState([]);
   const [instruments, setInstruments] = useState([]);
   const [locations, setLocations] = useState([]);
@@ -83,6 +84,7 @@ function Landing() {
     }).then(resp => {
       if(resp.ok){
         resp.json().then(data => {
+          setLoginErrors([])
           console.log(data); 
           setCurrentUser(data);
           setToggle(!toggle)
@@ -91,7 +93,7 @@ function Landing() {
             // navigate('/')
          })
       }else {
-         resp.json().then(json => console.log(json.errors))
+         resp.json().then(json => setLoginErrors(json.errors))
       }
    })
 
@@ -126,9 +128,6 @@ function Landing() {
           setSignupErrors([])
           setCurrentUser(data);
           console.log(data);
-          // setUser(data);
-            // handleCurrentUser(data)
-            // navigate('/')
          })
       }else {
          resp.json().then(json => setSignupErrors(json.errors))
@@ -152,7 +151,7 @@ function Landing() {
     <button onClick={meTest}>run /me</button>
     <h2>Login</h2>
   
-  
+    {loginErrors.map((loginError) => <><em>{loginError}</em><br></br></>)}
                 
     <form className="login" onSubmit={ handleSubmitLogin }>
           <div>
