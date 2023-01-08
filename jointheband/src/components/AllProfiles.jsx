@@ -19,27 +19,33 @@ function AllProfiles({users,genres,instruments,locations}) {
   function filterUsersByGenre(genre) {
 
     if (genre === 'All genres') {
+      setDescribeDisplayedUsers(`all users`)
       return users;
     }
     else {
+      setDescribeDisplayedUsers(`users whose genre is "${genre}"`)
       return users.filter((user) => user.genre_name === genre);
     }
   }
   function filterUsersByInstrument(instrument) {
 
     if (instrument === 'All instruments') {
+      setDescribeDisplayedUsers(`all users`)
       return users;
     }
     else {
+      setDescribeDisplayedUsers(`users whose instrument is "${instrument}"`)
       return users.filter((user) => user.instrument_name === instrument);
     }
   }
   function filterUsersByLocation(location) {
 
     if (location === 'All locations') {
+      setDescribeDisplayedUsers(`all users`)
       return users;
     }
     else {
+      setDescribeDisplayedUsers(`users whose location is "${location}"`)
       return users.filter((user) => user.location_name === location);
     }
   }
@@ -54,11 +60,14 @@ function AllProfiles({users,genres,instruments,locations}) {
 
   function handleSearch() {
     setDisplayedUsers(users.filter((user) => user.name.includes(searchTerm)))
+    setDescribeDisplayedUsers(`users whose name contains "${searchTerm}"`)
   }
+  const [describeDisplayedUsers, setDescribeDisplayedUsers] = useState('all users') 
   return (
     <div>
         <h2>Users:</h2>
         
+  
       <ButtonGroup style={{ width: '100%', display: 'flex', justifyContent:'space-between' }} className="mb-2">
         <InputGroup style={{ maxWidth: '50%', marginLeft:'50px' }} className="mb-3">
         <Form.Control
@@ -72,7 +81,7 @@ function AllProfiles({users,genres,instruments,locations}) {
           Submit
         </Button>
         </InputGroup>
-        <Button  variant="secondary" onClick={()=>setDisplayedUsers(users)} style={{maxWidth: '20%',marginRight: '50px',padding: '5px'}} >See all users</Button>
+        <Button variant="secondary" onClick={() => { setDisplayedUsers(users); setDescribeDisplayedUsers(`all users`) }} style={{maxWidth: '20%',marginRight: '50px',padding: '5px'}} >See all users</Button>
         </ButtonGroup>
 
       <ButtonGroup style={{ width: '100%', display: 'flex', justifyContent:'space-around' }}  className="mb-2">
@@ -111,9 +120,9 @@ function AllProfiles({users,genres,instruments,locations}) {
       </Dropdown.Menu>
         </Dropdown>
         </ButtonGroup>
-      
+      <p>Currently displaying {describeDisplayedUsers}</p>
     <div className="profiles">
-      
+  
         {displayedUsers.map((item, key) => {
         
         //  item stores data of musician's profile
