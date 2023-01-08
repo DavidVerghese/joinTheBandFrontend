@@ -6,6 +6,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
+import Spinner from 'react-bootstrap/Spinner';
 
 import { useState, useEffect } from 'react';
 function AllProfiles({users,genres,instruments,locations}) {
@@ -70,7 +71,6 @@ function AllProfiles({users,genres,instruments,locations}) {
     }
   }
   const [describeDisplayedUsers, setDescribeDisplayedUsers] = useState('all users');
-  const [noResults, setNoResults] = useState('');
   return (
     <div className="profiles-parent">
         <h2>Users:</h2>
@@ -131,7 +131,7 @@ function AllProfiles({users,genres,instruments,locations}) {
       <p>Currently displaying {describeDisplayedUsers}</p>
     <div className="profiles">
   
-        {displayedUsers.map((item, key) => {
+        {displayedUsers.length > 0 ? displayedUsers.map((item, key) => {
         
         //  item stores data of musician's profile
           return (
@@ -169,7 +169,12 @@ function AllProfiles({users,genres,instruments,locations}) {
             </Card.Body>
             </Card>
         );
-        })}
+        }) : <>
+            <h2>Loading</h2>
+            <Spinner animation="border" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </Spinner>
+        </>}
   
       {/* <a href="#top">
         <button
