@@ -1,5 +1,5 @@
 import './App.css';
-import { baseURL, config } from "./services";
+import { config } from "./services";
 import { useEffect, useState } from "react";
 import axios from "axios"
 import { Route, Link } from "react-router-dom";
@@ -45,6 +45,9 @@ function App() {
   drumAudio.volume = 0.05;
   const [toggleFetch, setToggleFetch] = useState(true)
   
+  console.log(process.env.NODE_ENV)
+  const baseURL = process.env.NODE_ENV === 'production' ?  `https://join-the-band-api.herokuapp.com/` : `http://localhost:3000`
+
   useEffect(() => {
     async function getData() {
       let response = await axios.get(baseURL + '/Musicians', config)
@@ -73,7 +76,7 @@ function App() {
 
   useEffect(() => {
     // debugger;
-    fetch("http://localhost:3000/users/")
+    fetch(`${baseURL}/users/`)
       .then((response) => response.json())
       .then((data) => {
         setUsers(data);
@@ -300,7 +303,7 @@ function App() {
 
   const [genres, setGenres] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/genres")
+    fetch(`${baseURL}/genres`)
       .then((response) => response.json())
       .then((data) => {
         setGenres(data);
@@ -313,7 +316,7 @@ function App() {
   
 
   useEffect(() => {
-    fetch("http://localhost:3000/instruments")
+    fetch(`${baseURL}/instruments`)
       .then((response) => response.json())
       .then((data) => {
         setInstruments(data);
@@ -321,7 +324,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3000/locations")
+    fetch(`${baseURL}/locations`)
       .then((response) => response.json())
       .then((data) => {
         setLocations(data);
@@ -365,14 +368,14 @@ function App() {
         
         <Route exact path="/">
           {/* <Home data={data}/> */}
-          <Landing instruments={instruments} locations={locations} genres={genres} setGenres={setGenres}/>
+          <Landing baseURL={baseURL} instruments={instruments} locations={locations} genres={genres} setGenres={setGenres}/>
         </Route>
         <Route path="/form">
           {/* setToggleFetch is passed as a prop to Form */}
           <Form data={data} refresh={setToggleFetch}/>
         </Route>
         <Route path="/profiles">
-          <AllProfiles genres={genres} instruments={instruments} locations={locations} users={users} refresh={setToggleFetch} data={data}/>
+          <AllProfiles baseURL={baseURL} genres={genres} instruments={instruments} locations={locations} users={users} refresh={setToggleFetch} data={data}/>
         </Route>
         <Route path="/search">
           <SearchResults warningMessage={warningMessage} musician={searchResult1} numberOfResults={searchValue}/>

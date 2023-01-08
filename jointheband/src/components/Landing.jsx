@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useHistory } from "react-router-dom";
 
-function Landing({genres,setGenres,instruments,locations}) {
+function Landing({baseURL,genres,setGenres,instruments,locations}) {
 
   let history = useHistory();
 
@@ -28,7 +28,7 @@ function Landing({genres,setGenres,instruments,locations}) {
   const [toggle,setToggle] = useState(false)
 
   function meTest()  {
-    fetch("http://localhost:3000/me")
+    fetch(`${baseURL}/me`)
       .then((response) => response.json())
       .then((data) => {
         setCurrentUser(data);
@@ -42,7 +42,7 @@ function Landing({genres,setGenres,instruments,locations}) {
     e.preventDefault();
 
     console.log(user);
-    fetch('http://localhost:3000/login', {
+    fetch(`${baseURL}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -75,7 +75,7 @@ function Landing({genres,setGenres,instruments,locations}) {
     e.preventDefault();
 
     console.log(user);
-    fetch('http://localhost:3000/signup', {
+    fetch(`${baseURL}/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

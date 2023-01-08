@@ -66,7 +66,7 @@ function AllProfiles({users,genres,instruments,locations}) {
     }
     else {
       setDisplayedUsers(searchResults)
-      setDescribeDisplayedUsers(`users whose name contains "${searchTerm}"`)
+      setDescribeDisplayedUsers(`users named ${searchTerm} or whose name contains "${searchTerm}"`)
     }
   }
   const [describeDisplayedUsers, setDescribeDisplayedUsers] = useState('all users');
