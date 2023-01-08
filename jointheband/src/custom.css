@@ -16,5 +16,10 @@ body {
 .login input, .signup input {
   display: block;
 }
+.profiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 @import 'bootstrap/dist/css/bootstrap.min.css'

@@ -1,5 +1,7 @@
 import Profile from "./Profile.jsx";
 import drumfill from "../sounds/drumfill.mp3";
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 function AllProfiles(props) {
   const drumFillAudio = new Audio(drumfill);
@@ -11,30 +13,50 @@ function AllProfiles(props) {
   }
   return (
     <div>
-      <a href="top" name="top">
-        <h2>Profiles:</h2>
-      </a>
-      <div id="all-profiles-parent-div">
+        <h2>Users:</h2>
         
+    <div className="profiles">
+      
         {users.map((item, key) => {
         
         //  item stores data of musician's profile
-        return (
-          <div> 
-            <p>{item.name}</p>
-            <img src={item.picture_url} />
-            <p>email: {item.email_address}</p>
-            <p>genre: {item.genre_name}</p>
-            <p>joined: {alterDate(item.created_at)}</p>
-            <p>location: {item.location_name}</p>
-            <p>instrument: {item.instrument_name}</p>
-            <p>looking for: {item.looking_for_name}</p>
-            {/* pass item as prop to Profile */}
-            {/* <Profile  key={key} item={item} refresh={props.refresh} /> */}
-          </div>
+          return (
+          
+            <Card style={{ width: '18rem', backgroundColor: 'black',boxShadow: '1px 1px 1px 1px white', margin: '10px', textAlign: 'center' }}>
+            <Card.Body>
+                 <Card.Header>
+                  <Card.Title>{item.name}</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">{item.instrument_name}</Card.Subtitle>
+                </Card.Header>
+
+                <Card.Img style={{ width: '5rem'}} variant="top" src={item.picture_url}  />
+
+               
+                
+                <Card.Text>
+                  email: {item.email_address}
+                </Card.Text>
+                <Card.Text>
+                genre: {item.genre_name}
+                </Card.Text>
+                <Card.Text>
+                <p>joined: {alterDate(item.created_at)}</p>
+                </Card.Text>
+                <Card.Text>
+                <p>location: {item.location_name}</p>
+                </Card.Text>
+                <Card.Text>
+                <p>instrument: {item.instrument_name}</p>
+                </Card.Text>
+                <Card.Text>
+                <p>looking for: {item.looking_for}</p>
+                </Card.Text>
+           
+            </Card.Body>
+            </Card>
         );
         })}
-      </div>
+  
       {/* <a href="#top">
         <button
           onClick={function () {
@@ -45,7 +67,7 @@ function AllProfiles(props) {
         </button>
       </a> */}
       </div>
-      // </div>
+      </div>
   );
 }
 
