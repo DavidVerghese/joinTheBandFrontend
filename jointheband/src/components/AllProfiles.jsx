@@ -59,10 +59,18 @@ function AllProfiles({users,genres,instruments,locations}) {
   const [searchTerm,setSearchTerm] = useState('')
 
   function handleSearch() {
-    setDisplayedUsers(users.filter((user) => user.name.includes(searchTerm)))
-    setDescribeDisplayedUsers(`users whose name contains "${searchTerm}"`)
+    const searchResults = users.filter((user) => user.name.includes(searchTerm));
+
+    if (searchResults.length == 0) {
+      alert(`there are no users named "${searchTerm}"`)
+    }
+    else {
+      setDisplayedUsers(searchResults)
+      setDescribeDisplayedUsers(`users whose name contains "${searchTerm}"`)
+    }
   }
-  const [describeDisplayedUsers, setDescribeDisplayedUsers] = useState('all users') 
+  const [describeDisplayedUsers, setDescribeDisplayedUsers] = useState('all users');
+  const [noResults, setNoResults] = useState('');
   return (
     <div className="profiles-parent">
         <h2>Users:</h2>
