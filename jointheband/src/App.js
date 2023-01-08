@@ -307,6 +307,26 @@ function App() {
       });
   }, []);
    
+  const [instruments, setInstruments] = useState([]);
+  const [locations, setLocations] = useState([]);
+
+  
+
+  useEffect(() => {
+    fetch("http://localhost:3000/instruments")
+      .then((response) => response.json())
+      .then((data) => {
+        setInstruments(data);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/locations")
+      .then((response) => response.json())
+      .then((data) => {
+        setLocations(data);
+      });
+  }, []);
 
   return (
     <div>
@@ -345,14 +365,14 @@ function App() {
         
         <Route exact path="/">
           {/* <Home data={data}/> */}
-          <Landing genres={genres} setGenres={setGenres}/>
+          <Landing instruments={instruments} locations={locations} genres={genres} setGenres={setGenres}/>
         </Route>
         <Route path="/form">
           {/* setToggleFetch is passed as a prop to Form */}
           <Form data={data} refresh={setToggleFetch}/>
         </Route>
         <Route path="/profiles">
-          <AllProfiles genres={genres} users={users} refresh={setToggleFetch} data={data}/>
+          <AllProfiles genres={genres} instruments={instruments} locations={locations} users={users} refresh={setToggleFetch} data={data}/>
         </Route>
         <Route path="/search">
           <SearchResults warningMessage={warningMessage} musician={searchResult1} numberOfResults={searchValue}/>

@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { useState, useEffect } from 'react';
-function AllProfiles({users,genres}) {
+function AllProfiles({users,genres,instruments,locations}) {
   const drumFillAudio = new Audio(drumfill);
   drumFillAudio.volume = 0.02;
 
@@ -18,18 +18,48 @@ function AllProfiles({users,genres}) {
       return users;
     }
     else {
-      console.log(users,genre)
       return users.filter((user) => user.genre_name === genre);
     }
-    
+  }
+  function filterUsersByInstrument(instrument) {
+
+    if (instrument === 'All instruments') {
+      return users;
+    }
+    else {
+      return users.filter((user) => user.instrument_name === instrument);
+    }
+  }
+  function filterUsersByLocation(location) {
+
+    if (location === 'All locations') {
+      return users;
+    }
+    else {
+      return users.filter((user) => user.location_name === location);
+    }
   }
   function alterDate(UTCString) {
     return Date(UTCString).split(' ').slice(0,3).join(' ')
   }
-  const genresPlusAllGenres = [{ name: "All genres" },...genres]
+  const genresPlusAllGenres = [{ name: "All genres" }, ...genres]
+  const instrumentsPlusAllInstruments = [{ name: "All instruments" }, ...instruments]
+  const locationsPlusAllLocations = [{ name: "All locations" }, ...locations]
+  
   return (
     <div>
         <h2>Users:</h2>
+
+        <div class="btn-group">
+        <Dropdown>
+      <Dropdown.Toggle variant="success" id="dropdown-basic">
+        Filter by Instrument
+      </Dropdown.Toggle>
+
+        <Dropdown.Menu>
+          {instrumentsPlusAllInstruments.map((instrument) => <Dropdown.Item onClick={()=>setDisplayedUsers(filterUsersByInstrument(instrument.name))}>{instrument.name}</Dropdown.Item>)}
+      </Dropdown.Menu>
+      </Dropdown>
 
         <Dropdown>
       <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -40,6 +70,17 @@ function AllProfiles({users,genres}) {
           {genresPlusAllGenres.map((genre) => <Dropdown.Item onClick={()=>setDisplayedUsers(filterUsersByGenre(genre.name))}>{genre.name}</Dropdown.Item>)}
       </Dropdown.Menu>
       </Dropdown>
+
+      <Dropdown>
+      <Dropdown.Toggle variant="success" id="dropdown-basic">
+        Filter by Location
+      </Dropdown.Toggle>
+
+        <Dropdown.Menu>
+          {locationsPlusAllLocations.map((location) => <Dropdown.Item onClick={()=>setDisplayedUsers(filterUsersByLocation(location.name))}>{location.name}</Dropdown.Item>)}
+      </Dropdown.Menu>
+        </Dropdown>
+        </div>
       
     <div className="profiles">
       
