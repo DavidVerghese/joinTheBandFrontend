@@ -8,9 +8,7 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.login, .signup {
-  max-width: 300px;
-}
+
 .login h2, .signup h2 {
   text-align: center;
   

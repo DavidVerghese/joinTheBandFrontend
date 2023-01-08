@@ -138,7 +138,7 @@ function Landing() {
 
   return <div className="login-or-signup">
     <p>current user: {currentUser.name}</p>
-    <button onClick={meTest}>run /me</button>
+    <Button variant="primary" onClick={meTest}>run /me</Button>
 
     <Form  onSubmit={handleSubmitLogin}>
       <h2>Signup</h2>
