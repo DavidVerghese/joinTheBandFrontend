@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { useHistory } from "react-router-dom";
+
 function Landing({genres,setGenres,instruments,locations}) {
+
+  let history = useHistory();
 
   const [currentUser, setCurrentUser] = useState({ name: 'no user' })
   const [user, setUser] = useState({
@@ -53,6 +57,7 @@ function Landing({genres,setGenres,instruments,locations}) {
           console.log(data); 
           setCurrentUser(data);
           setToggle(!toggle)
+          history.push("/profiles");
           // setUser(data);
             // handleCurrentUser(data)
             // navigate('/')
@@ -92,7 +97,9 @@ function Landing({genres,setGenres,instruments,locations}) {
         resp.json().then(data => {
           setSignupErrors([])
           setCurrentUser(data);
-          console.log(data);
+          history.push("/profiles");
+          // console.log(data);
+         
          })
       }else {
          resp.json().then(json => setSignupErrors(json.errors))
