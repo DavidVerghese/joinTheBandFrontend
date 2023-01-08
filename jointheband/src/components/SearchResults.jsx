@@ -1,5 +1,4 @@
 import "../App.css";
-import Profile from "./Profile.jsx";
 
 function SearchResults(props) {
   // this checks to make sure the number of results isn't zero. 
@@ -9,7 +8,7 @@ function SearchResults(props) {
     return (
       <div className="allResults">
         {props.musician.map((item) => {
-          return <Profile item={item} />;
+         
         })}
       </div>
     );

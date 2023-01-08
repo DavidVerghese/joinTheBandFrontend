@@ -1,4 +1,3 @@
-import Profile from "./Profile.jsx";
 import drumfill from "../sounds/drumfill.mp3";
 import Card from 'react-bootstrap/Card';
 import Dropdown from 'react-bootstrap/Dropdown';
