@@ -26,7 +26,7 @@ function Signup({baseURL,genres,setGenres,instruments,setInstruments,locations,s
     e.preventDefault();
 
     console.log(user);
-    fetch(`${baseURL}/signup`, {
+    fetch(`/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

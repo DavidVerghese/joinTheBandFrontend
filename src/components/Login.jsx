@@ -25,8 +25,7 @@ function Login({baseURL,user,setUser }) {
   const [toggle,setToggle] = useState(false)
 
   function meTest() {
-    const id = cookies.get('user_id');
-    fetch(`${baseURL}/lookup/${id}`)
+    fetch(`/me`)
       .then((response) => response.json())
       .then((data) => {
         setCurrentUser(data);
@@ -39,7 +38,7 @@ function Login({baseURL,user,setUser }) {
 
     e.preventDefault();
 
-    fetch(`${baseURL}/login`, {
+    fetch(`/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
