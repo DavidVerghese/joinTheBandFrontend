@@ -10,8 +10,6 @@ function Home({user}) {
   
   return (
     <div className="home">
-
-      <p>Welcome {user.name}</p>
       
       <h2>Join The Band</h2>
       <em>find musicians in your area</em>

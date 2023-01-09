@@ -179,7 +179,9 @@ function AllProfiles({users,genres,instruments,locations}) {
                 <Card.Text>
                  <p>looking for: {item.looking_for}</p>
                 </Card.Text> 
-          
+
+                <Button variant="primary">Chat</Button>
+                <Button variant="primary">Book appointment</Button>
              </Card.Body>
             </Card>
         );

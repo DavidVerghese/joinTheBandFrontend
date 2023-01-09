@@ -39,7 +39,7 @@ function App() {
         if(resp.ok){
           resp.json().then(data => {
            console.log(data);
-              //  setUser(data)
+               setUser(data)
               //  data.error? setLoggedIn(false) : setLoggedIn(true)
             })
         }else {
@@ -90,7 +90,7 @@ function App() {
   return (
     <div>
       <main>
-        <Header user={user} />
+        <Header user={user} setUser={setUser} />
       <Route exact path="/">
           <Home user={user} />
         </Route>
