@@ -86,6 +86,7 @@ function AllProfiles({users,genres,instruments,locations}) {
     }
   }
   const [describeDisplayedUsers, setDescribeDisplayedUsers] = useState('all users');
+
   return (
     <div className="profiles-parent">
         <h2>Users:</h2>
