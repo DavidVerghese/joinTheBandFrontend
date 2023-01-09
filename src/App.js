@@ -87,22 +87,16 @@ function App() {
         </Route>
 
         <Route path="/signup">
-          <Signup baseURL={baseURL} instruments={instruments} setInstruments={setInstruments} locations={locations} setLocations={setLocations} genres={genres} setGenres={setGenres} users={users} setUsers={setUsers} />
+          <Signup baseURL={baseURL} instruments={instruments} setInstruments={setInstruments} locations={locations} setLocations={setLocations} genres={genres} setGenres={setGenres} users={users} setUsers={setUsers}setUser={setUser} />
         </Route>
-       
-          {user ?
-            <>
-            <Route path="/profiles">
+       <Route path="/profiles">
               <AllProfiles baseURL={baseURL} genres={genres} instruments={instruments} locations={locations} users={users}/>
             </Route>
             <Route path="/edit-profile">
                 <EditProfile user={user} setUser={setUser}  instruments={instruments} setInstruments={setInstruments} locations={locations} setLocations={setLocations} genres={genres} setGenres={setGenres} users={users} setUsers={setUsers}  />
               </Route>
-            </>
-            : null}
-          
-          
-
+         
+        
         <Route exact path="*">
             <NoMatch/>
           </Route>

@@ -3,9 +3,9 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useHistory } from "react-router-dom";
 
-function Signup({baseURL,genres,setGenres,instruments,setInstruments,locations,setLocations, users,setUsers}) {
+function Signup({baseURL,genres,setGenres,instruments,setInstruments,locations,setLocations, users,setUsers, setUser}) {
   let history = useHistory();
-  const [user, setUser] = useState({
+  const [signupUser, setSignupUser] = useState({
     username: "",
     password: "",
     email_address: "", 
@@ -29,19 +29,19 @@ function Signup({baseURL,genres,setGenres,instruments,setInstruments,locations,s
         "Accept": "application/json"
       },
       body: JSON.stringify({
-        name: user.username,
-        password: user.password,
-        email_address: user.email_address, 
-        picture_url: user.picture_url,
-        genre: user.genre,                                            
-        instrument: user.instrument,                                        
-        location: user.location, 
-        looking_for: user.looking_for
+        name: signupUser.username,
+        password: signupUser.password,
+        email_address: signupUser.email_address, 
+        picture_url: signupUser.picture_url,
+        genre: signupUser.genre,                                            
+        instrument: signupUser.instrument,                                        
+        location: signupUser.location, 
+        looking_for: signupUser.looking_for
       }),
      
     }).then(resp => {
       if (resp.ok) {
-        debugger;
+        // debugger;
         resp.json().then(data => {
           setSignupErrors([])
           if (!genres.includes(data.genre)) {
@@ -54,6 +54,7 @@ function Signup({baseURL,genres,setGenres,instruments,setInstruments,locations,s
             setLocations([...locations,data.location])
           }
           setUsers([...users, data]);
+          setUser(data);
           history.push("/profiles");
           
          })
@@ -65,8 +66,8 @@ function Signup({baseURL,genres,setGenres,instruments,setInstruments,locations,s
   } 
 
   const handleChange = e => {
-    setUser({
-      ...user,
+    setSignupUser({
+      ...signupUser,
       [e.target.name]: e.target.value
     })
   }
@@ -86,29 +87,29 @@ function Signup({baseURL,genres,setGenres,instruments,setInstruments,locations,s
       {signupErrors.map((signupError) => <><em>{signupError}</em><br></br></>)}
       <Form.Group className="mb-3">
         <Form.Label>Username</Form.Label>
-        <Form.Control type="text" placeholder="Enter your username" name="username" value={user.username} onChange={handleChange}/>
+        <Form.Control type="text" placeholder="Enter your username" name="username" value={signupUser.username} onChange={handleChange}/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password"  name="password"  value={user.password} onChange={ handleChange } />
+        <Form.Control type="password" placeholder="Password"  name="password"  value={signupUser.password} onChange={ handleChange } />
       </Form.Group>
 
       <Form.Group className="mb-3">
         <Form.Label>Email Address</Form.Label>
-        <Form.Control type="text" placeholder="Enter your email address" name="email_address" value={user.email_address} onChange={handleChange}/>
+        <Form.Control type="text" placeholder="Enter your email address" name="email_address" value={signupUser.email_address} onChange={handleChange}/>
       </Form.Group>
 
       <Form.Group className="mb-3">
         <Form.Label>Picture URL</Form.Label>
-        <Form.Control type="text" placeholder="Enter your picture url" name="picture_url" value={user.picture_url} onChange={handleChange}/>
+        <Form.Control type="text" placeholder="Enter your picture url" name="picture_url" value={signupUser.picture_url} onChange={handleChange}/>
       </Form.Group>
 
 
       {!displayGenreInput ?
          <Form.Group className="mb-3">
          <Form.Label>Genre</Form.Label>
-          <Form.Select onChange={(e) => { if (e.target.value === 'Other') { setDisplayGenreInput(true) } else {setUser({...user,genre:e.target.value})} }}>
+          <Form.Select onChange={(e) => { if (e.target.value === 'Other') { setDisplayGenreInput(true) } else {setSignupUser({...signupUser,genre:e.target.value})} }}>
           <option value="" disabled selected>Select your genre</option>
           {genres.map((genre) => <option value={genre.name}>{genre.name}</option>)}
           <option>Other</option>
@@ -119,13 +120,13 @@ function Signup({baseURL,genres,setGenres,instruments,setInstruments,locations,s
         </Form.Group> : null}
       {displayGenreInput ? <Form.Group className="mb-3">
         <Form.Label>Genre</Form.Label>
-        <Form.Control type="text" placeholder="Enter your genre" name="genre" value={user.genre} onChange={handleChange}/>
+        <Form.Control type="text" placeholder="Enter your genre" name="genre" value={signupUser.genre} onChange={handleChange}/>
       </Form.Group> : null}
 
       {!displayInstrumentInput ?
          <Form.Group className="mb-3">
          <Form.Label>Instrument</Form.Label>
-          <Form.Select onChange={(e) => { if (e.target.value === 'Other') { setDisplayInstrumentInput(true) } else {setUser({...user,instrument:e.target.value})} }}>
+          <Form.Select onChange={(e) => { if (e.target.value === 'Other') { setDisplayInstrumentInput(true) } else {setSignupUser({...signupUser,instrument:e.target.value})} }}>
           <option value="" disabled selected>Select your instrument</option>
           {instruments.map((instrument) => <option value={instrument.name}>{instrument.name}</option>)}
           <option>Other</option>
@@ -136,7 +137,7 @@ function Signup({baseURL,genres,setGenres,instruments,setInstruments,locations,s
         </Form.Group> : null}
       {displayInstrumentInput ? <Form.Group className="mb-3">
         <Form.Label>Instrument</Form.Label>
-        <Form.Control type="text" placeholder="Enter your instrument" name="instrument" value={user.instrument} onChange={handleChange} />
+        <Form.Control type="text" placeholder="Enter your instrument" name="instrument" value={signupUser.instrument} onChange={handleChange} />
         <Form.Text className="text-muted">
           Enter in your instrument
         </Form.Text>
@@ -145,7 +146,7 @@ function Signup({baseURL,genres,setGenres,instruments,setInstruments,locations,s
       {!displayLocationInput ?
          <Form.Group className="mb-3">
          <Form.Label>Location</Form.Label>
-          <Form.Select onChange={(e) => { if (e.target.value === 'Other') { setDisplayLocationInput(true) } else {setUser({...user,location:e.target.value})} }}>
+          <Form.Select onChange={(e) => { if (e.target.value === 'Other') { setDisplayLocationInput(true) } else {setSignupUser({...signupUser,location:e.target.value})} }}>
           <option value="" disabled selected>Select your location</option>
           {locations.map((location) => <option value={location.name}>{location.name}</option>)}
           <option>Other</option>
@@ -156,13 +157,13 @@ function Signup({baseURL,genres,setGenres,instruments,setInstruments,locations,s
         </Form.Group> : null}
       {displayLocationInput ? <Form.Group className="mb-3">
         <Form.Label>Location</Form.Label>
-        <Form.Control type="text" placeholder="Enter your location" name="location" value={user.location} onChange={handleChange}/>
+        <Form.Control type="text" placeholder="Enter your location" name="location" value={signupUser.location} onChange={handleChange}/>
       </Form.Group> : null}
 
       {!displayLookingForInput ?
          <Form.Group className="mb-3">
          <Form.Label>Looking For</Form.Label>
-          <Form.Select onChange={(e) => { if (e.target.value === 'Other') { setDisplayLookingForInput(true) } else {setUser({...user,looking_for:e.target.value})} }}>
+          <Form.Select onChange={(e) => { if (e.target.value === 'Other') { setDisplayLookingForInput(true) } else {setSignupUser({...signupUser,looking_for:e.target.value})} }}>
           <option value="" disabled selected>Select the instrument you want to collaborate with</option>
           {instruments.map((instrument) => <option value={instrument.name}>{instrument.name}</option>)}
           <option>Other</option>
@@ -173,7 +174,7 @@ function Signup({baseURL,genres,setGenres,instruments,setInstruments,locations,s
         </Form.Group> : null}
       {displayLookingForInput ? <Form.Group className="mb-3">
         <Form.Label>Looking For</Form.Label>
-        <Form.Control type="text" placeholder="Enter the instrument you are looking for" name="looking_for" value={user.looking_for} onChange={handleChange} />
+        <Form.Control type="text" placeholder="Enter the instrument you are looking for" name="looking_for" value={signupUser.looking_for} onChange={handleChange} />
         <Form.Text className="text-muted">
          Enter the instrument you want to collaborate with
         </Form.Text>

@@ -65,6 +65,27 @@ function EditProfile({ user, setUser, genres, setGenres,instruments,setInstrumen
    })
 
   }
+  
+  function handleDelete(e) {
+    e.preventDefault();
+  
+
+    fetch(`/users/${user.id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+     
+    }).then(resp => {
+       
+         
+          setUser(null);
+          
+        })
+
+  }
+
     return <div>
   <Form onSubmit={handleEdit}>
         <h2>My Profile</h2>
@@ -112,7 +133,10 @@ function EditProfile({ user, setUser, genres, setGenres,instruments,setInstrumen
       <Button variant="primary" type="submit">
         Submit
       </Button>
-    </Form>
+      </Form>
+      <Button onClick={handleDelete} variant="danger" type="submit">
+        Delete account
+      </Button>
   </div> 
   }
   
