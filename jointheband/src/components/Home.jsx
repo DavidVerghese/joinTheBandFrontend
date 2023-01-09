@@ -5,13 +5,13 @@ import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
-function Home(props) {
+function Home({user}) {
   
   
   return (
     <div className="home">
 
-
+      <p>Welcome {user.name}</p>
       
       <h2>Join The Band</h2>
       <em>find musicians in your area</em>
