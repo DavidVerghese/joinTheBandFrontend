@@ -108,7 +108,6 @@ function Landing({baseURL,genres,setGenres,instruments,setInstruments,locations,
           setUsers([...users,data])
           setCurrentUser(data);
           history.push("/profiles");
-          // console.log(data);
          
          })
       }else {
@@ -149,25 +148,6 @@ function Landing({baseURL,genres,setGenres,instruments,setInstruments,locations,
       </Button>
     </Form>
   
-    {/* <form className="login" onSubmit={handleSubmitLogin}>
-      
-    <h2>Login</h2>
-  
-  {loginErrors.map((loginError) => <><em>{loginError}</em><br></br></>)}
-
-      
-          <div>
-        <label htmlFor="name">Name: </label>
-
-          <input type="text" id="name" name="username" value={user.username} onChange={handleChange} />
-
-          </div>
-          <div>
-            <label htmlFor="password">Password: </label>
-            <input type="password" id="password" name="password"  value={user.password} onChange={ handleChange } />
-          </div>
-          <input  type="submit" value="submit"  />
-    </form> */}
     
    
     <form className="signup" onSubmit={handleSubmitSignUp}>
