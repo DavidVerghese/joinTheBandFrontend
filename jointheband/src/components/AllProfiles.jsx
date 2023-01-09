@@ -191,16 +191,7 @@ function AllProfiles({users,genres,instruments,locations}) {
               <span className="visually-hidden">Loading...</span>
             </Spinner>
         </>}
-  
-      {/* <a href="#top">
-        <button
-          onClick={function () {
-            drumFillAudio.play();
-          }}
-        >
-          Back to Top
-        </button>
-      </a> */}
+
       </div>
       </div>
   );
