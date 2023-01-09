@@ -129,7 +129,10 @@ function Landing({baseURL,genres,setGenres,instruments,setInstruments,locations,
     })
   }
 
-  const [displayInput,setDisplayInput] = useState(false)
+  const [displayGenreInput, setDisplayGenreInput] = useState(false);
+  const [displayInstrumentInput, setDisplayInstrumentInput] = useState(false)
+  const [displayLocationInput, setDisplayLocationInput] = useState(false)
+  const [displayLookingForInput,setDisplayLookingForInput] = useState(false)
 
 
   return <div className="login-or-signup">
@@ -179,10 +182,10 @@ function Landing({baseURL,genres,setGenres,instruments,setInstruments,locations,
       </Form.Group>
 
 
-      {!displayInput ?
+      {!displayGenreInput ?
          <Form.Group className="mb-3">
          <Form.Label>Genre</Form.Label>
-          <Form.Select onChange={(e) => { if (e.target.value === 'Other') { setDisplayInput(true) } else {setUser({...user,genre:e.target.value})} }}>
+          <Form.Select onChange={(e) => { if (e.target.value === 'Other') { setDisplayGenreInput(true) } else {setUser({...user,genre:e.target.value})} }}>
           <option value="" disabled selected>Select your genre</option>
           {genres.map((genre) => <option value={genre.name}>{genre.name}</option>)}
           <option>Other</option>
@@ -191,10 +194,66 @@ function Landing({baseURL,genres,setGenres,instruments,setInstruments,locations,
           If you do not see your genre, select 'Other'
         </Form.Text>
         </Form.Group> : null}
-
-      {displayInput ? <Form.Group className="mb-3">
+      {displayGenreInput ? <Form.Group className="mb-3">
         <Form.Label>Genre</Form.Label>
         <Form.Control type="text" placeholder="Enter your genre" name="genre" value={user.genre} onChange={handleChange}/>
+      </Form.Group> : null}
+
+      {!displayInstrumentInput ?
+         <Form.Group className="mb-3">
+         <Form.Label>Instrument</Form.Label>
+          <Form.Select onChange={(e) => { if (e.target.value === 'Other') { setDisplayInstrumentInput(true) } else {setUser({...user,instrument:e.target.value})} }}>
+          <option value="" disabled selected>Select your instrument</option>
+          {instruments.map((instrument) => <option value={instrument.name}>{instrument.name}</option>)}
+          <option>Other</option>
+          </Form.Select>
+          <Form.Text className="text-muted">
+          If you do not see your instrument, select 'Other'
+        </Form.Text>
+        </Form.Group> : null}
+      {displayInstrumentInput ? <Form.Group className="mb-3">
+        <Form.Label>Instrument</Form.Label>
+        <Form.Control type="text" placeholder="Enter your instrument" name="instrument" value={user.instrument} onChange={handleChange} />
+        <Form.Text className="text-muted">
+          Enter in your instrument
+        </Form.Text>
+      </Form.Group> : null}
+
+      {!displayLocationInput ?
+         <Form.Group className="mb-3">
+         <Form.Label>Location</Form.Label>
+          <Form.Select onChange={(e) => { if (e.target.value === 'Other') { setDisplayLocationInput(true) } else {setUser({...user,location:e.target.value})} }}>
+          <option value="" disabled selected>Select your location</option>
+          {locations.map((location) => <option value={location.name}>{location.name}</option>)}
+          <option>Other</option>
+          </Form.Select>
+          <Form.Text className="text-muted">
+          If you do not see your location, select 'Other'
+        </Form.Text>
+        </Form.Group> : null}
+      {displayLocationInput ? <Form.Group className="mb-3">
+        <Form.Label>Location</Form.Label>
+        <Form.Control type="text" placeholder="Enter your location" name="location" value={user.location} onChange={handleChange}/>
+      </Form.Group> : null}
+
+      {!displayLookingForInput ?
+         <Form.Group className="mb-3">
+         <Form.Label>Looking For</Form.Label>
+          <Form.Select onChange={(e) => { if (e.target.value === 'Other') { setDisplayLookingForInput(true) } else {setUser({...user,looking_for:e.target.value})} }}>
+          <option value="" disabled selected>Select the instrument you want to collaborate with</option>
+          {instruments.map((instrument) => <option value={instrument.name}>{instrument.name}</option>)}
+          <option>Other</option>
+          </Form.Select>
+          <Form.Text className="text-muted">
+          If you do not see the instrument you want to collaborate with, select 'Other'
+        </Form.Text>
+        </Form.Group> : null}
+      {displayLookingForInput ? <Form.Group className="mb-3">
+        <Form.Label>Looking For</Form.Label>
+        <Form.Control type="text" placeholder="Enter the instrument you are looking for" name="looking_for" value={user.looking_for} onChange={handleChange} />
+        <Form.Text className="text-muted">
+         Enter the instrument you want to collaborate with
+        </Form.Text>
       </Form.Group> : null}
 
 
@@ -204,65 +263,7 @@ function Landing({baseURL,genres,setGenres,instruments,setInstruments,locations,
     </Form>
   
     
-    <form className="signup" onSubmit={handleSubmitSignUp}>
-      
-    <h2>Sign Up</h2>
-    {signupErrors.map((signupError) => <><em>{signupError}</em><br></br></>)}
-          <div>
-            <label htmlFor="name">Name: </label>
-        <input  type="text" id="name" name="username" value={user.username} onChange={ handleChange }/>
-          </div>
-          <div>
-            <label htmlFor="password">Password: </label>
-            <input type="password" id="password" name="password"  value={user.password} onChange={ handleChange } />
-      </div>
-      
-      <div>
-            <label htmlFor="email_address">email address: </label>
-            <input type="text" id="email_address" name="email_address"  value={user.email_address} onChange={ handleChange } />
-      </div>
-
-      <div>
-            <label htmlFor="picture_url">picture url: </label>
-            <input type="text" id="picture_url" name="picture_url"  value={user.picture_url} onChange={ handleChange } />
-      </div>
-
- 
-      
-      <div>
-        <label htmlFor="genre">genre: </label>
-          <input list="genres" type="text" id="genre" name="genre" value={user.genre} onChange={handleChange} />
-        <datalist id="genres">
-          {genres.map((genre) => <option value={genre.name}/>)}
-            </datalist> 
-      </div>
-
-      <div>
-            <label htmlFor="instrument">instrument: </label>
-            <input list="instruments" type="text" id="instrument" name="instrument"  value={user.instrument} onChange={ handleChange } />
-            <datalist id="instruments">
-          {instruments.map((instrument) => <option value={instrument.name}/>)}
-            </datalist> 
-      </div>
-
-      <div>
-            <label htmlFor="location">location: </label>
-        <input list="locations" type="text" id="location" name="location" value={user.location} onChange={handleChange} />
-        <datalist id="locations">
-          {locations.map((instrument) => <option value={instrument.name}/>)}
-            </datalist> 
-      </div>
-
-      <div>
-            <label htmlFor="looking_for">looking for: </label>
-        <input list="instruments" type="text" id="looking_for" name="looking_for" value={user.looking_for} onChange={handleChange} />
-        <datalist id="instruments">
-          {instruments.map((instrument) => <option value={instrument.name}/>)}
-            </datalist> 
-      </div>
     
-          <input  type="submit" value="submit"  />
-    </form>
   </div>
 }
 export default Landing;
