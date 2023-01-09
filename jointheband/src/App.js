@@ -32,6 +32,22 @@ function App() {
     })
    
   }, [])
+
+  useEffect(() => {
+    fetch(`${baseURL}/me`)
+    .then(resp => {
+        if(resp.ok){
+          resp.json().then(data => {
+           console.log(data);
+              //  setUser(data)
+              //  data.error? setLoggedIn(false) : setLoggedIn(true)
+            })
+        }else {
+            // resp.json().then(data => setErrors(data.error))
+        }
+    })
+   
+  }, [])
   
   useEffect(() => {
     fetch(`${baseURL}/users/`)
