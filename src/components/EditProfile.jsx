@@ -1,7 +1,7 @@
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 
 function EditProfile({ user, setUser, genres, setGenres,instruments,setInstruments,locations,setLocations, users,setUsers }) {
   const [editUser, setEditUser] = useState(user);
@@ -12,6 +12,7 @@ function EditProfile({ user, setUser, genres, setGenres,instruments,setInstrumen
       [e.target.name]: e.target.value
     })
   }
+  let history = useHistory();
   function handleEdit(e) {
     e.preventDefault();
     console.log(editUser);
@@ -36,18 +37,19 @@ function EditProfile({ user, setUser, genres, setGenres,instruments,setInstrumen
      if (resp.ok) {
        
        resp.json().then(data => {
-         console.log(data);
+         
          setUser(data);
          if (!genres.includes(data.genre)) {
           setGenres([...genres,data.genre])
         }
-        if (!instruments.includes(data.instrument)) {
+         if (!instruments.includes(data.instrument)) {
           setInstruments([...instruments,data.instrument])
         }
         if (!locations.includes(data.location)) {
           setLocations([...locations,data.location])
         }
-        setUsers([...users, data]);
+         setUsers([...users, data]);
+         history.push("/profiles");
           
          })
       }else {
