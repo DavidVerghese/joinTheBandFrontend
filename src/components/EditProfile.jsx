@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
 import { Redirect } from "react-router-dom";
 
-function EditProfile({ user, setUser }) {
+function EditProfile({ user, setUser, genres, setGenres,instruments,setInstruments,locations,setLocations, users,setUsers }) {
   const [editUser, setEditUser] = useState(user);
   const handleChange = e => {
     setEditUser({
@@ -36,7 +36,18 @@ function EditProfile({ user, setUser }) {
        
        resp.json().then(data => {
          console.log(data);
-         setUser(data)
+         setUser(data);
+         if (!genres.includes(data.genre)) {
+          setGenres([...genres,data.genre])
+        }
+        if (!instruments.includes(data.instrument)) {
+          setInstruments([...instruments,data.instrument])
+        }
+        if (!locations.includes(data.location)) {
+          setLocations([...locations,data.location])
+        }
+        setUsers([...users, data]);
+         
         //  setUsers[]
           // setSignupErrors([])
           // if (!genres.includes(data.genre)) {

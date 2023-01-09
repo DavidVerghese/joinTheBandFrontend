@@ -48,7 +48,7 @@ function Signup({baseURL,genres,setGenres,instruments,setInstruments,locations,s
             setGenres([...genres,data.genre])
           }
           if (!instruments.includes(data.instrument)) {
-            setInstruments([...genres,data.instrument])
+            setInstruments([...instruments,data.instrument])
           }
           if (!locations.includes(data.location)) {
             setLocations([...locations,data.location])
