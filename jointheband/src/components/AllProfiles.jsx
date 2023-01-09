@@ -1,4 +1,3 @@
-import drumfill from "../sounds/drumfill.mp3";
 import Card from 'react-bootstrap/Card';
 import Dropdown from 'react-bootstrap/Dropdown';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
@@ -9,8 +8,7 @@ import Spinner from 'react-bootstrap/Spinner';
 
 import { useState, useEffect } from 'react';
 function AllProfiles({users,genres,instruments,locations}) {
-  const drumFillAudio = new Audio(drumfill);
-  drumFillAudio.volume = 0.02;
+
 
   const [displayedUsers, setDisplayedUsers] = useState([]);
   useEffect(() => {
