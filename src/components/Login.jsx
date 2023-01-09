@@ -24,14 +24,6 @@ function Login({baseURL,user,setUser }) {
  
   const [toggle,setToggle] = useState(false)
 
-  function meTest() {
-    fetch(`/me`)
-      .then((response) => response.json())
-      .then((data) => {
-        setCurrentUser(data);
-        console.log(data);
-      });
-  }
   
 
   const handleSubmitLogin = e => {
@@ -82,8 +74,7 @@ function Login({baseURL,user,setUser }) {
 
 
   return <div className="login-or-signup">
-    <p>current user: {currentUser.name}</p>
-    <Button variant="primary" onClick={meTest}>run /me</Button>
+    
 
     <Form  onSubmit={handleSubmitLogin}>
       <h2>Log in</h2>
