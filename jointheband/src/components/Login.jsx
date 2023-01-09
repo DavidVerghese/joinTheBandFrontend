@@ -57,7 +57,6 @@ function Login({baseURL,user,setUser }) {
           setToggle(!toggle)
    
     
-          cookies.set('user_id', data.id, { path: '/' });
           // cookies.set('user_idd', 's', { path: '/' });
           setUser(data);
           history.push("/profiles");

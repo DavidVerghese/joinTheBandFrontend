@@ -58,7 +58,6 @@ function Signup({baseURL,genres,setGenres,instruments,setInstruments,locations,s
             setLocations([...locations,data.location])
           }
           setUsers([...users, data]);
-          cookies.set('user_id', data.encrypted_id, { path: '/' });
           history.push("/profiles");
           
          })
