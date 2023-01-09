@@ -78,11 +78,11 @@ function AllProfiles({users,genres,instruments,locations}) {
     const searchResults = users.filter((user) => user.name.includes(searchTerm));
 
     if (searchResults.length == 0) {
-      alert(`there are no users named "${searchTerm}"`)
+      alert(`there are no users named "${searchTerm}" or whose name contains "${searchTerm}"`)
     }
     else {
       setDisplayedUsers(searchResults)
-      setDescribeDisplayedUsers(`users named ${searchTerm} or whose name contains "${searchTerm}"`)
+      setDescribeDisplayedUsers(`users named "${searchTerm}" or whose name contains "${searchTerm}"`)
     }
   }
   const [describeDisplayedUsers, setDescribeDisplayedUsers] = useState('all users');
