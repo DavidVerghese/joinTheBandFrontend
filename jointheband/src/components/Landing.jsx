@@ -38,7 +38,7 @@ function Landing({baseURL,genres,setGenres,instruments,setInstruments,locations,
   
 
   const handleSubmitLogin = e => {
-    debugger;
+
     e.preventDefault();
 
     console.log(user);
@@ -53,6 +53,9 @@ function Landing({baseURL,genres,setGenres,instruments,setInstruments,locations,
     }).then(resp => {
       if(resp.ok){
         resp.json().then(data => {
+
+          debugger;
+
           setLoginErrors([])
           console.log(data); 
           setCurrentUser(data);
@@ -72,6 +75,7 @@ function Landing({baseURL,genres,setGenres,instruments,setInstruments,locations,
 
   const handleSubmitSignUp = e => {
 
+    debugger;
     e.preventDefault();
 
     console.log(user);
@@ -125,6 +129,7 @@ function Landing({baseURL,genres,setGenres,instruments,setInstruments,locations,
     })
   }
 
+  const [displayInput,setDisplayInput] = useState(false)
 
 
   return <div className="login-or-signup">
@@ -150,6 +155,55 @@ function Landing({baseURL,genres,setGenres,instruments,setInstruments,locations,
   
     
    
+    <Form  onSubmit={handleSubmitSignUp}>
+      <h2>Sign Up</h2>
+      {signupErrors.map((signupError) => <><em>{signupError}</em><br></br></>)}
+      <Form.Group className="mb-3">
+        <Form.Label>Username</Form.Label>
+        <Form.Control type="text" placeholder="Enter your username" name="username" value={user.username} onChange={handleChange}/>
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Password</Form.Label>
+        <Form.Control type="password" placeholder="Password"  name="password"  value={user.password} onChange={ handleChange } />
+      </Form.Group>
+
+      <Form.Group className="mb-3">
+        <Form.Label>Email Address</Form.Label>
+        <Form.Control type="text" placeholder="Enter your email address" name="email_address" value={user.email_address} onChange={handleChange}/>
+      </Form.Group>
+
+      <Form.Group className="mb-3">
+        <Form.Label>Picture URL</Form.Label>
+        <Form.Control type="text" placeholder="Enter your picture url" name="picture_url" value={user.picture_url} onChange={handleChange}/>
+      </Form.Group>
+
+
+      {!displayInput ?
+         <Form.Group className="mb-3">
+         <Form.Label>Genre</Form.Label>
+          <Form.Select onChange={(e) => { if (e.target.value === 'Other') { setDisplayInput(true) } else {setUser({...user,genre:e.target.value})} }}>
+          <option value="" disabled selected>Select your genre</option>
+          {genres.map((genre) => <option value={genre.name}>{genre.name}</option>)}
+          <option>Other</option>
+          </Form.Select>
+          <Form.Text className="text-muted">
+          If you do not see your genre, select 'Other'
+        </Form.Text>
+        </Form.Group> : null}
+
+      {displayInput ? <Form.Group className="mb-3">
+        <Form.Label>Genre</Form.Label>
+        <Form.Control type="text" placeholder="Enter your genre" name="genre" value={user.genre} onChange={handleChange}/>
+      </Form.Group> : null}
+
+
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+    </Form>
+  
+    
     <form className="signup" onSubmit={handleSubmitSignUp}>
       
     <h2>Sign Up</h2>
