@@ -17,8 +17,10 @@ function Home({user}) {
       <em>find musicians in your area</em>
 
       <ButtonGroup style={{ display: 'block' }}>
-        <Link to="/login"><Button style={{ margin: '10px'}}>Log in</Button></Link>
-        <Link to="/signup"><Button style={{ margin: '10px'}}>Sign up</Button></Link>
+        {/* <Link to="/login"><Button style={{ margin: '10px'}}>Log in</Button></Link>
+        <Link to="/signup"><Button style={{ margin: '10px'}}>Sign up</Button></Link> */}
+        <Link to="/profiles"><Button style={{ margin: '10px' }}>See users</Button></Link>
+        
       </ButtonGroup>
       <div id="turntable-container">
         <img id="turntable-arm" src={turntable_arm} />

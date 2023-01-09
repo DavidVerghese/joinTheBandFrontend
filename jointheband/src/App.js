@@ -78,9 +78,9 @@ function App() {
       <Route exact path="/">
           <Home user={user} />
         </Route>
-        <Route path="/login">
+        {/* <Route path="/login">
           <Login user={user} setUser={setUser} baseURL={baseURL} instruments={instruments} setInstruments={setInstruments} locations={locations} setLocations={setLocations} genres={genres} setGenres={setGenres} users={users} setUsers={setUsers} />
-        </Route>
+        </Route> */}
 
         <Route path="/signup">
           <Signup baseURL={baseURL} instruments={instruments} setInstruments={setInstruments} locations={locations} setLocations={setLocations} genres={genres} setGenres={setGenres} users={users} setUsers={setUsers} />

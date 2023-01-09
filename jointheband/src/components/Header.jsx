@@ -21,7 +21,7 @@ function Header({ user }) {
   return (<Navbar style={{ color: "white" }} expand="lg">
     <Container>
       <Link to = "/"> <Navbar.Brand style={{ color: "white" }} href="">Join The Band</Navbar.Brand></Link>
-   
+{/*    
       {!loggedIn ?
         <>
           <Link to="/login"> <Navbar.Brand style={{ color: "white" }} href="login">Log In</Navbar.Brand></Link>
@@ -29,7 +29,8 @@ function Header({ user }) {
         </> : <><p style={{ color: "white" }}>Welcome, {user.name}</p>
           <Link to="/"> <Navbar.Brand onClick={  cookies.remove('user_id', { path: '/' })} style={{ color: "white" }} href="signup">Log out</Navbar.Brand></Link>
         </>
-      }
+      } */}
+       <Link to="/profiles"> <Navbar.Brand style={{ color: "white" }}>Profiles</Navbar.Brand></Link>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
   </Container>
 </Navbar>)
