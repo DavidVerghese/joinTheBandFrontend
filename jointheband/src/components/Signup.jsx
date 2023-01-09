@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useHistory } from "react-router-dom";
+import Cookies from 'universal-cookie';
 
 function Signup({baseURL,genres,setGenres,instruments,setInstruments,locations,setLocations, users,setUsers}) {
   let history = useHistory();
@@ -15,6 +16,8 @@ function Signup({baseURL,genres,setGenres,instruments,setInstruments,locations,s
     location: "", 
     looking_for: ""
   });
+  const cookies = new Cookies();
+  
   const [signupErrors, setSignupErrors] = useState([]);
 
   const handleSubmitSignUp = e => {
@@ -41,7 +44,8 @@ function Signup({baseURL,genres,setGenres,instruments,setInstruments,locations,s
       }),
      
     }).then(resp => {
-      if(resp.ok){
+      if (resp.ok) {
+        debugger;
         resp.json().then(data => {
           setSignupErrors([])
           if (!genres.includes(data.genre)) {
@@ -53,9 +57,10 @@ function Signup({baseURL,genres,setGenres,instruments,setInstruments,locations,s
           if (!locations.includes(data.location)) {
             setLocations([...locations,data.location])
           }
-          setUsers([...users,data])
+          setUsers([...users, data]);
+          cookies.set('user_id', data.encrypted_id, { path: '/' });
           history.push("/profiles");
-         
+          
          })
       }else {
          resp.json().then(json => setSignupErrors(json.errors))
