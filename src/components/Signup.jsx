@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useHistory } from "react-router-dom";
-import Cookies from 'universal-cookie';
 
 function Signup({baseURL,genres,setGenres,instruments,setInstruments,locations,setLocations, users,setUsers}) {
   let history = useHistory();
@@ -16,16 +15,13 @@ function Signup({baseURL,genres,setGenres,instruments,setInstruments,locations,s
     location: "", 
     looking_for: ""
   });
-  const cookies = new Cookies();
   
   const [signupErrors, setSignupErrors] = useState([]);
 
   const handleSubmitSignUp = e => {
 
-    debugger;
     e.preventDefault();
 
-    console.log(user);
     fetch(`/signup`, {
       method: "POST",
       headers: {

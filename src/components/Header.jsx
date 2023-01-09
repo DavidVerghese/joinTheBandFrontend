@@ -1,13 +1,14 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link } from 'react-router-dom';
+import { Link, Redirect, useHistory } from 'react-router-dom';
 import { useEffect, useState } from "react";
-import Cookies from 'universal-cookie';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faHandsHolding,  } from '@fortawesome/free-solid-svg-icons'
 
 function Header({ user, setUser }) {
   const [loggedIn, setLoggedIn] = useState(false);
-
+  let history = useHistory();
   const handleLogout = e => {
 
     e.preventDefault();
@@ -44,9 +45,13 @@ function Header({ user, setUser }) {
         <>
           <Link to="/login"> <Navbar.Brand style={{ color: "white" }} href="login">Log In</Navbar.Brand></Link>
           <Link to="/signup"> <Navbar.Brand style={{ color: "white" }} href="signup">Sign Up</Navbar.Brand></Link>
-        </> : <Link to="/"> <Navbar.Brand onClick={handleLogout} style={{ color: "white" }} href="signup">Log out</Navbar.Brand></Link>
+        </> : <>
+          <Link to="/" onClick={history.push("/")}> <Navbar.Brand onClick={handleLogout} style={{ color: "white" }} href="signup">Log out</Navbar.Brand></Link>
+          <Navbar.Brand style={{ color: "white" }}><Link to="/edit-profile">Edit Profile</Link></Navbar.Brand>
+          <Link to="/profiles"> <Navbar.Brand style={{ color: "white" }}>Profiles</Navbar.Brand></Link>
+            </>
       }
-       <Link to="/profiles"> <Navbar.Brand style={{ color: "white" }}>Profiles</Navbar.Brand></Link>
+       
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
   </Container>
 </Navbar>)

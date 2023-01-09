@@ -1,0 +1,113 @@
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import { useState } from 'react';
+import { Redirect } from "react-router-dom";
+
+function EditProfile({ user, setUser }) {
+  const [editUser, setEditUser] = useState(user);
+  const handleChange = e => {
+    setEditUser({
+      ...editUser,
+      [e.target.name]: e.target.value
+    })
+  }
+  function handleEdit(e) {
+    e.preventDefault();
+    console.log(editUser);
+
+    fetch(`/users/${user.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        name: editUser.name,
+        email_address: editUser.email_address, 
+        picture_url: editUser.picture_url,
+        genre: editUser.genre_name,                                            
+        instrument: editUser.instrument_name,                                        
+        location: editUser.location_name, 
+        looking_for: editUser.looking_for
+      }),
+     
+    }).then(resp => {
+     if (resp.ok) {
+       
+       resp.json().then(data => {
+         console.log(data);
+         setUser(data)
+        //  setUsers[]
+          // setSignupErrors([])
+          // if (!genres.includes(data.genre)) {
+          //   setGenres([...genres,data.genre])
+          // }
+          // if (!instruments.includes(data.instrument)) {
+          //   setInstruments([...genres,data.instrument])
+          // }
+          // if (!locations.includes(data.location)) {
+          //   setLocations([...locations,data.location])
+          // }
+          // setUsers([...users, data]);
+          // history.push("/profiles");
+          
+         })
+      }else {
+        //  resp.json().then(json => setSignupErrors(json.errors))
+      }
+   })
+
+  }
+    return <div>
+  <Form onSubmit={handleEdit}>
+      <h2>My Profile</h2>
+      {/* {loginErrors.map((loginError) => <><em>{loginError}</em><br></br></>)} */}
+      <Form.Group className="mb-3">
+        <Form.Label>Username</Form.Label>
+        <Form.Control type="text" placeholder="Enter your username" name="name" value={editUser.name} onChange={handleChange}/>
+      </Form.Group>
+
+      
+
+      <Form.Group className="mb-3">
+        <Form.Label>Email Address</Form.Label>
+        <Form.Control type="text" placeholder="Enter your email address" name="email_address" value={editUser.email_address} onChange={handleChange}/>
+      </Form.Group>
+
+      <Form.Group className="mb-3">
+        <Form.Label>Picture URL</Form.Label>
+        <Form.Control type="text" placeholder="Enter your picture url" name="picture_url" value={editUser.picture_url} onChange={handleChange}/>
+      </Form.Group>
+
+      <Form.Group className="mb-3">
+        <Form.Label>Genre</Form.Label>
+        <Form.Control type="text" placeholder="Enter your genre" name="genre_name" value={editUser.genre_name} onChange={handleChange}/>
+      </Form.Group>
+
+      <Form.Group className="mb-3">
+        <Form.Label>Instrument</Form.Label>
+        <Form.Control type="text" placeholder="Enter your instrument" name="instrument_name" value={editUser.instrument_name} onChange={handleChange}/>
+      </Form.Group>
+
+
+      <Form.Group className="mb-3">
+        <Form.Label>Location</Form.Label>
+        <Form.Control type="text" placeholder="Enter your location" name="location_name" value={editUser.location_name} onChange={handleChange}/>
+      </Form.Group>
+
+      <Form.Group className="mb-3">
+        <Form.Label>Looking For</Form.Label>
+        <Form.Control type="text" placeholder="Enter what instrument you are looking for" name="looking_for" value={editUser.looking_for} onChange={handleChange}/>
+      </Form.Group>
+
+     
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+    </Form>
+  </div> 
+  }
+  
+  // return ( )
+
+export default EditProfile;

@@ -8,6 +8,8 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Header from './components/Header';
 import NoMatch from './components/NoMatch/NoMatch';
+import EditProfile from './components/EditProfile';
+
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -104,9 +106,18 @@ function App() {
           <Signup baseURL={baseURL} instruments={instruments} setInstruments={setInstruments} locations={locations} setLocations={setLocations} genres={genres} setGenres={setGenres} users={users} setUsers={setUsers} />
         </Route>
        
-        {user ? <Route path="/profiles">
-          <AllProfiles baseURL={baseURL} genres={genres} instruments={instruments} locations={locations} users={users}/>
-        </Route> : null}
+          {user ?
+            <>
+            <Route path="/profiles">
+              <AllProfiles baseURL={baseURL} genres={genres} instruments={instruments} locations={locations} users={users}/>
+            </Route>
+            <Route path="/edit-profile">
+                <EditProfile user={user} setUser={setUser} />
+              </Route>
+            </>
+            : null}
+          
+          
 
         <Route exact path="*">
             <NoMatch/>
