@@ -5,6 +5,7 @@ import { Redirect } from "react-router-dom";
 
 function EditProfile({ user, setUser, genres, setGenres,instruments,setInstruments,locations,setLocations, users,setUsers }) {
   const [editUser, setEditUser] = useState(user);
+  const [editErrors,setEditErrors] = useState([])
   const handleChange = e => {
     setEditUser({
       ...editUser,
@@ -47,24 +48,10 @@ function EditProfile({ user, setUser, genres, setGenres,instruments,setInstrumen
           setLocations([...locations,data.location])
         }
         setUsers([...users, data]);
-         
-        //  setUsers[]
-          // setSignupErrors([])
-          // if (!genres.includes(data.genre)) {
-          //   setGenres([...genres,data.genre])
-          // }
-          // if (!instruments.includes(data.instrument)) {
-          //   setInstruments([...genres,data.instrument])
-          // }
-          // if (!locations.includes(data.location)) {
-          //   setLocations([...locations,data.location])
-          // }
-          // setUsers([...users, data]);
-          // history.push("/profiles");
           
          })
       }else {
-        //  resp.json().then(json => setSignupErrors(json.errors))
+         resp.json().then(json => setEditErrors(json.errors))
       }
    })
 
@@ -72,7 +59,7 @@ function EditProfile({ user, setUser, genres, setGenres,instruments,setInstrumen
     return <div>
   <Form onSubmit={handleEdit}>
       <h2>My Profile</h2>
-      {/* {loginErrors.map((loginError) => <><em>{loginError}</em><br></br></>)} */}
+        {editErrors.map((error) => <p>{error}</p>)}
       <Form.Group className="mb-3">
         <Form.Label>Username</Form.Label>
         <Form.Control type="text" placeholder="Enter your username" name="name" value={editUser.name} onChange={handleChange}/>
