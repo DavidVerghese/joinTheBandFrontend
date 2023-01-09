@@ -14,27 +14,11 @@ import EditProfile from './components/EditProfile';
 function App() {
   const [users, setUsers] = useState([]);
   
-  const cookies = new Cookies();
   const baseURL = process.env.NODE_ENV === 'production' ?  `https://join-the-band-api.herokuapp.com/` : `http://localhost:3000`
   const [user, setUser] = useState(false);
 
   console.log(user);
-  useEffect(() => {
-    const id = cookies.get('user_id');
-    fetch(`/lookup/${id}`)
-    .then(resp => {
-        if(resp.ok){
-          resp.json().then(data => {
-            setUser(data);
-              //  setUser(data)
-              //  data.error? setLoggedIn(false) : setLoggedIn(true)
-            })
-        }else {
-            // resp.json().then(data => setErrors(data.error))
-        }
-    })
-   
-  }, [])
+
 
   useEffect(() => {
     fetch(`/me`)

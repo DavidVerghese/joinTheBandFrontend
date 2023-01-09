@@ -177,7 +177,7 @@ function AllProfiles({users,genres,instruments,locations}) {
                 <p>instrument: {item.instrument_name}</p>
                </Card.Text>
                 <Card.Text>
-                 <p>looking for: {item.looking_for}</p>
+                 <p>looking for: {item.looking_for? item.looking_for.name : null}</p>
                 </Card.Text> 
 
                 <Button variant="primary">Chat</Button>

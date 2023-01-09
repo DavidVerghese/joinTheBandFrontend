@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Redirect, useHistory } from "react-router-dom";
 
 function EditProfile({ user, setUser, genres, setGenres,instruments,setInstruments,locations,setLocations, users,setUsers }) {
-  const [editUser, setEditUser] = useState(user);
+  const [editUser, setEditUser] = useState({...user,looking_for: user.looking_for.name});
   const [editErrors,setEditErrors] = useState([])
   const handleChange = e => {
     setEditUser({
@@ -39,17 +39,24 @@ function EditProfile({ user, setUser, genres, setGenres,instruments,setInstrumen
        resp.json().then(data => {
          
          setUser(data);
-         if (!genres.includes(data.genre)) {
-          setGenres([...genres,data.genre])
-        }
-         if (!instruments.includes(data.instrument)) {
-          setInstruments([...instruments,data.instrument])
-        }
-        if (!locations.includes(data.location)) {
-          setLocations([...locations,data.location])
-        }
-         setUsers([...users, data]);
-         history.push("/profiles");
+        //  if (!genres.includes(data.genre)) {
+        //   setGenres([...genres,data.genre])
+        //  }
+         
+
+        //  if (!instruments.includes(data.instrument)) {
+        //   setInstruments([...instruments,data.instrument])
+        //  }
+
+        //  if (!instruments.includes(data.looking_for)) {
+        //   setInstruments([...instruments,data.looking_for])
+        //  }
+         
+        // if (!locations.includes(data.location)) {
+        //   setLocations([...locations,data.location])
+        // }
+         setUsers(users.map((user) => user.id == data.id ? data : user ));
+         history.push("/edit-profile");
           
          })
       }else {
@@ -60,7 +67,8 @@ function EditProfile({ user, setUser, genres, setGenres,instruments,setInstrumen
   }
     return <div>
   <Form onSubmit={handleEdit}>
-      <h2>My Profile</h2>
+        <h2>My Profile</h2>
+       
         {editErrors.map((error) => <p>{error}</p>)}
       <Form.Group className="mb-3">
         <Form.Label>Username</Form.Label>
@@ -79,7 +87,7 @@ function EditProfile({ user, setUser, genres, setGenres,instruments,setInstrumen
         <Form.Control type="text" placeholder="Enter your picture url" name="picture_url" value={editUser.picture_url} onChange={handleChange}/>
       </Form.Group>
 
-      <Form.Group className="mb-3">
+      {/* <Form.Group className="mb-3">
         <Form.Label>Genre</Form.Label>
         <Form.Control type="text" placeholder="Enter your genre" name="genre_name" value={editUser.genre_name} onChange={handleChange}/>
       </Form.Group>
@@ -98,7 +106,7 @@ function EditProfile({ user, setUser, genres, setGenres,instruments,setInstrumen
       <Form.Group className="mb-3">
         <Form.Label>Looking For</Form.Label>
         <Form.Control type="text" placeholder="Enter what instrument you are looking for" name="looking_for" value={editUser.looking_for} onChange={handleChange}/>
-      </Form.Group>
+      </Form.Group> */}
 
      
       <Button variant="primary" type="submit">
