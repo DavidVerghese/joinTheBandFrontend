@@ -53,6 +53,9 @@ function Signup({baseURL,genres,setGenres,instruments,setInstruments,locations,s
           if (!locations.includes(data.location)) {
             setLocations([...locations,data.location])
           }
+          if (!instruments.includes(data.looking_for)) {
+            setInstruments([...instruments,data.looking_for])
+          }
           setUsers([...users, data]);
           setUser(data);
           history.push("/profiles");

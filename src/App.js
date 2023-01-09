@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { Route, Switch, Link } from "react-router-dom";
 import Home from "./components/Home.jsx"
 import AllProfiles from "./components/AllProfiles.jsx"
-import Cookies from 'universal-cookie';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Header from './components/Header';
@@ -91,10 +90,11 @@ function App() {
         </Route>
        <Route path="/profiles">
               <AllProfiles baseURL={baseURL} genres={genres} instruments={instruments} locations={locations} users={users}/>
-            </Route>
-            <Route path="/edit-profile">
+          </Route>
+          {user? <Route path="/edit-profile">
                 <EditProfile user={user} setUser={setUser}  instruments={instruments} setInstruments={setInstruments} locations={locations} setLocations={setLocations} genres={genres} setGenres={setGenres} users={users} setUsers={setUsers}  />
-              </Route>
+              </Route>: null}
+            
          
         
         <Route exact path="*">
