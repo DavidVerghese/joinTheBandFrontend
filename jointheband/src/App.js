@@ -3,7 +3,6 @@ import { config } from "./services";
 import { useEffect, useState } from "react";
 import axios from "axios"
 import { Route, Link } from "react-router-dom";
-import Form from "./components/Form.jsx"
 import Home from "./components/Home.jsx"
 import AllProfiles from "./components/AllProfiles.jsx"
 import violinsound from "./sounds/violinsound.mp3"
@@ -340,9 +339,7 @@ function App() {
         <Route path="/home">
           <Home/>
         </Route>
-        <Route path="/form">
-          <Form data={data} refresh={setToggleFetch}/>
-        </Route>
+
         <Route path="/profiles">
           <AllProfiles baseURL={baseURL} genres={genres} instruments={instruments} locations={locations} users={users} refresh={setToggleFetch} data={data}/>
         </Route>
