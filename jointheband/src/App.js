@@ -332,48 +332,15 @@ function App() {
 
   return (
     <div>
-      {/* <header>
-        <div className="headerBackground">
-            <Link onClick={function (){ bassAudio.play() }} to="/"><p>Join the Band!</p></Link>
-          <Link
-        onClick={function () {
-          bassAudioTwo.play();
-        }}
-        to="/form"
-      >
-        <p>Make a post!</p>
-      </Link>
-      <Link
-        onClick={function () {
-          guitarAudio.play();
-        }}
-        to="/profiles"
-      >
-            <p>View All Posts</p>
-            
-          </Link>
-          <p>Search for musicians:</p>
-          <div className="searchBarDiv">
-          <label htmlFor="searchBar"></label>
-        
-          <input name="searchBar" type="text" placeholder="instrument,location,genre, etc" onChange={search} />
-          <Link to="/search">
-            <button id="search-button" onClick={searchSubmit}>Submit</button>
-          </Link>
-        </div>
-        </div>
-      </header> */}
       <main>
         
         <Route exact path="/">
-          {/* <Home data={data}/> */}
           <Landing baseURL={baseURL} instruments={instruments} setInstruments={setInstruments} locations={locations} setLocations={setLocations} genres={genres} setGenres={setGenres} users={users} setUsers={setUsers} />
         </Route>
         <Route path="/home">
           <Home/>
         </Route>
         <Route path="/form">
-          {/* setToggleFetch is passed as a prop to Form */}
           <Form data={data} refresh={setToggleFetch}/>
         </Route>
         <Route path="/profiles">
@@ -381,9 +348,6 @@ function App() {
         </Route>
 
       </main>
-      {/* <footer>
-        <h3>copyright David Verghese</h3>
-      </footer> */}
     </div>
   );
 }
