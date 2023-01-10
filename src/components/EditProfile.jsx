@@ -56,7 +56,7 @@ function EditProfile({ user, setUser, genres, setGenres,instruments,setInstrumen
         //   setLocations([...locations,data.location])
         // }
          setUsers(users.map((user) => user.id == data.id ? data : user ));
-         history.push("/edit-profile");
+         history.push("/profiles");
           
          })
       }else {

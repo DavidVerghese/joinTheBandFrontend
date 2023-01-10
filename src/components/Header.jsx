@@ -36,7 +36,9 @@ function Header({ user, setUser }) {
     else {
       setLoggedIn(false);
     }
-  },[user])
+  }, [user])
+  
+
   return (<Navbar style={{ color: "white" }} expand="lg">
     <Container>
       <Link to = "/"> <Navbar.Brand style={{ color: "white" }} href="">Join The Band</Navbar.Brand></Link>
@@ -45,8 +47,8 @@ function Header({ user, setUser }) {
         <>
           <Link to="/login"> <Navbar.Brand style={{ color: "white" }} href="login">Log In</Navbar.Brand></Link>
           <Link to="/signup"> <Navbar.Brand style={{ color: "white" }} href="signup">Sign Up</Navbar.Brand></Link>
-        </> : <>
-          <Link to="/" onClick={history.push("/")}> <Navbar.Brand onClick={handleLogout} style={{ color: "white" }} href="signup">Log out</Navbar.Brand></Link>
+        </> : <> 
+          <Link to="/"> <Navbar.Brand onClick={handleLogout} style={{ color: "white" }} href="signup">Log out</Navbar.Brand></Link>
           <Navbar.Brand style={{ color: "white" }}><Link to="/edit-profile">Edit Profile</Link></Navbar.Brand>
           <Link to="/profiles"> <Navbar.Brand style={{ color: "white" }}>Profiles</Navbar.Brand></Link>
             </>

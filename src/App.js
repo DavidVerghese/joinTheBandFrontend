@@ -81,14 +81,14 @@ function App() {
       <Route exact path="/">
           <Home user={user} />
         </Route>
-        <Route path="/login">
+        <Route exact path="/login">
           <Login user={user} setUser={setUser} baseURL={baseURL} instruments={instruments} setInstruments={setInstruments} locations={locations} setLocations={setLocations} genres={genres} setGenres={setGenres} users={users} setUsers={setUsers} />
         </Route>
 
-        <Route path="/signup">
+        <Route exact path="/signup">
           <Signup baseURL={baseURL} instruments={instruments} setInstruments={setInstruments} locations={locations} setLocations={setLocations} genres={genres} setGenres={setGenres} users={users} setUsers={setUsers}setUser={setUser} />
         </Route>
-       <Route path="/profiles">
+       <Route exact path="/profiles">
               <AllProfiles baseURL={baseURL} genres={genres} instruments={instruments} locations={locations} users={users}/>
           </Route>
           {user? <Route path="/edit-profile">
