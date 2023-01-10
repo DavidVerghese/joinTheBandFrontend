@@ -42,7 +42,7 @@ function App() {
       .then((data) => {
         setUsers(data);
       });
-  }, []);
+  }, [user]);
 
   const [genres, setGenres] = useState([]);
   useEffect(() => {

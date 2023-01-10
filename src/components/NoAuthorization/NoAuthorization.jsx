@@ -8,7 +8,7 @@ function NoAuthorization({webpage}) {
     <h2>{webpage}</h2>
           <Card style={{ backgroundColor: 'black',boxShadow: '1px 1px 1px 1px white',textAlign: 'center', margin: '10px' }}>
           <Card.Body>
-  <Card.Title><h1>ERROR 504!</h1></Card.Title>
+  <Card.Title><h1>ERROR 401!</h1></Card.Title>
   <Card.Text>
   <Card.Text style={{color: 'red'}}><h2>Sorry!</h2></Card.Text>You need to be logged in to access this page
     </Card.Text>

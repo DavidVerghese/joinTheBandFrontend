@@ -14,7 +14,8 @@ function AllProfiles({user,users,genres,instruments,locations}) {
 
   const [displayedUsers, setDisplayedUsers] = useState([]);
   useEffect(() => {
-    const usersWithMatchInfo = users.map((otherUser) => ({ ...otherUser, match: user.looking_for.name ===  otherUser.instrument_name}))
+    if (users.length > 0) {
+      const usersWithMatchInfo = users.map((otherUser) => ({ ...otherUser, match: user.looking_for.name ===  otherUser.instrument_name}))
     const putMatchUsersFirst = usersWithMatchInfo.
       filter((user) => user.match == true)
       .concat(
@@ -22,6 +23,8 @@ function AllProfiles({user,users,genres,instruments,locations}) {
           filter((user) => user.match == false))
       
     setDisplayedUsers(putMatchUsersFirst)
+    }
+    
   }, [users]);
 
   function filterUsersByGenre(genre) {
