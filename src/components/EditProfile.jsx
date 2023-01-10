@@ -140,6 +140,6 @@ function EditProfile({ user, setUser, genres, setGenres,instruments,setInstrumen
   </div> 
   }
   
-  // return ( )
+ 
 
 export default EditProfile;
