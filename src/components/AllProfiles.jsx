@@ -14,7 +14,14 @@ function AllProfiles({user,users,genres,instruments,locations}) {
 
   const [displayedUsers, setDisplayedUsers] = useState([]);
   useEffect(() => {
-    setDisplayedUsers(users)
+    const usersWithMatchInfo = users.map((otherUser) => ({ ...otherUser, match: user.looking_for.name ===  otherUser.instrument_name}))
+    const putMatchUsersFirst = usersWithMatchInfo.
+      filter((user) => user.match == true)
+      .concat(
+        usersWithMatchInfo.
+          filter((user) => user.match == false))
+      
+    setDisplayedUsers(putMatchUsersFirst)
   }, [users]);
   useEffect(() => {
     if (user) {
@@ -159,11 +166,15 @@ function AllProfiles({user,users,genres,instruments,locations}) {
      
             <Card style={{ width: '18rem', backgroundColor: 'black', boxShadow: '1px 1px 1px 1px white', margin: '10px', textAlign: 'center' }}>
               <Card.Body>
+              {item.match ? <Card.Header style={{backgroundColor:'darkred'}} as="h5">{`Match: this user plays '${user.looking_for.name}'`}</Card.Header> : null}
                 <Card.Header>
                   <Card.Title>{item.name}</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">{item.instrument_name}</Card.Subtitle>
                 </Card.Header>
 
+                <Card.Text>
+                  
+                </Card.Text>
                 <Card.Img style={{ width: '5rem' }} variant="top" src={item.picture_url} />
 
                
