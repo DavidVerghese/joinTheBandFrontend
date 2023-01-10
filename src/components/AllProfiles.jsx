@@ -9,11 +9,18 @@ import Spinner from 'react-bootstrap/Spinner';
 import { useState, useEffect } from 'react';
 function AllProfiles({user,users,genres,instruments,locations}) {
 
+  const [loggedIn, setLoggedIn] = useState(false);
+ 
 
   const [displayedUsers, setDisplayedUsers] = useState([]);
   useEffect(() => {
     setDisplayedUsers(users)
-  },[users])
+  }, [users]);
+  useEffect(() => {
+    if (user) {
+      setLoggedIn(true)
+    }
+  }, [displayedUsers,user]);
   function filterUsersByGenre(genre) {
     const filterResults =  users.filter((user) => user.genre_name === genre);
     if (genre === 'All genres') {

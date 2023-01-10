@@ -36,7 +36,7 @@ function App() {
   }, [])
   
   useEffect(() => {
-    fetch(`/users/`)
+    fetch(`/users`)
       .then((response) => response.json())
       .then((data) => {
         setUsers(data);
