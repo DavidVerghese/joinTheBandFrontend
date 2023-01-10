@@ -1,10 +1,11 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from "react-router-dom";
+import './NoAuthorization.css';
 
-function NoAuthorization() {
+function NoAuthorization({webpage}) {
   return (<div className="no-auth">
-
+    <h2>{webpage}</h2>
           <Card style={{ backgroundColor: 'black',boxShadow: '1px 1px 1px 1px white',textAlign: 'center', margin: '10px' }}>
           <Card.Body>
   <Card.Title><h1>ERROR 504!</h1></Card.Title>

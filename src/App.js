@@ -102,11 +102,11 @@ function App() {
              */}
          
           <Route exact path="/profiles">
-            {user?  <AllProfiles user={user} baseURL={baseURL} genres={genres} instruments={instruments} locations={locations} users={users}/> : <NoAuthorization/>}
+            {user?  <AllProfiles user={user} baseURL={baseURL} genres={genres} instruments={instruments} locations={locations} users={users}/> : <NoAuthorization webpage={'Profiles'} />}
           </Route>
           
           <Route path="/edit-profile">
-            {user? <EditProfile user={user} setUser={setUser} instruments={instruments} setInstruments={setInstruments} locations={locations} setLocations={setLocations} genres={genres} setGenres={setGenres} users={users} setUsers={setUsers} /> : <NoAuthorization/>}
+            {user ? <EditProfile user={user} setUser={setUser} instruments={instruments} setInstruments={setInstruments} locations={locations} setLocations={setLocations} genres={genres} setGenres={setGenres} users={users} setUsers={setUsers} /> : <NoAuthorization webpage={'Edit Profile'} />}
           </Route>
           
 
