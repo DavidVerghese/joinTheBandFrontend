@@ -18,7 +18,7 @@ function Home({user}) {
         {!user ? <>
           <Link to="/login"><Button style={{ margin: '10px'}}>Log in</Button></Link>
         <Link to="/signup"><Button style={{ margin: '10px'}}>Sign up</Button></Link>
-        </> : null}
+        </> : <Link to="/profiles"><Button style={{ margin: '10px'}}>See profiles</Button></Link>}
         
         
       </ButtonGroup>
