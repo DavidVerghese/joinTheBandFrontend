@@ -1,6 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from "react-router-dom";
+import './NoMatch.css';
 
 function NoMatch() {
   return (<div className="no-match">

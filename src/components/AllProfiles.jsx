@@ -23,11 +23,7 @@ function AllProfiles({user,users,genres,instruments,locations}) {
       
     setDisplayedUsers(putMatchUsersFirst)
   }, [users]);
-  useEffect(() => {
-    if (user) {
-      setLoggedIn(true)
-    }
-  }, [displayedUsers,user]);
+
   function filterUsersByGenre(genre) {
     const filterResults =  users.filter((user) => user.genre_name === genre);
     if (genre === 'All genres') {
@@ -166,7 +162,7 @@ function AllProfiles({user,users,genres,instruments,locations}) {
      
             <Card style={{ width: '18rem', backgroundColor: 'black', boxShadow: '1px 1px 1px 1px white', margin: '10px', textAlign: 'center' }}>
               <Card.Body>
-              {item.match ? <Card.Header style={{backgroundColor:'darkred'}} as="h5">{`Match: this user plays '${user.looking_for.name}'`}</Card.Header> : null}
+              {item.match ? <Card.Header style={{backgroundColor:'darkred'}} as="h5">{`Match: this user's instrument is '${user.looking_for.name}'`}</Card.Header> : null}
                 <Card.Header>
                   <Card.Title>{item.name}</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">{item.instrument_name}</Card.Subtitle>

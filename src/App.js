@@ -7,6 +7,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Header from './components/Header';
 import NoMatch from './components/NoMatch/NoMatch';
+import NoAuthorization from './components/NoAuthorization/NoAuthorization';
 import EditProfile from './components/EditProfile';
 
 
@@ -88,18 +89,31 @@ function App() {
         <Route exact path="/signup">
           <Signup baseURL={baseURL} instruments={instruments} setInstruments={setInstruments} locations={locations} setLocations={setLocations} genres={genres} setGenres={setGenres} users={users} setUsers={setUsers}setUser={setUser} />
         </Route>
-       <Route exact path="/profiles">
+       {/* <Route exact path="/profiles">
+            <AllProfiles user={user} baseURL={baseURL} genres={genres} instruments={instruments} locations={locations} users={users}/>
+          </Route> */}
+          {/* {user? <><Route path="/edit-profile">
+                <EditProfile user={user} setUser={setUser}  instruments={instruments} setInstruments={setInstruments} locations={locations} setLocations={setLocations} genres={genres} setGenres={setGenres} users={users} setUsers={setUsers}  />
+          </Route>
+          <Route exact path="/profiles">
             <AllProfiles user={user} baseURL={baseURL} genres={genres} instruments={instruments} locations={locations} users={users}/>
           </Route>
-          {user? <Route path="/edit-profile">
-                <EditProfile user={user} setUser={setUser}  instruments={instruments} setInstruments={setInstruments} locations={locations} setLocations={setLocations} genres={genres} setGenres={setGenres} users={users} setUsers={setUsers}  />
-              </Route>: null}
-            
+          </> : <><Route exact patch="/profiles"><NoAuthorization/></Route></>}
+             */}
          
-        
-        <Route exact path="*">
-            <NoMatch/>
+          <Route exact path="/profiles">
+            {user?  <AllProfiles user={user} baseURL={baseURL} genres={genres} instruments={instruments} locations={locations} users={users}/> : <NoAuthorization/>}
           </Route>
+          
+          <Route path="/edit-profile">
+            {user? <EditProfile user={user} setUser={setUser} instruments={instruments} setInstruments={setInstruments} locations={locations} setLocations={setLocations} genres={genres} setGenres={setGenres} users={users} setUsers={setUsers} /> : <NoAuthorization/>}
+          </Route>
+          
+
+        
+            <Route exact path="*">
+              <NoMatch/>
+              </Route>
         </Switch>
 
       </main>

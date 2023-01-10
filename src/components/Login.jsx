@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import Cookies from 'universal-cookie';
 
 function Login({baseURL,user,setUser }) {
@@ -78,6 +78,7 @@ function Login({baseURL,user,setUser }) {
 
     <Form  onSubmit={handleSubmitLogin}>
       <h2>Log in</h2>
+      <Link to="/signup">Sign up if you do not have an account</Link>
       {loginErrors.map((loginError) => <><em>{loginError}</em><br></br></>)}
       <Form.Group className="mb-3">
         <Form.Label>Username</Form.Label>
