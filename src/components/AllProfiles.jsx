@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 import Spinner from 'react-bootstrap/Spinner';
 
 import { useState, useEffect } from 'react';
-function AllProfiles({users,genres,instruments,locations}) {
+function AllProfiles({user,users,genres,instruments,locations}) {
 
 
   const [displayedUsers, setDisplayedUsers] = useState([]);
@@ -143,56 +143,56 @@ function AllProfiles({users,genres,instruments,locations}) {
         </Dropdown>
         </ButtonGroup>
       <p>Currently displaying {describeDisplayedUsers}</p>
-    <div className="profiles">
+      {user ? <div className="profiles">
   
         {displayedUsers && displayedUsers.length > 0 ? displayedUsers.map((item, key) => {
         
-        //  item stores data of musician's profile
+          //  item stores data of musician's profile
           return (
      
-             <Card style={{ width: '18rem', backgroundColor: 'black',boxShadow: '1px 1px 1px 1px white', margin: '10px', textAlign: 'center' }}>
-            <Card.Body>
+            <Card style={{ width: '18rem', backgroundColor: 'black', boxShadow: '1px 1px 1px 1px white', margin: '10px', textAlign: 'center' }}>
+              <Card.Body>
                 <Card.Header>
                   <Card.Title>{item.name}</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">{item.instrument_name}</Card.Subtitle>
                 </Card.Header>
 
-                 <Card.Img style={{ width: '5rem'}} variant="top" src={item.picture_url}  />
+                <Card.Img style={{ width: '5rem' }} variant="top" src={item.picture_url} />
 
                
                 
-                 <Card.Text>
-                   email: {item.email_address}
-                 </Card.Text>
                 <Card.Text>
-                 genre: {item.genre_name}
-                 </Card.Text>
-                 <Card.Text>
-                 <p>joined: {alterDate(item.created_at)}</p>
-                 </Card.Text>
+                  email: {item.email_address}
+                </Card.Text>
                 <Card.Text>
-               <p>location: {item.location_name}</p>
-               </Card.Text>
-               <Card.Text>
-                <p>instrument: {item.instrument_name}</p>
-               </Card.Text>
+                  genre: {item.genre_name}
+                </Card.Text>
                 <Card.Text>
-                 <p>looking for: {item.looking_for? item.looking_for.name : null}</p>
-                </Card.Text> 
+                  <p>joined: {alterDate(item.created_at)}</p>
+                </Card.Text>
+                <Card.Text>
+                  <p>location: {item.location_name}</p>
+                </Card.Text>
+                <Card.Text>
+                  <p>instrument: {item.instrument_name}</p>
+                </Card.Text>
+                <Card.Text>
+                  <p>looking for: {item.looking_for ? item.looking_for.name : null}</p>
+                </Card.Text>
 
                 {/* <Button variant="primary">Chat</Button>
                 <Button variant="primary">Book appointment</Button> */}
-             </Card.Body>
+              </Card.Body>
             </Card>
-        );
+          );
         }) : <>
-            <h2>Loading</h2>
-            <Spinner animation="border" role="status">
-              <span className="visually-hidden">Loading...</span>
-            </Spinner>
+          <h2>Loading</h2>
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
         </>}
 
-      </div>
+      </div> : <h2>Log in to see user profiles</h2>}
       </div>
   );
 }

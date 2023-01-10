@@ -89,7 +89,7 @@ function App() {
           <Signup baseURL={baseURL} instruments={instruments} setInstruments={setInstruments} locations={locations} setLocations={setLocations} genres={genres} setGenres={setGenres} users={users} setUsers={setUsers}setUser={setUser} />
         </Route>
        <Route exact path="/profiles">
-              <AllProfiles baseURL={baseURL} genres={genres} instruments={instruments} locations={locations} users={users}/>
+            <AllProfiles user={user} baseURL={baseURL} genres={genres} instruments={instruments} locations={locations} users={users}/>
           </Route>
           {user? <Route path="/edit-profile">
                 <EditProfile user={user} setUser={setUser}  instruments={instruments} setInstruments={setInstruments} locations={locations} setLocations={setLocations} genres={genres} setGenres={setGenres} users={users} setUsers={setUsers}  />
