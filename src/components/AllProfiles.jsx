@@ -180,8 +180,8 @@ function AllProfiles({users,genres,instruments,locations}) {
                  <p>looking for: {item.looking_for? item.looking_for.name : null}</p>
                 </Card.Text> 
 
-                <Button variant="primary">Chat</Button>
-                <Button variant="primary">Book appointment</Button>
+                {/* <Button variant="primary">Chat</Button>
+                <Button variant="primary">Book appointment</Button> */}
              </Card.Body>
             </Card>
         );
