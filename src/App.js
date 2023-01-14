@@ -21,7 +21,7 @@ function App() {
 
 
   useEffect(() => {
-    fetch(`/me`)
+    fetch(`https://join-the-band-api.herokuapp.com/me`)
     .then(resp => {
         if(resp.ok){
           resp.json().then(data => {
@@ -37,7 +37,7 @@ function App() {
   }, [])
   
   useEffect(() => {
-    fetch(`/users`)
+    fetch(`https://join-the-band-api.herokuapp.com/users`)
       .then((response) => response.json())
       .then((data) => {
         setUsers(data);
@@ -46,7 +46,7 @@ function App() {
 
   const [genres, setGenres] = useState([]);
   useEffect(() => {
-    fetch(`/genres`)
+    fetch(`https://join-the-band-api.herokuapp.com/genres`)
       .then((response) => response.json())
       .then((data) => {
         setGenres(data);
@@ -59,7 +59,7 @@ function App() {
   
 
   useEffect(() => {
-    fetch(`/instruments`)
+    fetch(`https://join-the-band-api.herokuapp.com/instruments`)
       .then((response) => response.json())
       .then((data) => {
         setInstruments(data);
@@ -67,7 +67,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch(`/locations`)
+    fetch(`https://join-the-band-api.herokuapp.com/locations`)
       .then((response) => response.json())
       .then((data) => {
         setLocations(data);

@@ -30,7 +30,7 @@ function Login({baseURL,user,setUser }) {
 
     e.preventDefault();
 
-    fetch(`/login`, {
+    fetch(`https://join-the-band-api.herokuapp.com/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -22,7 +22,7 @@ function Signup({baseURL,genres,setGenres,instruments,setInstruments,locations,s
 
     e.preventDefault();
 
-    fetch(`/signup`, {
+    fetch(`https://join-the-band-api.herokuapp.com/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
