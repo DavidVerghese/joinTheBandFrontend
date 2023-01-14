@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
 import { Redirect, useHistory } from "react-router-dom";
 
-function EditProfile({ user, setUser, genres, setGenres,instruments,setInstruments,locations,setLocations, users,setUsers }) {
+function EditProfile({ baseURL, user, setUser, genres, setGenres,instruments,setInstruments,locations,setLocations, users,setUsers }) {
   const [editUser, setEditUser] = useState({...user,looking_for: user.looking_for.name});
   const [editErrors,setEditErrors] = useState([])
   const handleChange = e => {
@@ -17,7 +17,7 @@ function EditProfile({ user, setUser, genres, setGenres,instruments,setInstrumen
     e.preventDefault();
     console.log(editUser);
 
-    fetch(`/users/${user.id}`, {
+    fetch(`${baseURL}/users/${user.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -70,7 +70,7 @@ function EditProfile({ user, setUser, genres, setGenres,instruments,setInstrumen
     e.preventDefault();
   
 
-    fetch(`/users/${user.id}`, {
+    fetch(`${baseURL}/users/${user.id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

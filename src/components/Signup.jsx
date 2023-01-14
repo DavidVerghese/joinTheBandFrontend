@@ -22,7 +22,7 @@ function Signup({baseURL,genres,setGenres,instruments,setInstruments,locations,s
 
     e.preventDefault();
 
-    fetch(`/signup`, {
+    fetch(`${baseURL}/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -82,10 +82,10 @@ function Signup({baseURL,genres,setGenres,instruments,setInstruments,locations,s
   const [displayLookingForInput,setDisplayLookingForInput] = useState(false)
 
 
-
+  console.log(genres,instruments,locations)
 
   return <div className="login-or-signup">
-
+    
 <Form  onSubmit={handleSubmitSignUp}>
       <h2>Sign Up</h2>
       {signupErrors.map((signupError) => <><em>{signupError}</em><br></br></>)}

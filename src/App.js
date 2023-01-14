@@ -14,14 +14,14 @@ import EditProfile from './components/EditProfile';
 function App() {
   const [users, setUsers] = useState([]);
   
-  const baseURL = process.env.NODE_ENV === 'production' ?  `https://join-the-band-api.herokuapp.com/` : `http://localhost:3000`
+  const baseURL = process.env.NODE_ENV === 'production' ?  `/https://join-the-band-api.herokuapp.com` : ``
   const [user, setUser] = useState(false);
 
   console.log(user);
 
 
   useEffect(() => {
-    fetch(`/me`)
+    fetch(`${baseURL}/me`)
     .then(resp => {
         if(resp.ok){
           resp.json().then(data => {
@@ -37,7 +37,7 @@ function App() {
   }, [])
   
   useEffect(() => {
-    fetch(`/users`)
+    fetch(`${baseURL}/users`)
       .then((response) => response.json())
       .then((data) => {
         setUsers(data);
@@ -46,7 +46,7 @@ function App() {
 
   const [genres, setGenres] = useState([]);
   useEffect(() => {
-    fetch(`/genres`)
+    fetch(`${baseURL}/genres`)
       .then((response) => response.json())
       .then((data) => {
         setGenres(data);
@@ -59,7 +59,7 @@ function App() {
   
 
   useEffect(() => {
-    fetch(`/instruments`)
+    fetch(`${baseURL}/instruments`)
       .then((response) => response.json())
       .then((data) => {
         setInstruments(data);
@@ -67,7 +67,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch(`/locations`)
+    fetch(`${baseURL}/locations`)
       .then((response) => response.json())
       .then((data) => {
         setLocations(data);
@@ -106,7 +106,7 @@ function App() {
           </Route>
           
           <Route path="/edit-profile">
-            {user ? <EditProfile user={user} setUser={setUser} instruments={instruments} setInstruments={setInstruments} locations={locations} setLocations={setLocations} genres={genres} setGenres={setGenres} users={users} setUsers={setUsers} /> : <NoAuthorization webpage={'Edit Profile'} />}
+            {user ? <EditProfile baseURL={baseURL}  user={user} setUser={setUser} instruments={instruments} setInstruments={setInstruments} locations={locations} setLocations={setLocations} genres={genres} setGenres={setGenres} users={users} setUsers={setUsers} /> : <NoAuthorization webpage={'Edit Profile'} />}
           </Route>
           
 
