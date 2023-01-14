@@ -13,19 +13,25 @@ function AllProfiles({user,users,genres,instruments,locations}) {
  
 
   const [displayedUsers, setDisplayedUsers] = useState([]);
-  useEffect(() => {
-    if (users.length > 0) {
-      const usersWithMatchInfo = users.map((otherUser) => ({ ...otherUser, match: user.looking_for.name ===  otherUser.instrument_name}))
-    const putMatchUsersFirst = usersWithMatchInfo.
-      filter((user) => user.match == true)
-      .concat(
-        usersWithMatchInfo.
-          filter((user) => user.match == false))
+ 
+   useEffect(() => {
+  
+    setDisplayedUsers(users)
+    }, [users]);
+
+  // useEffect(() => {
+  //   if (users.length > 0) {
+  //     const usersWithMatchInfo = users.map((otherUser) => ({ ...otherUser, match: user.looking_for.name ===  otherUser.instrument_name}))
+  //   const putMatchUsersFirst = usersWithMatchInfo.
+  //     filter((user) => user.match == true)
+  //     .concat(
+  //       usersWithMatchInfo.
+  //         filter((user) => user.match == false))
       
-    setDisplayedUsers(putMatchUsersFirst)
-    }
+  //   setDisplayedUsers(putMatchUsersFirst)
+  //   }
     
-  }, [users]);
+  // }, [users]);
 
   function filterUsersByGenre(genre) {
     const filterResults =  users.filter((user) => user.genre_name === genre);
