@@ -17,7 +17,7 @@ function EditProfile({ baseURL, user, setUser, genres, setGenres,instruments,set
     e.preventDefault();
     console.log(editUser);
 
-    fetch(`https://join-the-band-api.herokuapp.com/users/${user.id}`, {
+    fetch(`/${user.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -70,7 +70,7 @@ function EditProfile({ baseURL, user, setUser, genres, setGenres,instruments,set
     e.preventDefault();
   
 
-    fetch(`https://join-the-band-api.herokuapp.com/users/${user.id}`, {
+    fetch(`/users/${user.id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
