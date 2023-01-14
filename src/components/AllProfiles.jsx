@@ -162,7 +162,8 @@ function AllProfiles({user,users,genres,instruments,locations}) {
         </Dropdown>
         </ButtonGroup>
       <p>Currently displaying {describeDisplayedUsers}</p>
-      {user ? <div className="profiles">
+      {/* condition used to be user */}
+      {true ? <div className="profiles">
   
         {displayedUsers && displayedUsers.length > 0 ? displayedUsers.map((item, key) => {
         
