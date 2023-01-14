@@ -109,37 +109,39 @@ function Signup({baseURL,genres,setGenres,instruments,setInstruments,locations,s
         <Form.Control type="text" placeholder="Enter your picture url" name="picture_url" value={signupUser.picture_url} onChange={handleChange}/>
       </Form.Group>
 
-
-      {!displayGenreInput ?
+      {/* the condition was originally displayGenreInput: */}
+      {/* I took out the other option as well*/}
+      {true ?
          <Form.Group className="mb-3">
          <Form.Label>Genre</Form.Label>
           <Form.Select onChange={(e) => { if (e.target.value === 'Other') { setDisplayGenreInput(true) } else {setSignupUser({...signupUser,genre:e.target.value})} }}>
           <option value="" disabled selected>Select your genre</option>
           {genres.map((genre) => <option value={genre.name}>{genre.name}</option>)}
-          <option>Other</option>
+          {/* <option>Other</option> */}
           </Form.Select>
           <Form.Text className="text-muted">
-          If you do not see your genre, select 'Other'
+          {/* If you do not see your genre, select 'Other' */}
         </Form.Text>
         </Form.Group> : null}
-      {displayGenreInput ? <Form.Group className="mb-3">
+      {false ? <Form.Group className="mb-3">
         <Form.Label>Genre</Form.Label>
         <Form.Control type="text" placeholder="Enter your genre" name="genre" value={signupUser.genre} onChange={handleChange}/>
       </Form.Group> : null}
 
-      {!displayInstrumentInput ?
+      {/* the condition was originally displayInstrumentInput: */}
+      {true ?
          <Form.Group className="mb-3">
          <Form.Label>Instrument</Form.Label>
           <Form.Select onChange={(e) => { if (e.target.value === 'Other') { setDisplayInstrumentInput(true) } else {setSignupUser({...signupUser,instrument:e.target.value})} }}>
           <option value="" disabled selected>Select your instrument</option>
           {instruments.map((instrument) => <option value={instrument.name}>{instrument.name}</option>)}
-          <option>Other</option>
+          {/* <option>Other</option> */}
           </Form.Select>
           <Form.Text className="text-muted">
-          If you do not see your instrument, select 'Other'
+          {/* If you do not see your instrument, select 'Other' */}
         </Form.Text>
         </Form.Group> : null}
-      {displayInstrumentInput ? <Form.Group className="mb-3">
+      {false ? <Form.Group className="mb-3">
         <Form.Label>Instrument</Form.Label>
         <Form.Control type="text" placeholder="Enter your instrument" name="instrument" value={signupUser.instrument} onChange={handleChange} />
         <Form.Text className="text-muted">
@@ -147,40 +149,43 @@ function Signup({baseURL,genres,setGenres,instruments,setInstruments,locations,s
         </Form.Text>
       </Form.Group> : null}
 
-      {!displayLocationInput ?
+      {/* the condition was originally displayLocationInput: */}
+   
+      {true ?
          <Form.Group className="mb-3">
          <Form.Label>Location</Form.Label>
           <Form.Select onChange={(e) => { if (e.target.value === 'Other') { setDisplayLocationInput(true) } else {setSignupUser({...signupUser,location:e.target.value})} }}>
           <option value="" disabled selected>Select your location</option>
           {locations.map((location) => <option value={location.name}>{location.name}</option>)}
-          <option>Other</option>
+          {/* <option>Other</option> */}
           </Form.Select>
           <Form.Text className="text-muted">
-          If you do not see your location, select 'Other'
+          {/* If you do not see your location, select 'Other' */}
         </Form.Text>
         </Form.Group> : null}
-      {displayLocationInput ? <Form.Group className="mb-3">
+      {false ? <Form.Group className="mb-3">
         <Form.Label>Location</Form.Label>
         <Form.Control type="text" placeholder="Enter your location" name="location" value={signupUser.location} onChange={handleChange}/>
       </Form.Group> : null}
 
-      {!displayLookingForInput ?
+      {/* the condition was originally displayLookingForInput: */}
+      {true ?
          <Form.Group className="mb-3">
          <Form.Label>Looking For</Form.Label>
           <Form.Select onChange={(e) => { if (e.target.value === 'Other') { setDisplayLookingForInput(true) } else {setSignupUser({...signupUser,looking_for:e.target.value})} }}>
           <option value="" disabled selected>Select the instrument you want to collaborate with</option>
           {instruments.map((instrument) => <option value={instrument.name}>{instrument.name}</option>)}
-          <option>Other</option>
+          {/* <option>Other</option> */}
           </Form.Select>
           <Form.Text className="text-muted">
-          If you do not see the instrument you want to collaborate with, select 'Other'
+          {/* If you do not see the instrument you want to collaborate with, select 'Other' */}
         </Form.Text>
         </Form.Group> : null}
-      {displayLookingForInput ? <Form.Group className="mb-3">
+      {false ? <Form.Group className="mb-3">
         <Form.Label>Looking For</Form.Label>
         <Form.Control type="text" placeholder="Enter the instrument you are looking for" name="looking_for" value={signupUser.looking_for} onChange={handleChange} />
         <Form.Text className="text-muted">
-         Enter the instrument you want to collaborate with
+         {/* Enter the instrument you want to collaborate with */}
         </Form.Text>
       </Form.Group> : null}
 
