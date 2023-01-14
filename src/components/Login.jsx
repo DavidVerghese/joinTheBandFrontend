@@ -30,7 +30,7 @@ function Login({baseURL,user,setUser }) {
 
     e.preventDefault();
 
-    fetch(`${baseURL}/login`, {
+    fetch(`/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

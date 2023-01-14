@@ -17,7 +17,7 @@ function EditProfile({ baseURL, user, setUser, genres, setGenres,instruments,set
     e.preventDefault();
     console.log(editUser);
 
-    fetch(`${baseURL}/users/${user.id}`, {
+    fetch(`/users/${user.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -70,7 +70,7 @@ function EditProfile({ baseURL, user, setUser, genres, setGenres,instruments,set
     e.preventDefault();
   
 
-    fetch(`${baseURL}/users/${user.id}`, {
+    fetch(`/users/${user.id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

@@ -21,7 +21,7 @@ function App() {
 
 
   useEffect(() => {
-    fetch(`${baseURL}/me`)
+    fetch(`/me`)
     .then(resp => {
         if(resp.ok){
           resp.json().then(data => {
@@ -37,7 +37,7 @@ function App() {
   }, [])
   
   useEffect(() => {
-    fetch(`${baseURL}/users`)
+    fetch(`/users`)
       .then((response) => response.json())
       .then((data) => {
         setUsers(data);
@@ -46,7 +46,7 @@ function App() {
 
   const [genres, setGenres] = useState([]);
   useEffect(() => {
-    fetch(`${baseURL}/genres`)
+    fetch(`/genres`)
       .then((response) => response.json())
       .then((data) => {
         setGenres(data);
@@ -59,7 +59,7 @@ function App() {
   
 
   useEffect(() => {
-    fetch(`${baseURL}/instruments`)
+    fetch(`/instruments`)
       .then((response) => response.json())
       .then((data) => {
         setInstruments(data);
@@ -67,7 +67,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch(`${baseURL}/locations`)
+    fetch(`/locations`)
       .then((response) => response.json())
       .then((data) => {
         setLocations(data);
