@@ -24,6 +24,7 @@ function Header({ user, setUser }) {
       if (resp.ok) {
         resp.json().then(data => {
           setUser(null);
+          history.push("/")
         })
       }
     })
